@@ -28,6 +28,10 @@ export default function Home() {
       }}
       className="flex flex-col items-center justify-center"
     >
+      {/* ---- PARTICLES THAT ARE MOVING ON HOVER ----- */}
+      {/* <div id="large-header" className="absolute inset-0 -z-10 animate-fade-in">
+        <canvas id="demo-canvas" className="min-h-screen w-[100%]"></canvas>
+      </div> */}
       <div className="mb-20 min-h-screen flex flex-col justify-center ">
         <div className="mt-32 mb-16" ref={descContainer}>
           <motion.h1
