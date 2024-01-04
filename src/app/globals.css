@@ -25,3 +25,9 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+@layer utilities {
+  .clip-path-hero-nav {
+    clip-path: inset (50% 0 50%);
+  }
+}

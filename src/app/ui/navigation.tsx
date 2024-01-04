@@ -1,14 +1,16 @@
-import Link from "next/link";
-import { useState } from "react";
+import { SetStateAction, useState } from "react";
 import NavigationTitles from "./navigation-titles";
-import { NavigationData } from "../lib/navData";
+
+import NavigationDescription from "./navigation-descriptions";
 
 export default function Navigation() {
-  const [selectedProject, setSelectedProject] = useState(null);
+  const [selectedProject, setSelectedProject] =
+    useState<SetStateAction<null | number>>(null);
 
   return (
     <div className="absolute w-[100%] z-10">
-      <NavigationTitles data={NavigationData} setSelectedProject={setSelectedProject} />
+      <NavigationTitles setSelectedProject={setSelectedProject} />
+      <NavigationDescription selectedProject={selectedProject} />
     </div>
   );
 }
