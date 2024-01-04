@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "./components/smooth-scroll/smooth-scroll";
-import localFont from "next/font/local";
 import "cal-sans";
 
 const inter = Inter({ subsets: ["latin"] });
