@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "./components/smooth-scroll/smooth-scroll";
+import localFont from "next/font/local";
+import "cal-sans";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <SmoothScroll>
-        <body className={inter.className}>{children}</body>
+        <body>{children}</body>
       </SmoothScroll>
     </html>
   );

@@ -19,7 +19,7 @@ export default function NavigationDescription({
         return (
           <div
             key={i}
-            className="clip-path-hero-nav flex bg-[#ec4e39] justify-between items-center pl-[5%] pr-[5%] transition-all duration-500 w-[100%] mb-[2px] border-transparent text-[#010101]"
+            className="clip-path-hero-nav flex bg-orange justify-between items-center pl-[5%] pr-[5%] transition-all duration-500 w-[100%] mb-[2px] border-transparent text-black"
             style={{
               clipPath:
                 selectedProject == i ? "inset(0 0 0)" : `inset(50% 0 50%)`,
@@ -29,7 +29,7 @@ export default function NavigationDescription({
               {crop(name, 10)}
             </p>
 
-            <p className="w-[30%] text-[1w] font-bold">{description}</p>
+            <p className="w-[30%] text-2xl font-bold">{description}</p>
           </div>
         );
       })}

@@ -75,14 +75,12 @@ function Title({
           className="font-bold text-[7vw] leading-[9vw] uppercase"
         >
           <motion.p
-            className="inline-block text-[#b7ab98] relative m-0  z-[2] "
+            className="inline-block text-light-brown relative m-0  z-[2] "
             style={{ clipPath: clip }}
           >
             {name}
           </motion.p>
-          <p className="block absolute text-[#1c1c1c] top-0 z-[1] m-0 ">
-            {name}
-          </p>
+          <p className="block absolute text-shadow top-0 z-[1] m-0 ">{name}</p>
         </Link>
       </div>
     </div>
