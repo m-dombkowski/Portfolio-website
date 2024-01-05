@@ -5,7 +5,7 @@ import {
   useTransform,
   useMotionTemplate,
 } from "framer-motion";
-import { NavigationData } from "../lib/navData";
+import { NavigationData } from "../../lib/navData";
 import Link from "next/link";
 // import { NavDataType } from "../lib/definitions";
 

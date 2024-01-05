@@ -13,8 +13,8 @@ export default function Cursor() {
     x: useMotionValue(0),
     y: useMotionValue(0),
   };
-  const smoothInnerOptions = { damping: 20, stiffnes: 300, mass: 0.5 };
-  const smoothOuterOptions = { damping: 30, stiffnes: 300, mass: 1 };
+  const smoothInnerOptions = { damping: 20, stiffnes: 100, mass: 0.3 };
+  const smoothOuterOptions = { damping: 30, stiffnes: 100, mass: 0.6 };
 
   const smoothInnerMouse = {
     x: useSpring(mouseInner.x, smoothInnerOptions),
