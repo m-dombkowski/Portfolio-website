@@ -1,6 +1,6 @@
 import { Variants } from "framer-motion";
 
-export const anim = (variants: Variants, custom: number) => {
+export const anim = (variants: Variants, custom: number | null) => {
   return {
     initial: "initial",
     animate: "enter",
@@ -15,21 +15,42 @@ export const expand = {
     top: 0,
   },
   enter: (i: number) => ({
-    top: "100%",
-
-    transition: { duration: 0.5, delay: 0.1 * i },
+    top: "100vh",
+    transition: {
+      duration: 0.65,
+      delay: 0.1 * i,
+      ease: [0.215, 0.61, 0.355, 1],
+    },
+    transitionEnd: {
+      height: "0",
+      top: "0",
+    },
+  }),
+  exit: (i: number) => ({
+    height: "100vh",
+    transition: {
+      duration: 0.65,
+      delay: 0.1 * i,
+      ease: [0.215, 0.61, 0.355, 1],
+    },
   }),
 };
 
-export const expand2 = {
+export const opacityBg = {
   initial: {
-    height: "100%",
+    opacity: 1,
   },
-  enter: (i: number) => ({
-    height: 0,
 
-    transition: { duration: 0.4, delay: i },
-  }),
+  enter: {
+    opacity: 0,
+    transition: {
+      duration: 0.05,
+    },
+  },
+
+  exit: {
+    opacity: 1,
+  },
 };
 
 export const opacity = {

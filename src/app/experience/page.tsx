@@ -1,7 +1,3 @@
 export default function ExperiencePage() {
-  return (
-    <div>
-      <h1>ExperiencePage</h1>
-    </div>
-  );
+  return <h1>ExperiencePage</h1>;
 }

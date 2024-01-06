@@ -17,6 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const path = usePathname();
+  console.log(path);
 
   return (
     <html lang="en">

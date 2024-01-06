@@ -7,19 +7,19 @@ import {
   slideUpThird,
 } from "../lib/anim";
 import { Typewriter } from "react-simple-typewriter";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import galaxy from "../../../public/galaxy-bg.png";
 import Navigation from "../ui/hero-nav/navigation";
 import Cursor from "../ui/cursor/cursor";
 import { Player } from "@lottiefiles/react-lottie-player";
-import { useRouter } from "next/navigation";
+
 
 export default function HomePage() {
   const descContainer = useRef<HTMLDivElement>(null);
   const isInView = useInView(descContainer);
 
   return (
-    <div>
+    <>
       <Cursor />
       <main
         style={{
@@ -96,6 +96,6 @@ export default function HomePage() {
           <Navigation />
         </motion.div>
       </main>
-    </div>
+    </>
   );
 }
