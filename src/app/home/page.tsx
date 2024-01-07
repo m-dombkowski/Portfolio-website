@@ -1,18 +1,13 @@
 "use client";
 import { motion, useInView } from "framer-motion";
-import {
-  opacity,
-  slideUpFirst,
-  slideUpSecond,
-  slideUpThird,
-} from "../lib/anim";
+import { opacity, slideUp, anim, animByBoolean } from "../lib/anim";
 import { Typewriter } from "react-simple-typewriter";
 import { useRef } from "react";
 import galaxy from "../../../public/galaxy-bg.png";
 import Navigation from "../ui/hero-nav/navigation";
 import Cursor from "../ui/cursor/cursor";
 import { Player } from "@lottiefiles/react-lottie-player";
-
+import Link from "next/link";
 
 export default function HomePage() {
   const descContainer = useRef<HTMLDivElement>(null);
@@ -31,53 +26,45 @@ export default function HomePage() {
         }}
         className="flex flex-col items-center justify-center"
       >
-        {/* ---- PARTICLES THAT ARE MOVING ON HOVER ----- */}
-        {/* <div id="large-header" className="absolute inset-0 -z-10 animate-fade-in">
-<canvas id="demo-canvas" className="min-h-screen w-[100%]"></canvas>
-</div> */}
         <div className="mb-20 min-h-screen flex flex-col justify-center ">
-          <div className="mt-32 mb-16" ref={descContainer}>
+          <div
+            className="mt-32 mb-16 flex gap-5 flex-col text-xl"
+            ref={descContainer}
+          >
+            <motion.p {...animByBoolean(slideUp, isInView, 0.6)}>
+              Hey there! My name is{" "}
+            </motion.p>
             <motion.h1
-              initial="initial"
-              animate={isInView ? "open" : "closed"}
-              variants={opacity}
-              className="text-8xl text-center mb-6 text-light-brown"
+              {...animByBoolean(opacity, isInView, null)}
+              className="text-7xl text-light-brown"
             >
-              Hello there!
+              Mateusz Dombkowski
             </motion.h1>
-            <div className="flex gap-5 flex-col text-xl">
-              <motion.p
-                className="pr-[10px]"
-                initial="initial"
-                variants={slideUpFirst}
-                animate={isInView ? "open" : "closed"}
-              >{`My name's Mateusz and I'm currently working as a Junior Frontend Developer.`}</motion.p>
-              <motion.p
-                initial="initial"
-                variants={slideUpSecond}
-                animate={isInView ? "open" : "closed"}
-              >
-                {`At the moment I'm looking for a new full-time position as a`}{" "}
-                <span className="text-light-brown">
-                  <Typewriter
-                    words={[
-                      "Frontend Developer.",
-                      "Frontend Engineer.",
-                      "React Developer.",
-                      "React Engineer.",
-                    ]}
-                    loop={false}
-                  />
-                </span>
-              </motion.p>
-              <motion.p
-                initial="initial"
-                variants={slideUpThird}
-                animate={isInView ? "open" : "closed"}
-              >
-                Always happy and open to new opportunities/projects.
-              </motion.p>
-            </div>
+
+            <motion.p
+              {...animByBoolean(slideUp, isInView, 1.2)}
+            >{`and I'm a Devloper witha a passion for everything code related with a focus on Frontend,`}</motion.p>
+            <motion.p {...animByBoolean(slideUp, isInView, 1.8)}>
+              {`especially React, Next.js, Typescript. I also love baking but more about that on `}
+              <span className="text-light-brown">
+                <Link href="/about">About</Link>
+              </span>
+              {" page."}
+            </motion.p>
+            <motion.p {...animByBoolean(slideUp, isInView, 2.4)}>
+              At the moment looking for a new full-time position as a{" "}
+              <span className="text-light-brown">
+                <Typewriter
+                  words={[
+                    "Frontend Developer.",
+                    "Frontend Engineer.",
+                    "React Developer.",
+                    "React Engineer.",
+                  ]}
+                  loop={false}
+                />
+              </span>
+            </motion.p>
           </div>
           <div className="flex justify-center items-center">
             <Player

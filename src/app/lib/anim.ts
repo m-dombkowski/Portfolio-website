@@ -5,6 +5,22 @@ export const anim = (variants: Variants, custom: number | null) => {
     initial: "initial",
     animate: "enter",
     exit: "exit",
+    open: "open",
+    variants,
+    custom,
+  };
+};
+
+export const animByBoolean = (
+  variants: Variants,
+  animateValue: boolean,
+  custom: number | null
+) => {
+  return {
+    initial: "initial",
+    animate: animateValue ? "open" : "closed",
+    open: "open",
+    closed: "closed",
     variants,
     custom,
   };
@@ -62,6 +78,19 @@ export const opacity = {
     transition: { duration: 1 },
   },
   closed: {
+    opacity: 0,
+  },
+};
+
+export const slideUp = {
+  initial: { y: "15px", opacity: "0" },
+  open: (i: number) => ({
+    y: 0,
+    opacity: 1,
+    transition: { duration: 0.5, delay: 0.75 * i },
+  }),
+  closed: {
+    y: "15px",
     opacity: 0,
   },
 };
