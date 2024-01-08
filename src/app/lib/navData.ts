@@ -31,7 +31,7 @@ export const NavigationData = [
   },
   {
     href: "/contact",
-    description: `Let's chat! Feel free to hit me up via contact form, email or on any social media`,
+    description: `Let's chat! Feel free to hit me up via email or on any social media`,
     name: "Contact",
     speed: 1,
     index: 4,
