@@ -9,6 +9,7 @@ import PageTransition from "./ui/page-transition/stairs";
 import { AnimatePresence } from "framer-motion";
 
 import { usePathname } from "next/navigation";
+import Cursor from "./ui/cursor/cursor";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -31,6 +32,7 @@ export default function RootLayout({
     <html lang="en" className={[inter.variable, calSans.variable].join(" ")}>
       <SmoothScroll>
         <body>
+          <Cursor />
           <AnimatePresence mode="wait">
             <PageTransition key={path}>{children}</PageTransition>
           </AnimatePresence>
