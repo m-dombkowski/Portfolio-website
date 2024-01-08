@@ -24,7 +24,7 @@ export default function HomePage() {
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
         }}
-        className="flex flex-col items-center justify-center"
+        className="flex flex-col items-center justify-center font-sans"
       >
         <div className="mb-20 min-h-screen flex flex-col justify-center ">
           <div
@@ -36,18 +36,18 @@ export default function HomePage() {
             </motion.p>
             <motion.h1
               {...animByBoolean(opacity, isInView, null)}
-              className="text-7xl text-light-brown"
+              className="text-7xl text-light-brown font-display"
             >
               Mateusz Dombkowski
             </motion.h1>
 
             <motion.p
               {...animByBoolean(slideUp, isInView, 1.2)}
-            >{`and I'm a Devloper witha a passion for everything code related with a focus on Frontend,`}</motion.p>
+            >{`and I'm a Devloper passionate about everything code related with a focus on Frontend,`}</motion.p>
             <motion.p {...animByBoolean(slideUp, isInView, 1.8)}>
               {`especially React, Next.js, Typescript. I also love baking but more about that on `}
               <span className="text-light-brown">
-                <Link href="/about">About</Link>
+                <Link href="/about">another</Link>
               </span>
               {" page."}
             </motion.p>
@@ -79,7 +79,7 @@ export default function HomePage() {
             ></Player>
           </div>
         </div>
-        <motion.div className="flex flex-col gap-20 min-h-screen justify-center items-center">
+        <motion.div className="flex flex-col gap-20 min-h-screen justify-center items-center ">
           <Navigation />
         </motion.div>
       </main>

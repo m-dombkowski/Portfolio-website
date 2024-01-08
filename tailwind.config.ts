@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import defaultTheme from "tailwindcss/defaultTheme";
 
 const config: Config = {
   content: [
@@ -8,18 +9,30 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["var(--font-inter)", ...defaultTheme.fontFamily.sans],
+        display: ["var(--font-calsans)"],
+      },
       backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        "gradient-radial-chrono": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "gradient-radial":
+          "radial-gradient(50% 50% at 50% 50%, var(--tw-gradient-stops))",
         galaxy: "url('/public/galaxy-bg.png')",
       },
     },
+
     colors: {
       orange: "#ec4e39",
       "light-brown": "#b7ab98",
       black: "#010101",
       shadow: "#1c1c1c",
+      "zinc-900-flipped": "rgb(24,24,27,0)",
+      "zinc-900": "#18181b",
+      "zinc-600": "rgb(82, 82, 91, 0)",
+      "zinc-800-flipped": "rgba(39,39,42,.1)",
+      "zinc-100-flipped": "hsla(240,5%,96%,0)",
     },
   },
   plugins: [],

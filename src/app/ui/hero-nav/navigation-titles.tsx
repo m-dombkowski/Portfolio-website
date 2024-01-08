@@ -7,7 +7,6 @@ import {
 } from "framer-motion";
 import { NavigationData } from "../../lib/navData";
 import Link from "next/link";
-// import { NavDataType } from "../lib/definitions";
 
 type NavDataType = {
   href: string;
@@ -23,7 +22,7 @@ export default function index({
   setSelectedProject: Dispatch<SetStateAction<null | number>>;
 }) {
   return (
-    <div className="w-100 border-t-2 border-solid border-[rgba(183, 171, 152, 0.25)]">
+    <div className="w-100 border-t-2 border-solid border-[rgba(183, 171, 152, 0.25)] ">
       {NavigationData.map((project, i) => {
         return (
           <Title
@@ -72,7 +71,7 @@ function Title({
       >
         <Link
           href={href}
-          className="font-bold text-[7vw] leading-[9vw] uppercase"
+          className="font-bold text-[7vw] leading-[10vw] uppercase"
         >
           <motion.p
             className="inline-block text-light-brown relative m-0  z-[2] "

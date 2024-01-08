@@ -12,7 +12,7 @@ export default function NavigationDescription({
   };
 
   return (
-    <div className="absolute top-[2px]  h-[100%] w-[100%] z-[2] pointer-events-none">
+    <div className="absolute top-[2px]  h-[100%] w-[100%] z-[2] pointer-events-none ">
       {NavigationData.map((project, i) => {
         const { name, description } = project;
 
@@ -25,11 +25,13 @@ export default function NavigationDescription({
                 selectedProject == i ? "inset(0 0 0)" : `inset(50% 0 50%)`,
             }}
           >
-            <p className=" uppercase text-[7vw] leading-[9vw] font-bold m-0 relative z-[1]">
+            <p className=" uppercase text-[7vw] leading-[10vw] font-bold m-0 relative z-[1]">
               {crop(name, 10)}
             </p>
 
-            <p className="w-[30%] text-2xl font-bold">{description}</p>
+            <p className="w-[30%] text-[1.5vw] font-bold font-sans">
+              {description}
+            </p>
           </div>
         );
       })}

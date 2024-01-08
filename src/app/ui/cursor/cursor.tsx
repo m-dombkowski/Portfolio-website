@@ -1,4 +1,4 @@
-import { motion, motionValue, useMotionValue, useSpring } from "framer-motion";
+import { motion, useMotionValue, useSpring } from "framer-motion";
 import { useEffect } from "react";
 export default function Cursor() {
   const innerSize = 8;
