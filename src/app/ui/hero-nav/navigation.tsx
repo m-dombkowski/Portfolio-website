@@ -8,7 +8,7 @@ export default function Navigation() {
     useState<SetStateAction<null | number>>(null);
 
   return (
-    <div className="absolute w-[100%] z-10 font-display">
+    <div className="absolute w-[100%] z-10 font-display ">
       <NavigationTitles setSelectedProject={setSelectedProject} />
       <NavigationDescription selectedProject={selectedProject} />
     </div>

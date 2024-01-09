@@ -71,7 +71,7 @@ function Title({
       >
         <Link
           href={href}
-          className="font-bold text-[7vw] leading-[10vw] uppercase"
+          className="font-bold text-[10.5vw] leading-[13.5vw] uppercase lg:leading-[10vw] lg:text-[7vw]"
         >
           <motion.p
             className="inline-block text-light-brown relative m-0  z-[2] "

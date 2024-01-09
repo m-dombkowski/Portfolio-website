@@ -25,7 +25,7 @@ export default function NavigationDescription({
                 selectedProject == i ? "inset(0 0 0)" : `inset(50% 0 50%)`,
             }}
           >
-            <p className=" uppercase text-[7vw] leading-[10vw] font-bold m-0 relative z-[1]">
+            <p className=" uppercase text-[10.5vw] leading-[13.5vw] font-bold m-0 relative z-[1] lg:leading-[10vw] lg:text-[7vw]">
               {crop(name, 10)}
             </p>
 
