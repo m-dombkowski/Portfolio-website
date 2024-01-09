@@ -30,10 +30,10 @@ export default function ContactPage() {
     <div className="bg-gradient-to-bl from-zinc-900-flipped via-zinc-900 to-zinc-900-flipped ">
       <div className="flex flex-col min-h-screen justify-center">
         <div className="flex justify-center mt-32">
-          <h1 className="text-3xl mb-20 font-display lg:text-6xl text-center">{`Choose the way to connect that suits you best`}</h1>
+          <h1 className="text-3xl mb-16 font-display lg:text-5xl text-center xl:text-6xl">{`Choose the way to connect that suits you best`}</h1>
         </div>
         <div className="container flex items-center justify-center px-4 mx-auto font-sans text-center">
-          <div className="grid w-full grid-cols-1 gap-8 mx-auto sm:mt-0 sm:grid-cols-3 lg:mt-32 lg:gap-16">
+          <div className="grid w-full grid-cols-1 gap-8 mx-auto sm:mt-0 sm:grid-cols-3 lg:mt-16 lg:gap-16">
             {contacts.map((contact, i) => (
               <Card key={i}>
                 <Link key={i} href={contact.href} target="_blank">
@@ -44,7 +44,9 @@ export default function ContactPage() {
                     <h1 className="text-3xl mb-5 font-display ">
                       {contact.label}
                     </h1>
-                    <p className="text-lg mb-40">{contact.description}</p>
+                    <p className="text-lg mb-40 sm:mb-28 sm: text-base">
+                      {contact.description}
+                    </p>
                   </div>
                 </Link>
               </Card>
