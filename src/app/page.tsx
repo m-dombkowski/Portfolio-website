@@ -26,7 +26,7 @@ export default function HomePage() {
       >
         <div className="min-h-screen flex flex-col justify-center text-center lg:text-left">
           <div
-            className="mt-32 mb-16 flex flex-col text-sm px-6 gap-2 md:text-base md:px-40 lg:text-xl lg:px-52 lg:gap-5 xl:p-0 xl: mb-32"
+            className="mt-32 mb-16 flex flex-col text-sm px-8 gap-3 md:text-base md:px-40 lg:text-xl lg:px-52 lg:gap-5 xl:p-0 xl: mb-32"
             ref={descContainer}
           >
             <motion.p
@@ -49,7 +49,7 @@ export default function HomePage() {
               {`I'm a Devloper passionate about everything code related with a focus on Frontend, especially React, Next.js, Typescript.`}
             </motion.p>
             <motion.span
-              className=""
+              className="max-w-[245px] block m-[auto]"
               {...animByBoolean(slideUp, isInView, 1.8)}
             >
               {`  I also love baking but more about that on `}
