@@ -24,20 +24,20 @@ export default function HomePage() {
         }}
         className="flex flex-col items-center justify-center font-sans"
       >
-        <div className="min-h-screen flex flex-col justify-center text-center xl:text-left">
+        <div className="min-h-screen flex flex-col justify-center text-center lg:text-left">
           <div
-            className="mt-32 mb-16 flex flex-col text-base sm:gap-2 px-32 md:px-40 lg:text-xl lg:px-52 lg:gap-5 xl:p-0 xl: mb-32"
+            className="mt-32 mb-16 flex flex-col text-sm px-6 gap-2 md:text-base md:px-40 lg:text-xl lg:px-52 lg:gap-5 xl:p-0 xl: mb-32"
             ref={descContainer}
           >
             <motion.p
-              className="mb-5 sm:mb-0"
+              className="mb-2"
               {...animByBoolean(slideUp, isInView, 0.6)}
             >
               Hey there! My name is{" "}
             </motion.p>
             <motion.h1
               {...animByBoolean(opacity, isInView, null)}
-              className="text-4xl text-light-brown font-display mb-5 sm:mb-0 md:text-6xl lg:text-7xl"
+              className="text-4xl text-light-brown font-display mb-2 md:text-6xl lg:text-7xl"
             >
               Mateusz Dombkowski
             </motion.h1>
@@ -87,7 +87,7 @@ export default function HomePage() {
             ></Player>
           </div>
         </div>
-        <motion.div className="flex flex-col gap-20 min-h-[380px] justify-center items-center lg:min-h-screen sm:min-h-[50vh] md:min-h-[90vh]">
+        <motion.div className="flex flex-col gap-20 min-h-[450px] justify-center items-center lg:min-h-screen sm:min-h-[50vh] md:min-h-[90vh]">
           <Navigation />
         </motion.div>
       </main>
