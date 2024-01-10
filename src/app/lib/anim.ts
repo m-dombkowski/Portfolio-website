@@ -26,6 +26,25 @@ export const animByBoolean = (
   };
 };
 
+export const animPage = (variants: Variants) => {
+  return {
+    initial: "initial",
+    animate: "open",
+
+    variants,
+  };
+};
+
+export const fadePage = {
+  initial: { top: "25px", opacity: 0 },
+  open: () => ({
+    top: "0",
+    opacity: 1,
+    transition: { duration: 0.3 },
+  }),
+  exit: { top: "25px", opacity: 0 },
+};
+
 export const expand = {
   initial: {
     top: 0,
@@ -91,45 +110,6 @@ export const slideUp = {
   }),
   closed: {
     y: "15px",
-    opacity: 0,
-  },
-};
-
-export const slideUpFirst = {
-  initial: { y: "50px", opacity: "0" },
-  open: {
-    y: 0,
-    opacity: 1,
-    transition: { duration: 0.5, delay: 0.75 },
-  },
-  closed: {
-    y: "50px",
-    opacity: 0,
-  },
-};
-export const slideUpSecond = {
-  initial: { y: "50px", opacity: "0" },
-
-  open: {
-    y: 0,
-    opacity: 1,
-    transition: { duration: 0.5, delay: 1.5 },
-  },
-  closed: {
-    y: "50px",
-    opacity: 0,
-  },
-};
-export const slideUpThird = {
-  initial: { y: "50px", opacity: "0" },
-
-  open: {
-    y: 0,
-    opacity: 1,
-    transition: { duration: 0.5, delay: 2.25 },
-  },
-  closed: {
-    y: "50px",
     opacity: 0,
   },
 };
