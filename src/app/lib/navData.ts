@@ -1,7 +1,10 @@
 export const NavigationData = [
   {
     href: "/",
+    description: "Main page of this website",
     name: "Home",
+    speed: 0.33,
+    index: 0,
   },
   {
     href: "/about",
