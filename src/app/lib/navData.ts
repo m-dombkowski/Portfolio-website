@@ -1,5 +1,9 @@
 export const NavigationData = [
   {
+    href: "/",
+    name: "Home",
+  },
+  {
     href: "/about",
     description:
       "Get to know me, not only by what I do professionally but also what I do and am up to outside of a work time",
@@ -11,7 +15,7 @@ export const NavigationData = [
     href: "/experience",
     description:
       "My (mostly) commercial experiance shown in a nice visual way, with a short description for each chapter",
-    name: "Experience",
+    name: "Work",
     speed: 0.65,
     index: 1,
   },

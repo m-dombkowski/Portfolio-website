@@ -26,10 +26,13 @@ const config: Config = {
     colors: {
       orange: "#ec4e39",
       "light-brown": "#b7ab98",
+      "light-brown-transparent": "rgb(183, 171, 152,1)",
       black: "#010101",
       shadow: "#1c1c1c",
       "zinc-900-flipped": "rgb(24,24,27,0)",
       "zinc-900": "#18181b",
+      "zinc-900-transparent": "rgb(24,24,27,.7)",
+      "zinc-nav-active": "rgb(47,47,50,.7)",
       "zinc-600": "rgb(82, 82, 91, 0)",
       "zinc-800-flipped": "rgba(39,39,42,.1)",
       "zinc-100-flipped": "hsla(240,5%,96%,0)",

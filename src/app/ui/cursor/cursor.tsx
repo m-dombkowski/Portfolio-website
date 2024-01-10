@@ -49,11 +49,11 @@ export default function Cursor() {
     <>
       <motion.div
         style={{ left: smoothInnerMouse.x, top: smoothInnerMouse.y }}
-        className="hidden w-[8px] h-[8px] bg-light-brown fixed rounded-full z-[100] pointer-events-none lg:block"
+        className="hidden w-[8px] h-[8px] bg-light-brown fixed rounded-full pointer-events-none lg:block z-[9999]"
       ></motion.div>
       <motion.div
         style={{ left: smoothOuterMouse.x, top: smoothOuterMouse.y }}
-        className="hidden w-[70px] h-[70px] border-solid border-2 border-light-brown fixed rounded-full z-[100] pointer-events-none lg:block"
+        className="hidden w-[70px] h-[70px] border-solid border-2 border-light-brown fixed rounded-full z-[9999] pointer-events-none lg:block"
       ></motion.div>
     </>
   );
