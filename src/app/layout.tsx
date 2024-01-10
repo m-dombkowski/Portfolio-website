@@ -10,6 +10,8 @@ import { AnimatePresence } from "framer-motion";
 
 import { usePathname } from "next/navigation";
 import Cursor from "./ui/cursor/cursor";
+import PageWrapper from "./ui/page-transition/fade";
+import Navigation from "./ui/navigation/navigation";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -26,16 +28,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const path = usePathname();
-  console.log(path);
 
   return (
     <html lang="en" className={[inter.variable, calSans.variable].join(" ")}>
       <SmoothScroll>
         <body>
+          <Navigation currentPath={path} />
           <Cursor />
-          <AnimatePresence mode="wait">
-            <PageTransition key={path}>{children}</PageTransition>
-          </AnimatePresence>
+          <AnimatePresence mode="wait">{children}</AnimatePresence>
         </body>
       </SmoothScroll>
     </html>
