@@ -9,13 +9,16 @@ export default function Navigation({ currentPath }: { currentPath: string }) {
         <ul className="text-xs font-display flex justify-center align-center gap-[5px] bg-zinc-900 rounded-full px-[0.75rem] py-[0.5rem] sm:px-3 sm:py-2 sm:px-6 sm:py-3 sm:gap-6 sm:text-base">
           {NavigationData.map((element, i) => {
             return currentPath !== element.href ? (
-              <li key={i} className="py-2 px-[0.55rem] ">
+              <li key={i} className="py-2 px-[0.55rem] sm:py-3 sm:px-6">
                 <Link className="z-[10] relative" href={element.href}>
                   {element.name}
                 </Link>
               </li>
             ) : (
-              <li key={i} className="relative py-2 px-4  ">
+              <li
+                key={i}
+                className="relative py-2 px-[0.55rem] sm:py-3 sm:px-6"
+              >
                 <Link href={element.href} className="z-[10] relative">
                   {element.name}
                 </Link>
