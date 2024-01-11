@@ -2,7 +2,7 @@ import { motion, useMotionValue, useSpring } from "framer-motion";
 import { useEffect } from "react";
 export default function Cursor() {
   const innerSize = 8;
-  const outerSize = 70;
+  const outerSize = 30;
 
   const mouseInner = {
     x: useMotionValue(0),
@@ -13,8 +13,8 @@ export default function Cursor() {
     x: useMotionValue(0),
     y: useMotionValue(0),
   };
-  const smoothInnerOptions = { damping: 20, stiffnes: 100, mass: 0.3 };
-  const smoothOuterOptions = { damping: 30, stiffnes: 100, mass: 0.6 };
+  const smoothInnerOptions = { damping: 17, stiffnes: 200, mass: 0.3 };
+  const smoothOuterOptions = { damping: 22, stiffnes: 500, mass: 0.6 };
 
   const smoothInnerMouse = {
     x: useSpring(mouseInner.x, smoothInnerOptions),
@@ -53,7 +53,7 @@ export default function Cursor() {
       ></motion.div>
       <motion.div
         style={{ left: smoothOuterMouse.x, top: smoothOuterMouse.y }}
-        className="hidden w-[70px] h-[70px] border-solid border-2 border-light-brown fixed rounded-full z-[9999] pointer-events-none lg:block"
+        className="hidden w-[30px] h-[30px] border-solid border-2 border-light-brown fixed rounded-full z-[9999] pointer-events-none lg:block"
       ></motion.div>
     </>
   );
