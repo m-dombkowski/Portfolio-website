@@ -1,5 +1,5 @@
 "use client";
-import PageWrapper from "../ui/page-transition/fade";
+import PageWrapper from "../components/page-transition/fade";
 
 export default function ExperiencePage() {
   return (

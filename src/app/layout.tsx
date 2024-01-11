@@ -5,13 +5,9 @@ import "./globals.css";
 import SmoothScroll from "./components/smooth-scroll/smooth-scroll";
 import LocalFont from "next/font/local";
 import "cal-sans";
-import PageTransition from "./ui/page-transition/stairs";
 import { AnimatePresence } from "framer-motion";
-
 import { usePathname } from "next/navigation";
-import Cursor from "./ui/cursor/cursor";
-import PageWrapper from "./ui/page-transition/fade";
-import Navigation from "./ui/navigation/navigation";
+import Navigation from "./components/navigation/navigation";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -34,8 +30,9 @@ export default function RootLayout({
       <SmoothScroll>
         <body>
           <Navigation currentPath={path} />
-          <Cursor />
-          <AnimatePresence mode="wait">{children}</AnimatePresence>
+          <AnimatePresence mode="wait">
+            <div>{children}</div>
+          </AnimatePresence>
         </body>
       </SmoothScroll>
     </html>

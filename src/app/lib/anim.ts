@@ -30,7 +30,7 @@ export const animPage = (variants: Variants) => {
   return {
     initial: "initial",
     animate: "open",
-
+    exit: "exit",
     variants,
   };
 };
@@ -42,7 +42,7 @@ export const fadePage = {
     opacity: 1,
     transition: { duration: 0.3 },
   }),
-  exit: { top: "25px", opacity: 0 },
+  exit: () => ({ top: "25px", opacity: 0, transition: { duration: 0.3 } }),
 };
 
 export const expand = {
