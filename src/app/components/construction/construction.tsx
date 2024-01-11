@@ -16,8 +16,8 @@ export default function PageUnderContstuction() {
   };
 
   return (
-    <div className=" flex justify-center items-center flex-col gap-10 pt-[20%]">
-      <div className="text-center font-display text-4xl text-color-text-primary">
+    <div className="min-h-screen flex justify-center items-center flex-col gap-10 ">
+      <div className="text-center font-display text-xl text-color-text-primary mt-10 sm:mt-20 sm:text-4xl">
         <p>Oops, this page is currently under construction.</p>
         <p>Please check back later</p>
       </div>
@@ -28,9 +28,9 @@ export default function PageUnderContstuction() {
         variants={slideUp}
       >
         <Player
+          className="w-[300px] h-[300px] sm:w-[500px] sm:h-[500px]"
           src="https://lottie.host/eb5692cb-2aeb-4dbb-8613-d511f6b2fdf2/96SeDHXDq6.json"
           background="transparent"
-          style={{ width: "500px", height: "500px" }}
           loop
           autoplay
         ></Player>

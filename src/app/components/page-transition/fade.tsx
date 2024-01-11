@@ -8,8 +8,10 @@ export default function PageWrapper({
   children: React.ReactNode;
 }) {
   return (
-    <motion.div className="relative overflow-hidden" {...animPage(fadePage)}>
-      {children}
-    </motion.div>
+    <div className="overflow-y-hidden">
+      <motion.div className="relative overflow-hidden" {...animPage(fadePage)}>
+        {children}
+      </motion.div>
+    </div>
   );
 }
