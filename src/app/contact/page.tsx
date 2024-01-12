@@ -1,6 +1,5 @@
 "use client";
 
-import { useMotionTemplate, useMotionValue } from "framer-motion";
 import { Github, Linkedin, Mail } from "lucide-react";
 import Link from "next/link";
 import { Card } from "../components/card/card";
@@ -30,9 +29,9 @@ const contacts = [
 export default function ContactPage() {
   return (
     <PageWrapper>
-      <div className="flex flex-col min-h-screen justify-center">
+      <section className="flex flex-col min-h-screen justify-center">
         <div className="flex justify-center mt-32">
-          <h1 className="text-3xl mb-16 font-display lg:text-5xl text-center px-8 md:px-0 xl:text-6xl text-color-text-lighter">{`Choose the way to connect that suits you best`}</h1>
+          <h1 className="text-3xl mb-16 font-calc lg:text-5xl text-center px-8 md:px-0 xl:text-6xl text-color-text-lighter">{`Choose the way to connect that suits you best`}</h1>
         </div>
         <div className="container flex items-center justify-center px-4 mx-auto font-sans text-center">
           <div className="grid w-full grid-cols-1 gap-8 mx-auto mb-8 sm:mt-0 sm:grid-cols-3 lg:mt-16 lg:gap-16 ">
@@ -43,7 +42,7 @@ export default function ContactPage() {
                     <span className="mt-20 mb-20 p-5 border-solid border-color-text-lighter border-[2px] rounded-full">
                       {contact.icon}
                     </span>
-                    <h1 className="text-3xl mb-5 font-display text-color-text-lighter">
+                    <h1 className="text-3xl mb-5 font-calc text-color-text-lighter">
                       {contact.label}
                     </h1>
                     <p className="text-lg mb-40 sm:mb-28 sm: text-base text-color-text-lighter">
@@ -55,7 +54,7 @@ export default function ContactPage() {
             ))}
           </div>
         </div>
-      </div>
+      </section>
     </PageWrapper>
   );
 }

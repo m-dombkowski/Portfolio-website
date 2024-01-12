@@ -12,7 +12,7 @@ export default function HomePage() {
 
   return (
     <>
-      <main className="flex flex-col items-center justify-center font-display">
+      <main className="flex flex-col items-center justify-center font-calc">
         <div className="min-h-screen flex flex-col justify-center text-center lg:text-left">
           <div
             className="mt-32 mb-16 flex flex-col text-sm px-8 gap-3 sm:text-base md:px-40 lg:text-xl lg:px-52 lg:gap-5 xl:p-0 xl: mb-32"
