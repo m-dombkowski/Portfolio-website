@@ -18,22 +18,15 @@ export const NavigationData = [
     href: "/experience",
     description:
       "My (mostly) commercial experiance shown in a nice visual way, with a short description for each chapter",
-    name: "Work",
+    name: "Experience",
     speed: 0.65,
     index: 2,
-  },
-  {
-    href: "/projects",
-    description: "Stuff that I've been recently working on",
-    name: "Projects",
-    speed: 0.65,
-    index: 3,
   },
   {
     href: "/contact",
     description: `Let's chat! Feel free to hit me up via email or on any social media`,
     name: "Contact",
     speed: 1,
-    index: 4,
+    index: 3,
   },
 ];

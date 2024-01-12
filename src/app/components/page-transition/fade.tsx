@@ -1,6 +1,6 @@
-import { animPage, fadePage } from "@/app/lib/anim";
 import { motion } from "framer-motion";
 import React from "react";
+import { fadePage, animPage } from "@/app/lib/anim";
 
 export default function PageWrapper({
   children,
