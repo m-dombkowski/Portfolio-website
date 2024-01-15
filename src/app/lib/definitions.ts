@@ -5,3 +5,9 @@ export type NavDataType = {
   speed: number;
   index: number;
 };
+
+export type SpotifyDataType = {
+  band: string;
+  song: string;
+  url: string;
+};
