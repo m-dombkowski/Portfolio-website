@@ -8,6 +8,9 @@ import "cal-sans";
 import { AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
 import Navigation from "./components/navigation/navigation";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fas } from "@fortawesome/free-solid-svg-icons";
+import { faSpotify } from "@fortawesome/free-brands-svg-icons";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -24,6 +27,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const path = usePathname();
+
+  library.add(fas, faSpotify);
 
   return (
     <html lang="en" className={[inter.variable, calSans.variable].join(" ")}>

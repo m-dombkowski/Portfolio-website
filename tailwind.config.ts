@@ -81,6 +81,7 @@ const config: Config = {
       "color-bg-lighter": "#8fdcc2",
       "color-text-darker": "#7bbea8",
       "dark-bg": "#020a13",
+      "bg-dark-gray": "#282828",
     },
   },
   plugins: [],
