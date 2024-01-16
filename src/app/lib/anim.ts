@@ -36,13 +36,36 @@ export const animPage = (variants: Variants) => {
 };
 
 export const fadePage = {
-  initial: { top: "25px", opacity: 0 },
+  initial: { top: "35px", opacity: 0 },
   open: () => ({
     top: "0",
     opacity: 1,
     transition: { duration: 0.3 },
   }),
-  exit: () => ({ top: "25px", opacity: 0, transition: { duration: 0.3 } }),
+  exit: () => ({ top: "50px", opacity: 0, transition: { duration: 0.3 } }),
+};
+
+export const slideLeft = {
+  initial: { x: "-15px", opacity: 0 },
+  open: (i: number) => ({
+    x: 0,
+    opacity: 1,
+    transition: { duration: 0.5, delay: 0.5 * i },
+  }),
+  exit: { x: "15px", opacity: 0 },
+};
+
+export const slideUp = {
+  initial: { y: "15px", opacity: "0" },
+  open: (i: number) => ({
+    y: 0,
+    opacity: 1,
+    transition: { duration: 0.5, delay: 0.75 * i },
+  }),
+  exit: {
+    y: "15px",
+    opacity: 0,
+  },
 };
 
 export const expand = {
@@ -100,16 +123,15 @@ export const opacity = {
     opacity: 0,
   },
 };
-
-export const slideUp = {
-  initial: { y: "15px", opacity: "0" },
+export const opacityWithDelay = {
+  initial: {
+    opacity: 0,
+  },
   open: (i: number) => ({
-    y: 0,
     opacity: 1,
-    transition: { duration: 0.5, delay: 0.75 * i },
+    transition: { duration: 1, delay: i },
   }),
   exit: {
-    y: "15px",
     opacity: 0,
   },
 };

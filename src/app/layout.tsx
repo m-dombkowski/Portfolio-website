@@ -1,5 +1,4 @@
 "use client";
-
 import { Inter } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "./components/smooth-scroll/smooth-scroll";
@@ -35,9 +34,7 @@ export default function RootLayout({
       <SmoothScroll>
         <body>
           <Navigation currentPath={path} />
-          <AnimatePresence mode="wait">
-            <div>{children}</div>
-          </AnimatePresence>
+          <AnimatePresence mode="wait">{children}</AnimatePresence>
         </body>
       </SmoothScroll>
     </html>
