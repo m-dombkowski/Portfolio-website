@@ -7,28 +7,33 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpotify } from "@fortawesome/free-brands-svg-icons/faSpotify";
 import Link from "next/link";
 import { spotifyData } from "../lib/spotifyData";
-import { useEffect } from "react";
 import { SpotifyDataType } from "../lib/definitions";
+import { motion, useInView } from "framer-motion";
+import { slideLeft, animByBoolean, opacityWithDelay, anim } from "../lib/anim";
+import { useEffect, useRef, useState } from "react";
+import Gallery from "../components/gallery/gallery";
 
 const SpotifyLink = () => {
-  const random = Math.random() * 13;
+  const [selectedSong, setSelectedSong] = useState<SpotifyDataType>();
 
-  const selected: SpotifyDataType | undefined = spotifyData.find(
-    (el, index) => {
-      if (index === Math.floor(random)) {
-        return el;
+  useEffect(() => {
+    spotifyData.find((el, index) => {
+      if (index === Math.floor(Math.random() * spotifyData.length)) {
+        setSelectedSong(el);
       }
-    }
-  );
+    });
+  }, []);
 
-  console.log(selected);
+  if (!selectedSong) return;
+
+  const { url, band, song } = selectedSong;
 
   return (
     <>
-      {selected && (
-        <Link target="_blank" href={selected.url}>
-          <p className="font-black">{selected.band}</p>
-          <p className="font-bold">{selected.song}</p>
+      {selectedSong && (
+        <Link target="_blank" href={url}>
+          <p className="font-black">{band}</p>
+          <p className="font-bold">{song}</p>
         </Link>
       )}
     </>
@@ -36,21 +41,28 @@ const SpotifyLink = () => {
 };
 
 export default function AboutPage() {
-  useEffect(() => {}, []);
+  const descContainer = useRef<HTMLDivElement>(null);
+  const sptofiyContainer = useRef<HTMLDivElement>(null);
+  const isDescInView = useInView(descContainer);
+  const isSpotifyInView = useInView(sptofiyContainer);
+
   return (
     <PageWrapper>
-      <section className="flex flex-col justify-center items-center pt-48 max-w-[600px] m-[auto]">
+      <section className="flex flex-col justify-center items-center max-w-[600px] m-[auto] text-center xl:max-w-[900px]">
         <div className="flex justify-center flex-col gap-10 pb-20">
-          <div className="flex flex-col gap-6 text-center sm:text-left">
+          <div className="flex flex-col gap-6">
             <h1 className=" text-4xl font-calc sm:text-6xl">{`Hi! Mateusz here.`}</h1>
-            <div className="flex w-100 justify-center flex-col items-center">
+            <div className="flex w-100 justify-center flex-col items-center py-10">
               <Image
-                className="w-[300px] h-[100%] rounded-t-full"
+                className="w-[250px] h-[100%] rounded-t-full sm:w-[325px]"
                 src={portrait}
                 alt="picture of me"
               />
-              <div className="w-[300px] bg-bg-dark-gray h-[85px] flex justify-center items-center gap-5">
-                <Link href="https://open.spotify.com/user/hevrak?si=3764935cfac041dd">
+              <div className="w-[250px] bg-bg-dark-gray h-[85px] flex justify-center items-center gap-5 sm:w-[325px] sm:gap-10">
+                <Link
+                  target="_blank"
+                  href="https://open.spotify.com/user/hevrak?si=3764935cfac041dd"
+                >
                   {" "}
                   <FontAwesomeIcon size="3x" color="#8fdcc2" icon={faSpotify} />
                 </Link>
@@ -62,24 +74,35 @@ export default function AboutPage() {
               <span className="block">from Poland, Wrocław.</span>
             </h1>
           </div>
-          <div className="flex flex-col gap-8 text-base text-sans text-color-text-lighter text-justify px-6">
-            <p>
+          <div
+            ref={descContainer}
+            className="flex flex-col gap-8 text-lg text-sans text-color-text-lighter text-justify px-6 "
+          >
+            <motion.p {...animByBoolean(slideLeft, isDescInView, 1)}>
               {`Back in 2021 I decided to give programming a shot.
               I can honestly say that it was hell of a ride tumbling head first into a rabbit hole called Frontend Development.
               Since then I stared my first commercial work, gained ton of knowledge and learned a lot but it's just a beginning`}
-            </p>
-            <p>{`Now I have over 1.5 year of commercial experience in which I've been mainly focused on working with React, Typescript and Next.js.
-            `}</p>
-            <p>
+            </motion.p>
+            <motion.p
+              {...animByBoolean(slideLeft, isDescInView, 2)}
+            >{`Now I have over 1.5 year of commercial experience in which I've been mainly focused on working with React, Typescript and Next.js.
+            `}</motion.p>
+            <motion.p {...animByBoolean(slideLeft, isDescInView, 3)}>
               {`Outside of my work time I enjoy good coffee, tea. You can also find me ice skating durning winter, roller skating durning summer or doing my new found love, baking.
               I guess I fell in love with baking because simillar as in frontend devlopment you can create something from almost nothing and can see the growth and development of the process. Other than that I really love metalcore and dogs.`}
-            </p>
+            </motion.p>
           </div>
         </div>
-        <div className="flex flex-col justify-start items-center gap-10">
+        <motion.div
+          ref={sptofiyContainer}
+          {...animByBoolean(opacityWithDelay, isSpotifyInView, 1)}
+          className="flex flex-col justify-start items-center gap-10"
+        >
           <div className="flex flex-col gap-3 w-[100%]">
-            <h1 className="text-4xl font-calc">Like heavy music aswell?</h1>
-            <h2 className="text-3xl font-calc text-color-text-darker">
+            <h1 className="text-4xl font-calc sm:text-5xl">
+              Like heavy music aswell?
+            </h1>
+            <h2 className="text-3xl font-calc text-color-text-darker sm:text-4xl">
               Feel free to check out my Spotify playlist
             </h2>
           </div>
@@ -87,10 +110,11 @@ export default function AboutPage() {
             className="rounded-[12px] w-[300px] h-[152px] sm:w-[600px]"
             src="https://open.spotify.com/embed/playlist/0Vm128JrgFdU44nQToJtql?utm_source=generator&theme=0"
             allowFullScreen={undefined}
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            allow="fullscreen"
             loading="lazy"
           ></iframe>
-        </div>
+        </motion.div>
+        <Gallery />
       </section>
     </PageWrapper>
   );
