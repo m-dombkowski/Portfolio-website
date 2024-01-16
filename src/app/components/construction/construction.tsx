@@ -16,8 +16,8 @@ export default function PageUnderContstuction() {
   };
 
   return (
-    <div className="min-h-screen flex justify-center items-center flex-col gap-10 ">
-      <div className="text-center font-display text-xl text-color-text-primary mt-10 sm:mt-20 sm:text-4xl">
+    <div className=" flex justify-center items-center flex-col gap-10 ">
+      <div className="text-center font-calc text-xl text-color-text-primary  sm:text-4xl">
         <p>Oops, this page is currently under construction.</p>
         <p>Please check back later</p>
       </div>

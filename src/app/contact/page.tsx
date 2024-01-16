@@ -29,8 +29,8 @@ const contacts = [
 export default function ContactPage() {
   return (
     <PageWrapper>
-      <section className="flex flex-col min-h-screen justify-center">
-        <div className="flex justify-center mt-32">
+      <section className="flex flex-col justify-center">
+        <div className="flex justify-center">
           <h1 className="text-3xl mb-16 font-calc lg:text-5xl text-center px-8 md:px-0 xl:text-6xl text-color-text-lighter">{`Choose the way to connect that suits you best`}</h1>
         </div>
         <div className="container flex items-center justify-center px-4 mx-auto font-sans text-center">

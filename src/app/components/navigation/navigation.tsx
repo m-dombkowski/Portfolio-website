@@ -7,7 +7,7 @@ export default function Navigation({ currentPath }: { currentPath: string }) {
   const NavItemHighlighted = ({ element }: { element: NavDataType }) => {
     return (
       <li className="relative py-2 px-[0.55rem] sm:py-3 sm:px-6">
-        <Link href={element.href} className="z-[10] relative">
+        <Link href={element.href} className="z-[10] relative ">
           {element.name}
         </Link>
         <motion.div
@@ -20,18 +20,21 @@ export default function Navigation({ currentPath }: { currentPath: string }) {
 
   const NavItemDefault = ({ element }: { element: NavDataType }) => {
     return (
-      <li className="py-2 px-[0.55rem] sm:py-3 sm:px-6">
-        <Link className="z-[10] relative" href={element.href}>
+      <li className="py-2 px-[0.55rem] sm:py-3 sm:px-6 ">
+        <Link
+          className="text-color-text-lighter z-[10] relative "
+          href={element.href}
+        >
           {element.name}
         </Link>
       </li>
     );
   };
-
+  // fixed inset-0
   return (
-    <header className="fixed inset-0 margin-0 z-[999] w-[100%]  h-[105px]">
-      <nav className="flex justify-center mt-5 sm:mt-10">
-        <ul className="text-xs font-display flex justify-center align-center gap-[5px] bg-zinc-900 rounded-full px-[0.75rem] py-[0.5rem] sm:px-3 sm:py-2 sm:px-6 sm:py-3 sm:gap-6 sm:text-base">
+    <header className=" margin-0 z-[999] w-[100%] h-[105px] mt-5 sm:mb-10 sm:mt-10">
+      <nav className="flex justify-center ">
+        <ul className="text-xs font-calc flex justify-center align-center gap-[5px] bg-zinc-900 rounded-full px-[0.75rem] py-[0.5rem] sm:px-3 sm:py-2 sm:px-6 sm:py-3 sm:gap-6 sm:text-base">
           {NavigationData.map((element, i) => {
             return currentPath !== element.href ? (
               <div key={i}>
