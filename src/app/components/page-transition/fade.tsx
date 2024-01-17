@@ -8,10 +8,8 @@ export default function PageWrapper({
   children: React.ReactNode;
 }) {
   return (
-    <div className="mt-[-185px]">
-      <motion.div className="relative" {...animPage(fadePage)}>
-        {children}
-      </motion.div>
-    </div>
+    <motion.div className="relative" {...animPage(fadePage)}>
+      {children}
+    </motion.div>
   );
 }

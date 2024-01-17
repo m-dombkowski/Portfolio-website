@@ -42,7 +42,7 @@ export default function Gallery() {
     },
     {
       src: pierogi,
-      scale: scale5,
+      scale: scale9,
       alt: "pierogi (polish dumplings)",
     },
     {
@@ -65,7 +65,6 @@ export default function Gallery() {
   return (
     <div ref={container} className="h-[300vh] relative mt-[50vh] mb-[100vh]">
       <div className="sticky overflow-hidden top-0 h-[100vh]">
-        <h1>Fancy some sweets?</h1>
         {pictures.map(({ src, scale, alt }, index) => {
           return (
             <motion.div key={index} style={{ scale }} className={styles.el}>
