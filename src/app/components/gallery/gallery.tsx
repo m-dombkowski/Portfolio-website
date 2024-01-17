@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import Image from "next/image";
+import styles from "./styles.module.scss";
 import brownie from "../../../../public/images/food/brownie-kokos.png";
 import chmurka from "../../../../public/images/food/chmurka.jpg";
 import ciasteczka from "../../../../public/images/food/ciasteczka.jpg";
@@ -25,29 +26,29 @@ export default function Gallery() {
 
   const pictures = [
     {
-      src: brownie,
+      src: drozdzowka,
       scale: scale4,
-      alt: "brownie",
-    },
-    {
-      src: chmurka,
-      scale: scale5,
-      alt: "raspberry cloud",
+      alt: "raspberry filled bun",
     },
     {
       src: ciasteczka,
-      scale: scale6,
+      scale: scale5,
       alt: "cookies",
     },
     {
-      src: cynamonki,
-      scale: scale5,
-      alt: "cinnamon rolls",
+      src: chmurka,
+      scale: scale6,
+      alt: "raspberry cloud",
     },
     {
-      src: drozdzowka,
+      src: pierogi,
+      scale: scale5,
+      alt: "pierogi (polish dumplings)",
+    },
+    {
+      src: cynamonki,
       scale: scale6,
-      alt: "raspberry filled bun",
+      alt: "cinnamon rolls",
     },
     {
       src: jagodzianka,
@@ -55,51 +56,23 @@ export default function Gallery() {
       alt: "blueberry filled bun",
     },
     {
-      src: pierogi,
+      src: brownie,
       scale: scale9,
-      alt: "pierogi (polish dumplings)",
+      alt: "brownie",
     },
   ];
 
   return (
-    <div ref={container} className="h-[300vh] relative">
+    <div ref={container} className="h-[300vh] relative mt-[50vh] mb-[100vh]">
       <div className="sticky overflow-hidden top-0 h-[100vh]">
+        <h1>Fancy some sweets?</h1>
         {pictures.map(({ src, scale, alt }, index) => {
           return (
-            <motion.div
-              key={index}
-              style={{ scale }}
-              className="w-[100%] h-[100%] top-0 absolute flex justify-center items-center "
-            >
-              <div
-                className="relative w-[25vw] h-[25vh] [&>*:nth-of-type(2)]:top-[-30vh]
-                [&>*:nth-of-type(2)]:left-[5vw]
-                [&>*:nth-of-type(2)]:width-[35vw]
-                [&>*:nth-of-type(2)]:height-[30vh]
-                [&>*:nth-of-type(3)]:top-[-10vh]
-                [&>*:nth-of-type(3)]:left-[-25vw]
-                [&>*:nth-of-type(3)]:width-[20vw]
-                [&>*:nth-of-type(3)]:height-[45vh]
-                [&>*:nth-of-type(4)]:left-[27.5vw]
-                [&>*:nth-of-type(4)]:width-[25vw]
-                [&>*:nth-of-type(4)]:height-[25vh]
-                [&>*:nth-of-type(5)]:top-[27.5vh]
-                [&>*:nth-of-type(5)]:left-[5vw]
-                [&>*:nth-of-type(5)]:width-[20vhw
-                [&>*:nth-of-type(5)]:height-[25vh]
-                [&>*:nth-of-type(6)]:top-[27.5vh]
-                [&>*:nth-of-type(6)]:left-[-22.5vw]
-                [&>*:nth-of-type(6)]:width-[30vw]
-                [&>*:nth-of-type(6)]:height-[25vh]
-                [&>*:nth-of-type(7)]:top-[22.5vh]
-                [&>*:nth-of-type(7)]:left-[25vw]
-                [&>*:nth-of-type(7)]:width-[15vw]
-                [&>*:nth-of-type(7)]:height-[15vh]"
-              >
+            <motion.div key={index} style={{ scale }} className={styles.el}>
+              <div className={styles.imageContainer}>
                 <Image
                   className="object-cover"
                   src={src}
-                  fill
                   alt={alt}
                   placeholder="blur"
                 />
@@ -110,31 +83,4 @@ export default function Gallery() {
       </div>
     </div>
   );
-  {
-    /* 
-[&>*:nth-of-type(2)]:top-[-30vh]
-[&>*:nth-of-type(2)]:left-[5vw]
-[&>*:nth-of-type(2)]:width-[35vw]
-[&>*:nth-of-type(2)]:height-[30vh]
-[&>*:nth-of-type(3)]:top-[-10vh]
-[&>*:nth-of-type(3)]:left-[-25vw]
-[&>*:nth-of-type(3)]:width-[20vw]
-[&>*:nth-of-type(3)]:height-[45vh]
-[&>*:nth-of-type(4)]:left-[27.5vw]
-[&>*:nth-of-type(4)]:width-[25vw]
-[&>*:nth-of-type(4)]:height-[25vh]
-[&>*:nth-of-type(5)]:top-[27.5vh]
-[&>*:nth-of-type(5)]:left-[5vw]
-[&>*:nth-of-type(5)]:width-[20vhw
-[&>*:nth-of-type(5)]:height-[25vh]
-[&>*:nth-of-type(6)]:top-[27.5vh]
-[&>*:nth-of-type(6)]:left-[-22.5vw]
-[&>*:nth-of-type(6)]:width-[30vw]
-[&>*:nth-of-type(6)]:height-[25vh]
-[&>*:nth-of-type(7)]:top-[22.5vh]
-[&>*:nth-of-type(7)]:left-[25vw]
-[&>*:nth-of-type(7)]:width-[15vw]
-[&>*:nth-of-type(7)]:height-[15vh]
-*/
-  }
 }
