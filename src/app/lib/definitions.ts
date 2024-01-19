@@ -1,3 +1,6 @@
+import { MotionValue } from "framer-motion";
+import { StaticImageData } from "next/image";
+
 export type NavDataType = {
   href: string;
   description: string;
@@ -10,4 +13,10 @@ export type SpotifyDataType = {
   band: string;
   song: string;
   url: string;
+};
+
+export type FoodGalleryPicType = {
+  src: StaticImageData;
+  scale: MotionValue<number>;
+  alt: string;
 };
