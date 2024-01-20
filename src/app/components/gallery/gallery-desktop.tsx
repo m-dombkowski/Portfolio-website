@@ -9,8 +9,9 @@ import cynamonki from "../../../../public/images/food/cynamonki.jpg";
 import drozdzowka from "../../../../public/images/food/drozdzowka-maliny.jpg";
 import jagodzianka from "../../../../public/images/food/jagodzianka.jpg";
 import pierogi from "../../../../public/images/food/pierogi.jpg";
+import { FoodGalleryPicType } from "@/app/lib/definitions/types";
 
-export default function Gallery() {
+export default function GalleryDesktop() {
   const container = useRef<HTMLDivElement>(null);
 
   const { scrollYProgress } = useScroll({
@@ -24,7 +25,7 @@ export default function Gallery() {
   const scale8 = useTransform(scrollYProgress, [0, 1], [1, 8]);
   const scale9 = useTransform(scrollYProgress, [0, 1], [1, 9]);
 
-  const pictures = [
+  const pictures: FoodGalleryPicType[] = [
     {
       src: drozdzowka,
       scale: scale4,
