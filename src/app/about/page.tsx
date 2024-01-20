@@ -8,8 +8,14 @@ import { faSpotify } from "@fortawesome/free-brands-svg-icons/faSpotify";
 import Link from "next/link";
 import { spotifyData } from "../lib/spotifyData";
 import { SpotifyDataType } from "../lib/definitions";
-import { motion, useInView } from "framer-motion";
-import { slideLeft, animByBoolean, opacityWithDelay, anim } from "../lib/anim";
+import { motion, useInView, useScroll } from "framer-motion";
+import {
+  slideLeft,
+  animByBoolean,
+  opacityWithDelay,
+  anim,
+  opacity,
+} from "../lib/anim";
 import { useEffect, useRef, useState } from "react";
 import Gallery from "../components/gallery/gallery";
 import { Player } from "@lottiefiles/react-lottie-player";
@@ -44,12 +50,20 @@ const SpotifyLink = () => {
 export default function AboutPage() {
   const descContainer = useRef<HTMLDivElement>(null);
   const sptofiyContainer = useRef<HTMLDivElement>(null);
+  const galleryTitleContainer = useRef<HTMLDivElement>(null);
   const isDescInView = useInView(descContainer);
   const isSpotifyInView = useInView(sptofiyContainer);
+  const isGalleryInView = useInView(galleryTitleContainer);
+
+  const { scrollYProgress } = useScroll();
 
   return (
     <PageWrapper>
       <section className="flex flex-col justify-center items-center  m-[auto] text-center ">
+        <motion.div
+          className="fixed top-0 h-[10px] left-0 right-0 origin-[0%] bg-color-text-darker"
+          style={{ scaleX: scrollYProgress }}
+        />
         <div className="max-w-[600px] xl:max-w-[900px] pb-32">
           <div className="flex justify-center flex-col gap-10 pb-20">
             <div className="flex flex-col gap-6">
@@ -122,20 +136,25 @@ export default function AboutPage() {
           </motion.div>
         </div>
         <div className="w-[100%]">
-          <h1 className="font-calc text-6xl flex justify-center items-center pb-20">
-            Fancy something nice to eat?
-          </h1>
-          <div className="flex justify-center items-center">
-            <Player
-              className="w-[50px] h-[50px] lg:w-[124px] lg:h-[124px]"
-              src="https://lottie.host/7ce71967-4e20-40de-a3c7-d1566bb1727d/AglJY8GMuc.json"
-              background="transparent"
-              speed={1}
-              direction={1}
-              loop
-              autoplay
-            ></Player>
-          </div>
+          <motion.div
+            ref={galleryTitleContainer}
+            {...animByBoolean(opacityWithDelay, isGalleryInView, 0.75)}
+          >
+            <h1 className="font-calc text-6xl flex justify-center items-center pb-20">
+              Fancy something nice to eat?
+            </h1>
+            <div className="flex justify-center items-center">
+              <Player
+                className="w-[50px] h-[50px] lg:w-[124px] lg:h-[124px]"
+                src="https://lottie.host/7ce71967-4e20-40de-a3c7-d1566bb1727d/AglJY8GMuc.json"
+                background="transparent"
+                speed={1}
+                direction={1}
+                loop
+                autoplay
+              ></Player>
+            </div>
+          </motion.div>
           <Gallery />
         </div>
       </section>
