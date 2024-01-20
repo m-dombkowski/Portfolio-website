@@ -6,8 +6,6 @@ import PageWrapper from "../components/page-transition/fade";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpotify } from "@fortawesome/free-brands-svg-icons/faSpotify";
 import Link from "next/link";
-import { spotifyData } from "../lib/spotifyData";
-import { SpotifyDataType } from "../lib/definitions";
 import { motion, useInView, useScroll } from "framer-motion";
 import {
   slideLeft,
@@ -17,35 +15,12 @@ import {
   opacity,
 } from "../lib/anim";
 import { useEffect, useRef, useState } from "react";
-import Gallery from "../components/gallery/gallery";
+import Gallery from "../components/gallery/gallery-desktop";
 import { Player } from "@lottiefiles/react-lottie-player";
-
-const SpotifyLink = () => {
-  const [selectedSong, setSelectedSong] = useState<SpotifyDataType>();
-
-  useEffect(() => {
-    spotifyData.find((el, index) => {
-      if (index === Math.floor(Math.random() * spotifyData.length)) {
-        setSelectedSong(el);
-      }
-    });
-  }, []);
-
-  if (!selectedSong) return;
-
-  const { url, band, song } = selectedSong;
-
-  return (
-    <>
-      {selectedSong && (
-        <Link target="_blank" href={url}>
-          <p className="font-black">{band}</p>
-          <p className="font-bold">{song}</p>
-        </Link>
-      )}
-    </>
-  );
-};
+import useWindowDimensions from "../hooks/useWindowDimension";
+import SpotifyLink from "../components/spotify-link/spotify-link";
+import { Device } from "../lib/definitions/enums";
+import GalleryDesktop from "../components/gallery/gallery-desktop";
 
 export default function AboutPage() {
   const descContainer = useRef<HTMLDivElement>(null);
@@ -54,8 +29,18 @@ export default function AboutPage() {
   const isDescInView = useInView(descContainer);
   const isSpotifyInView = useInView(sptofiyContainer);
   const isGalleryInView = useInView(galleryTitleContainer);
+  const [deviceType, setDeviceType] = useState<Device>(Device.NONE);
 
   const { scrollYProgress } = useScroll();
+  const { width } = useWindowDimensions();
+
+  useEffect(() => {
+    if (width < 1000) {
+      setDeviceType(Device.MOBILE);
+    } else {
+      setDeviceType(Device.DESKTOP);
+    }
+  }, [width]);
 
   return (
     <PageWrapper>
@@ -145,7 +130,7 @@ export default function AboutPage() {
             </h1>
             <div className="flex justify-center items-center">
               <Player
-                className="w-[50px] h-[50px] lg:w-[124px] lg:h-[124px]"
+                className="w-[80px] h-[80px] lg:w-[124px] lg:h-[124px]"
                 src="https://lottie.host/7ce71967-4e20-40de-a3c7-d1566bb1727d/AglJY8GMuc.json"
                 background="transparent"
                 speed={1}
@@ -155,7 +140,7 @@ export default function AboutPage() {
               ></Player>
             </div>
           </motion.div>
-          <Gallery />
+          {deviceType === "desktop" ? <GalleryDesktop /> : null}
         </div>
       </section>
     </PageWrapper>
