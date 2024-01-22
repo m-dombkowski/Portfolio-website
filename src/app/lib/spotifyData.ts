@@ -1,4 +1,4 @@
-import { SpotifyDataType } from "./definitions";
+import { SpotifyDataType } from "./definitions/types";
 
 export const spotifyData: SpotifyDataType[] = [
   {

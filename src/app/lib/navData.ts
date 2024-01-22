@@ -1,4 +1,6 @@
-export const NavigationData = [
+import { NavDataType } from "./definitions/types";
+
+export const NavigationData: NavDataType[] = [
   {
     href: "/",
     description: "Main page of this website",
