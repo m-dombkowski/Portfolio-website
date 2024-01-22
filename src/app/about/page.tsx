@@ -21,6 +21,7 @@ import useWindowDimensions from "../hooks/useWindowDimension";
 import SpotifyLink from "../components/spotify-link/spotify-link";
 import { Device } from "../lib/definitions/enums";
 import GalleryDesktop from "../components/gallery/gallery-desktop";
+import GalleryMobile from "../components/gallery/gallery-mobile";
 
 export default function AboutPage() {
   const descContainer = useRef<HTMLDivElement>(null);
@@ -35,7 +36,7 @@ export default function AboutPage() {
   const { width } = useWindowDimensions();
 
   useEffect(() => {
-    if (width < 1000) {
+    if (width < 1025) {
       setDeviceType(Device.MOBILE);
     } else {
       setDeviceType(Device.DESKTOP);
@@ -46,7 +47,7 @@ export default function AboutPage() {
     <PageWrapper>
       <section className="flex flex-col justify-center items-center  m-[auto] text-center ">
         <motion.div
-          className="fixed top-0 h-[10px] left-0 right-0 origin-[0%] bg-color-text-darker"
+          className="fixed top-0 h-[10px] left-0 right-0 origin-[0%] bg-color-text-darker z-[999]"
           style={{ scaleX: scrollYProgress }}
         />
         <div className="max-w-[600px] xl:max-w-[900px] pb-32">
@@ -81,7 +82,7 @@ export default function AboutPage() {
             </div>
             <div
               ref={descContainer}
-              className="flex flex-col gap-8 text-lg text-sans text-color-text-lighter text-justify px-6 "
+              className="flex flex-col gap-8 text-lg text-sans text-color-text-lighter text-justify px-6 font-calc"
             >
               <motion.p {...animByBoolean(slideLeft, isDescInView, 1)}>
                 {`Back in 2021 I decided to give programming a shot.
@@ -140,7 +141,7 @@ export default function AboutPage() {
               ></Player>
             </div>
           </motion.div>
-          {deviceType === "desktop" ? <GalleryDesktop /> : null}
+          {deviceType === "desktop" ? <GalleryDesktop /> : <GalleryMobile />}
         </div>
       </section>
     </PageWrapper>
