@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import Image from "next/image";
+import Image, { ImageLoaderProps } from "next/image";
 import styles from "./styles.module.scss";
 import brownie from "../../../../public/images/food/brownie-kokos.png";
 import chmurka from "../../../../public/images/food/chmurka.jpg";
@@ -27,37 +27,37 @@ export default function GalleryDesktop() {
 
   const pictures: FoodGalleryPicType[] = [
     {
-      src: drozdzowka,
+      source: drozdzowka,
       scale: scale4,
       alt: "raspberry filled bun",
     },
     {
-      src: ciasteczka,
+      source: ciasteczka,
       scale: scale5,
       alt: "cookies",
     },
     {
-      src: chmurka,
+      source: chmurka,
       scale: scale6,
       alt: "raspberry cloud",
     },
     {
-      src: pierogi,
+      source: pierogi,
       scale: scale9,
       alt: "pierogi (polish dumplings)",
     },
     {
-      src: cynamonki,
+      source: cynamonki,
       scale: scale6,
       alt: "cinnamon rolls",
     },
     {
-      src: jagodzianka,
+      source: jagodzianka,
       scale: scale8,
       alt: "blueberry filled bun",
     },
     {
-      src: brownie,
+      source: brownie,
       scale: scale9,
       alt: "brownie",
     },
@@ -66,15 +66,20 @@ export default function GalleryDesktop() {
   return (
     <div ref={container} className="h-[300vh] relative mt-[50vh] mb-[100vh]">
       <div className="sticky overflow-hidden top-0 h-[100vh]">
-        {pictures.map(({ src, scale, alt }, index) => {
+        {pictures.map(({ source, scale, alt }, index) => {
           return (
             <motion.div key={index} style={{ scale }} className={styles.el}>
               <div className={styles.imageContainer}>
                 <Image
                   className="object-cover"
-                  src={src}
+                  src={source}
                   alt={alt}
                   placeholder="blur"
+                  loader={({ src, width, quality }: ImageLoaderProps) => {
+                    return `${source.src ? source.src : src}?w=${width}&q=${
+                      quality || 75
+                    }`;
+                  }}
                 />
               </div>
             </motion.div>

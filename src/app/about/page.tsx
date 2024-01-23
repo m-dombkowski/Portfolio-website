@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import Image, { ImageLoaderProps } from "next/image";
 import portrait from "../../../public/images/me.jpg";
 import PageWrapper from "../components/page-transition/fade";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -57,8 +57,13 @@ export default function AboutPage() {
               <div className="flex w-100 justify-center flex-col items-center py-10">
                 <Image
                   className="w-[250px] h-[100%] rounded-t-full sm:w-[325px]"
-                  src={portrait}
+                  src={portrait ? portrait : "/me.jpg"}
                   alt="picture of me"
+                  loader={({ src, width, quality }: ImageLoaderProps) => {
+                    return `${portrait.src ? portrait.src : src}?w=${width}&q=${
+                      quality || 75
+                    }`;
+                  }}
                 />
                 <div className="w-[250px] bg-bg-dark-gray h-[85px] flex justify-center items-center gap-5 sm:w-[325px] sm:gap-10">
                   <Link

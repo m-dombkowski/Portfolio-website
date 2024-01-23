@@ -16,7 +16,7 @@ export type SpotifyDataType = {
 };
 
 export type FoodGalleryPicType = {
-  src: StaticImageData;
+  source: StaticImageData;
   scale: MotionValue<number>;
   alt: string;
 };
