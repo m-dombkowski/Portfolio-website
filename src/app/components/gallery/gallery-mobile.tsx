@@ -7,7 +7,7 @@ import jagodzianka from "../../../../public/images/food/jagodzianka.jpg";
 import pierogi from "../../../../public/images/food/pierogi.jpg";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCreative, Pagination } from "swiper/modules";
-import Image from "next/image";
+import Image, { ImageLoaderProps } from "next/image";
 import "swiper/css";
 import "swiper/css/effect-creative";
 import "swiper/css/pagination";
@@ -15,31 +15,31 @@ import "swiper/css/pagination";
 export default function GalleryMobile() {
   const pics = [
     {
-      src: drozdzowka,
+      source: drozdzowka,
       alt: "raspberry filled bun",
     },
     {
-      src: ciasteczka,
+      source: ciasteczka,
       alt: "cookies",
     },
     {
-      src: chmurka,
+      source: chmurka,
       alt: "raspberry cloud",
     },
     {
-      src: pierogi,
+      source: pierogi,
       alt: "pierogi (polish dumplings)",
     },
     {
-      src: cynamonki,
+      source: cynamonki,
       alt: "cinnamon rolls",
     },
     {
-      src: jagodzianka,
+      source: jagodzianka,
       alt: "blueberry filled bun",
     },
     {
-      src: brownie,
+      source: brownie,
       alt: "brownie",
     },
   ];
@@ -48,7 +48,7 @@ export default function GalleryMobile() {
     <div className="p-[25px] sm:p-0">
       <Swiper
         pagination={true}
-        className="my-[100px] mx-[auto] max-w-[440px] h-[auto]"
+        className="my-[100px] mx-[auto] max-w-[440px] h-[300px] xs1:h-[375px] xs2:h-[450px] xs3:h-[500px]"
         grabCursor={true}
         effect={"creative"}
         creativeEffect={{
@@ -66,15 +66,20 @@ export default function GalleryMobile() {
         }}
         modules={[EffectCreative, Pagination]}
       >
-        {pics.map((picture, index) => (
+        {pics.map(({ source, alt }, index) => (
           <SwiperSlide
             className="flex items-center justify-center w-[100%] h-[100%]"
             key={index}
           >
             <Image
               className="w-[100%] h-[100%]"
-              src={picture.src}
-              alt={picture.alt}
+              src={source}
+              alt={alt}
+              loader={({ src, width, quality }: ImageLoaderProps) => {
+                return `${source.src ? source.src : src}?w=${width}&q=${
+                  quality || 75
+                }`;
+              }}
             />
           </SwiperSlide>
         ))}
