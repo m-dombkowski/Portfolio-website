@@ -10,6 +10,12 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screens: {
+      xs1: "350px",
+      xs2: "425px",
+      xs3: "500px",
+      ...defaultTheme.screens,
+    },
     extend: {
       fontFamily: {
         sans: ["var(--font-inter)", ...defaultTheme.fontFamily.sans],
