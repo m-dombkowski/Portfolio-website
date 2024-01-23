@@ -33,14 +33,15 @@ export default function AboutPage() {
   const [deviceType, setDeviceType] = useState<Device>(Device.NONE);
 
   const { scrollYProgress } = useScroll();
-  const { width } = useWindowDimensions();
 
+  const { width } = useWindowDimensions();
   useEffect(() => {
     if (width < 1025) {
       setDeviceType(Device.MOBILE);
     } else {
       setDeviceType(Device.DESKTOP);
     }
+    console.log(width);
   }, [width]);
 
   return (
