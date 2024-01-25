@@ -1,0 +1,80 @@
+.mobileNav {
+  width: 120px;
+  height: 30px;
+  background-color: #18181b;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: fixed;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+  margin: 16px 16px 0 0;
+  border-radius: 100%;
+
+  .bgMobileNav {
+    width: 100%;
+    height: 120px;
+    z-index: 0;
+    position: absolute;
+    transition: all 0.5s;
+    border-radius: 100%;
+    background-image: radial-gradient(
+      circle at center,
+      rgb(47, 47, 50, 0.7) 50%,
+      transparent 50%
+    );
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 0 0;
+  }
+  .burger {
+    width: 100%;
+
+    &::after,
+    &::before {
+      content: "";
+      display: block;
+      height: 1px;
+      width: 40%;
+      margin: auto;
+      background-color: white;
+      position: absolute;
+      transition: transform 0.3s;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+
+    &::after {
+      top: -15px;
+    }
+
+    &::before {
+      top: 15px;
+    }
+  }
+
+  .burgerActive {
+    &::after {
+      transform: rotate(45deg);
+      top: -1px;
+    }
+    &::before {
+      transform: rotate(-45deg);
+      top: 0px;
+    }
+  }
+
+  &:hover {
+    .bgMobileNav {
+      background-size: 200% 200%;
+    }
+  }
+}
+
+@media (min-width: 640px) {
+  .mobileNav {
+    height: 120px;
+  }
+}
