@@ -1,6 +1,6 @@
 import React, { SetStateAction } from "react";
 
-import { NavigationData } from "../../lib/navData";
+import { NavigationData } from "../../../lib/navData";
 
 export default function NavigationDescription({
   selectedProject,
