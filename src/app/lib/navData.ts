@@ -17,10 +17,10 @@ export const NavigationData: NavDataType[] = [
     index: 1,
   },
   {
-    href: "/experience",
+    href: "/work",
     description:
       "My (mostly) commercial experiance shown in a nice visual way, with a short description for each chapter",
-    name: "Experience",
+    name: "Work",
     speed: 0.65,
     index: 2,
   },
