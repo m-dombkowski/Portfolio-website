@@ -16,7 +16,20 @@ const config: Config = {
       xs3: "500px",
       ...defaultTheme.screens,
     },
+    backgroundPosition: {
+      "p-double-50": "50% 50%",
+    },
+
+    backgroundSize: {
+      "s-double-0": "0 0",
+      "s-double-200": "200% 200%",
+    },
     extend: {
+      transitionProperty: {
+        height: "height",
+        backgroundSize: "backgroundSize",
+        color: "color",
+      },
       fontFamily: {
         sans: ["var(--font-inter)", ...defaultTheme.fontFamily.sans],
         calc: ["var(--font-calsans)"],
@@ -28,6 +41,8 @@ const config: Config = {
         "gradient-radial":
           "radial-gradient(50% 50% at 50% 50%, var(--tw-gradient-stops))",
         galaxy: "url('/public/galaxy-bg.png')",
+        "mobile-nav-gradient":
+          "radial-gradient(circle at center , blue 50%, transparent 50%)",
       },
     },
     animation: {
