@@ -30,7 +30,7 @@ export default function Navigation({ currentPath }: { currentPath: string }) {
       </li>
     );
   };
-  // fixed inset-0
+
   return (
     <header className=" margin-0 z-[999] w-[100%] h-[105px] mt-5 sm:mb-10 sm:mt-10">
       <nav className="flex justify-center ">

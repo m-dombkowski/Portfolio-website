@@ -3,7 +3,7 @@
 import { Github, Linkedin, Mail } from "lucide-react";
 import Link from "next/link";
 import { Card } from "../components/card/card";
-import PageWrapper from "../components/page-transition/fade";
+import PageWrapper from "../components/transitions/fade";
 
 const contacts = [
   {

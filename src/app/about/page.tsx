@@ -2,7 +2,7 @@
 
 import Image, { ImageLoaderProps } from "next/image";
 import portrait from "../../../public/images/me.jpg";
-import PageWrapper from "../components/page-transition/fade";
+import PageWrapper from "../components/transitions/fade";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpotify } from "@fortawesome/free-brands-svg-icons/faSpotify";
 import Link from "next/link";
@@ -11,11 +11,8 @@ import {
   slideLeft,
   animByBoolean,
   opacityWithDelay,
-  anim,
-  opacity,
 } from "../lib/anim";
 import { useEffect, useRef, useState } from "react";
-import Gallery from "../components/gallery/gallery-desktop";
 import { Player } from "@lottiefiles/react-lottie-player";
 import useWindowDimensions from "../hooks/useWindowDimension";
 import SpotifyLink from "../components/spotify-link/spotify-link";

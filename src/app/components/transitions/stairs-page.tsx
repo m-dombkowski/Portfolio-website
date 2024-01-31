@@ -1,11 +1,7 @@
 import { anim, expand, opacityBg } from "@/app/lib/anim";
 import { motion } from "framer-motion";
 
-export default function PageTransition({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function StairsTransition({}: {}) {
   const numberOfColumns = 5;
 
   return (
@@ -19,13 +15,12 @@ export default function PageTransition({
           return (
             <motion.div
               {...anim(expand, i)}
-              className="h-[100%] w-[100%] bg-light-brown relative top-0"
+              className="h-[100%] w-[100%] bg-black relative top-0"
               key={i}
             />
           );
         })}
       </div>
-      {children}
     </>
   );
 }

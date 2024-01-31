@@ -3,7 +3,6 @@ import { motion, useInView } from "framer-motion";
 import { opacity, slideUp, animByBoolean } from "./lib/anim";
 import { Typewriter } from "react-simple-typewriter";
 import { useRef } from "react";
-import galaxy from "../../public/galaxy-bg.png";
 import Link from "next/link";
 
 export default function HomePage() {
