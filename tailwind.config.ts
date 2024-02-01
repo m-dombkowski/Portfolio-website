@@ -48,8 +48,18 @@ const config: Config = {
     animation: {
       "fade-left": "fade-left 3s ease-in-out forwards",
       "fade-right": "fade-right 3s ease-in-out forwards",
+      slider: "slider 12s linear infinite",
     },
     keyframes: {
+      slider: {
+        from: {
+          transform: "translate3d(0, 0, 0)",
+        },
+
+        to: {
+          transform: "translate3d(-100%, 0, 0)",
+        },
+      },
       "fade-left": {
         "0%": {
           transform: "translateX(100%)",
