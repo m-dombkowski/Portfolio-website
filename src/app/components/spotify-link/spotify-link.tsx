@@ -7,8 +7,8 @@ export default function SpotifyLink() {
   const [selectedSong, setSelectedSong] = useState<SpotifyDataType>();
 
   useEffect(() => {
-    spotifyData.find((el, index) => {
-      if (index === Math.floor(Math.random() * spotifyData.length)) {
+    spotifyData.filter((el, index) => {
+      if (index === Math.floor(Math.random() * spotifyData.length - 1)) {
         setSelectedSong(el);
       }
     });
