@@ -49,11 +49,12 @@ export default function MenuLink({
   return (
     <motion.div
       onMouseEnter={animateIn}
+      onMouseLeave={animateOut}
       ref={scope}
       variants={rotateX}
       {...mountAnim}
       custom={index}
-      className="border-t flex justify-center pointer origin-top last-of-type:border-b"
+      className="group relative border-t flex justify-center pointer origin-top last-of-type:border-b"
     >
       <Link
         href={href}
@@ -61,15 +62,19 @@ export default function MenuLink({
       >
         {name}
       </Link>
-      <div ref={outer} className={styles.outer}>
-        <div ref={inner} className={styles.inner}>
+      <div
+        ref={outer}
+        className="flex absolute h-[100%] w-[100%] overflow-hidden pointer-events-none"
+      >
+        <div
+          ref={inner}
+          className="flex bg-[#D3FD50] absolute whitespace-nowrap h-[100%] top-[100%]"
+        >
           {[...Array(2)].map((_, index) => {
             return (
-              <SliderContent
-                key={index}
-                description={description}
-                image={image}
-              />
+              <div key={index} className="opacity-0 group-hover:opacity-100 ">
+                <SliderContent description={description} image={image} />
+              </div>
             );
           })}
         </div>
@@ -85,15 +90,19 @@ const SliderContent = ({
   image: StaticImageData;
 }) => {
   return (
-    <div className={styles.container}>
-      <div className={styles.imageContainer}>
-        <Image src={image} fill alt="image" />
+    <div className="flex items-center animate-[slider_12s_linear_infinite] transition-opacity duration-300 relative ">
+      <div className="h-[6vw] w-[16vw] relative overflow-hidden rounded-[3vw] ml-[1vw] mr-[1vw] flex">
+        <Image src={image} fill alt="image" className="object-cover" />
       </div>
-      <p>{description}</p>
-      <div className={styles.imageContainer}>
-        <Image src={image} fill alt="image" />
+      <p className="text-[#000] uppercase text-[7vw] leading-[7.2vw] m-0 ">
+        {description}
+      </p>
+      <div className="h-[6vw] w-[16vw] relative overflow-hidden rounded-[3vw] ml-[1vw] mr-[1vw] flex">
+        <Image src={image} fill alt="image" className="object-cover" />
       </div>
-      <p>{description}</p>
+      <p className="text-[#000] uppercase text-[7vw] leading-[7.2vw] m-0">
+        {description}
+      </p>
     </div>
   );
 };
