@@ -1,10 +1,10 @@
 import brownie from "../../../../public/images/food/brownie-kokos.png";
 import chmurka from "../../../../public/images/food/chmurka.jpg";
-import ciasteczka from "../../../../public/images/food/ciasteczka.jpg";
+import ciasteczka from "../../../../public/images/food/cookies.jpg";
 import cynamonki from "../../../../public/images/food/cynamonki.jpg";
 import drozdzowka from "../../../../public/images/food/drozdzowka-maliny.jpg";
 import jagodzianka from "../../../../public/images/food/jagodzianka.jpg";
-import pierogi from "../../../../public/images/food/pierogi.jpg";
+import sernik from "../../../../public/images/food/sernik.jpg";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCreative, Pagination } from "swiper/modules";
 import Image, { ImageLoaderProps } from "next/image";
@@ -16,7 +16,7 @@ export default function GalleryMobile() {
   const pics = [
     {
       source: drozdzowka,
-      alt: "raspberry filled bun",
+      alt: "raspberry, blueberry bun",
     },
     {
       source: ciasteczka,
@@ -27,8 +27,8 @@ export default function GalleryMobile() {
       alt: "raspberry cloud",
     },
     {
-      source: pierogi,
-      alt: "pierogi (polish dumplings)",
+      source: sernik,
+      alt: "blueberry cheesecake",
     },
     {
       source: cynamonki,

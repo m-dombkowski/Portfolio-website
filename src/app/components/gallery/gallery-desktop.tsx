@@ -4,11 +4,11 @@ import Image, { ImageLoaderProps } from "next/image";
 import styles from "./styles.module.scss";
 import brownie from "../../../../public/images/food/brownie-kokos.png";
 import chmurka from "../../../../public/images/food/chmurka.jpg";
-import ciasteczka from "../../../../public/images/food/ciasteczka.jpg";
+import ciasteczka from "../../../../public/images/food/cookies.jpg";
 import cynamonki from "../../../../public/images/food/cynamonki.jpg";
 import drozdzowka from "../../../../public/images/food/drozdzowka-maliny.jpg";
 import jagodzianka from "../../../../public/images/food/jagodzianka.jpg";
-import pierogi from "../../../../public/images/food/pierogi.jpg";
+import sernik from "../../../../public/images/food/sernik.jpg";
 import { FoodGalleryPicType } from "@/app/lib/definitions/types";
 
 export default function GalleryDesktop() {
@@ -42,9 +42,9 @@ export default function GalleryDesktop() {
       alt: "raspberry cloud",
     },
     {
-      source: pierogi,
+      source: sernik,
       scale: scale9,
-      alt: "pierogi (polish dumplings)",
+      alt: "blueberry cheesecake",
     },
     {
       source: cynamonki,
