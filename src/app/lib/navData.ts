@@ -1,4 +1,8 @@
 import { NavDataType } from "./definitions/types";
+import ciasteczka from "../../../../public/images/food/cookies.jpg";
+import sernik from "../../../../public/images/food/sernik.jpg";
+import brownie from "../../../../public/images/food/brownie-kokos.png";
+import drozdzowka from "../../../../public/images/food/drozdzowka-maliny.jpg";
 
 export const NavigationData: NavDataType[] = [
   {
@@ -7,6 +11,7 @@ export const NavigationData: NavDataType[] = [
     name: "Home",
     speed: 0.33,
     index: 0,
+    image: ciasteczka,
   },
   {
     href: "/about",
@@ -15,6 +20,7 @@ export const NavigationData: NavDataType[] = [
     name: "About",
     speed: 0.65,
     index: 1,
+    image: sernik,
   },
   {
     href: "/work",
@@ -23,6 +29,7 @@ export const NavigationData: NavDataType[] = [
     name: "Work",
     speed: 0.65,
     index: 2,
+    image: brownie,
   },
   {
     href: "/contact",
@@ -30,5 +37,6 @@ export const NavigationData: NavDataType[] = [
     name: "Contact",
     speed: 1,
     index: 3,
+    image: drozdzowka,
   },
 ];

@@ -7,6 +7,7 @@ export type NavDataType = {
   name: string;
   speed: number;
   index: number;
+  image: StaticImageData;
 };
 
 export type SpotifyDataType = {
@@ -19,4 +20,10 @@ export type FoodGalleryPicType = {
   source: StaticImageData;
   scale: MotionValue<number>;
   alt: string;
+};
+
+export type SocialMediaDataType = {
+  title: string;
+  text: string;
+  href: string;
 };
