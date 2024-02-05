@@ -1,14 +1,16 @@
 "use client";
 import styles from "./styles.module.scss";
-import { Dispatch, SetStateAction, useState } from "react";
+import { Dispatch, SetStateAction } from "react";
 
 export default function Burger({
   toggleMenu,
+  setIsActive,
+  isActive,
 }: {
   toggleMenu: Dispatch<SetStateAction<boolean>>;
+  setIsActive: Dispatch<SetStateAction<boolean>>;
+  isActive: boolean;
 }) {
-  const [isActive, setIsActive] = useState<boolean>(false);
-
   const handleClick = () => {
     if (isActive) {
       toggleMenu(false);

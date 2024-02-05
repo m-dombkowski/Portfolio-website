@@ -5,16 +5,21 @@ import StairsNavTransition from "../../transitions/stairs-nav";
 import Menu from "./menu";
 
 export default function MobileNav() {
-  const [menuIsOpen, setMenuIsOpen] = useState(false);
+  const [menuIsOpen, setMenuIsOpen] = useState<boolean>(false);
+  const [isActive, setIsActive] = useState<boolean>(false);
 
   return (
     <div>
-      <Burger toggleMenu={setMenuIsOpen} />
+      <Burger
+        toggleMenu={setMenuIsOpen}
+        isActive={isActive}
+        setIsActive={setIsActive}
+      />
       <AnimatePresence mode="wait">
         {menuIsOpen && (
           <>
             <StairsNavTransition />
-            <Menu />
+            <Menu toggleMenu={setMenuIsOpen} setIsActive={setIsActive} />
           </>
         )}
       </AnimatePresence>

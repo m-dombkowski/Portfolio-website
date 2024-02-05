@@ -1,17 +1,31 @@
 import { motion } from "framer-motion";
-import { opacityNav, slideLeft, mountAnim } from "../../../lib/anim";
+import { opacityNav, mountAnim } from "../../../lib/anim";
 import MenuLink from "./menu-link";
-import { Dispatch, SetStateAction } from "react";
 import Link from "next/link";
 import { NavigationData } from "@/app/lib/navData";
 import { socials } from "@/app/lib/socialsData";
+import { Dispatch, SetStateAction } from "react";
 
-export default function Menu() {
+export default function Menu({
+  toggleMenu,
+  setIsActive,
+}: {
+  toggleMenu: Dispatch<SetStateAction<boolean>>;
+  setIsActive: Dispatch<SetStateAction<boolean>>;
+}) {
   return (
     <div className="fixed top-0 flex z-[1003] h-[100%] w-[100%] justify-center items-end">
       <div className=" absolute left-[50%] top-[50%] w-[100%] translate-y-[-50%] translate-x-[-50%]">
         {NavigationData.map((el, index) => {
-          return <MenuLink data={el} index={index} key={index} />;
+          return (
+            <MenuLink
+              data={el}
+              index={index}
+              key={index}
+              toggleMenu={toggleMenu}
+              setIsActive={setIsActive}
+            />
+          );
         })}
       </div>
 
