@@ -67,7 +67,7 @@ export const height = {
   }),
   exit: (i: number) => ({
     height: 0,
-    transition: { duration: 0.3, delay: 0.05 * i, ease: [0.33, 1, 0.68, 1] },
+    transition: { duration: 0.5, delay: 0.05 * i, ease: [0.33, 1, 0.68, 1] },
   }),
 };
 

@@ -13,7 +13,7 @@ export const socials: SocialMediaDataType[] = [
   },
   {
     title: "Github",
-    text: "GIT",
+    text: "GH",
     href: "https://github.com/m-dombkowski",
   },
 ];
