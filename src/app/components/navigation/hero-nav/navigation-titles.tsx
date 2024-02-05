@@ -7,14 +7,7 @@ import {
 } from "framer-motion";
 import { NavigationData } from "../../../lib/navData";
 import Link from "next/link";
-
-type NavDataType = {
-  href: string;
-  description: string;
-  name: string;
-  speed: number;
-  index: number;
-};
+import { NavDataType } from "@/app/lib/definitions/types";
 
 export default function index({
   setSelectedProject,

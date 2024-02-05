@@ -6,12 +6,13 @@ import PageWrapper from "../components/transitions/fade";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpotify } from "@fortawesome/free-brands-svg-icons/faSpotify";
 import Link from "next/link";
-import { motion, useInView, useScroll } from "framer-motion";
 import {
-  slideLeft,
-  animByBoolean,
-  opacityWithDelay,
-} from "../lib/anim";
+  motion,
+  useInView,
+  useMotionValueEvent,
+  useScroll,
+} from "framer-motion";
+import { slideLeft, animByBoolean, opacityWithDelay } from "../lib/anim";
 import { useEffect, useRef, useState } from "react";
 import { Player } from "@lottiefiles/react-lottie-player";
 import useWindowDimensions from "../hooks/useWindowDimension";
@@ -19,6 +20,7 @@ import SpotifyLink from "../components/spotify-link/spotify-link";
 import { Device } from "../lib/definitions/enums";
 import GalleryDesktop from "../components/gallery/gallery-desktop";
 import GalleryMobile from "../components/gallery/gallery-mobile";
+import MobileNav from "../components/navigation/mobile-nav/mobile-nav";
 
 export default function AboutPage() {
   const descContainer = useRef<HTMLDivElement>(null);
@@ -130,7 +132,7 @@ export default function AboutPage() {
             {...animByBoolean(opacityWithDelay, isGalleryInView, 0.75)}
           >
             <h1 className="font-calc text-6xl flex justify-center items-center pb-20">
-              Fancy something nice to eat?
+              Fancy something sweet?
             </h1>
             <div className="flex justify-center items-center">
               <Player
