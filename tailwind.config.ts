@@ -48,7 +48,7 @@ const config: Config = {
     animation: {
       "fade-left": "fade-left 3s ease-in-out forwards",
       "fade-right": "fade-right 3s ease-in-out forwards",
-      slider: "slider 12s linear infinite",
+      slider: "slider 14s linear infinite",
     },
     keyframes: {
       slider: {
