@@ -4,12 +4,14 @@ import "./globals.css";
 import SmoothScroll from "./components/smooth-scroll/smooth-scroll";
 import LocalFont from "next/font/local";
 import "cal-sans";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, useMotionValueEvent, useScroll } from "framer-motion";
 import { usePathname } from "next/navigation";
 import Navigation from "./components/navigation/navigation";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import { faSpotify } from "@fortawesome/free-brands-svg-icons";
+import { useRef } from "react";
+import MobileNav from "./components/navigation/mobile-nav/mobile-nav";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -26,6 +28,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const path = usePathname();
+  const mobileNavRef = useRef<HTMLDivElement>(null);
+
+  const { scrollY } = useScroll();
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    if (latest >= 250 && mobileNavRef.current) {
+      mobileNavRef.current.style.opacity = "1";
+    }
+    if (latest < 250 && mobileNavRef.current) {
+      mobileNavRef.current.style.opacity = "0";
+    }
+  });
 
   library.add(fas, faSpotify);
 
@@ -34,6 +48,12 @@ export default function RootLayout({
       <SmoothScroll>
         <body>
           <Navigation currentPath={path} />
+          <div
+            className="opacity-0 transition-opacity duration-300"
+            ref={mobileNavRef}
+          >
+            <MobileNav />
+          </div>
           <AnimatePresence mode="wait">{children}</AnimatePresence>
         </body>
       </SmoothScroll>
