@@ -65,19 +65,6 @@ export default function HomePage() {
               </span>
             </motion.p>
           </div>
-
-          {/* <div className="flex justify-center items-center">
-              <Player
-                className="w-[50px] h-[50px] lg:w-[100px] lg:h-[100px]"
-                src="https://lottie.host/bb61b936-d6cd-416e-83ad-7bae45f4a48b/ByPgffCY5H.json"
-                background="transparent"
-                speed={1}
-                // style={{ width: "72px", height: "72px" }}
-                direction={1}
-                loop
-                autoplay
-              ></Player>
-            </div> */}
         </div>
         {/* <motion.div className="flex flex-col gap-20 min-h-[450px] justify-center items-center lg:min-h-screen sm:min-h-[50vh] md:min-h-[90vh]">
             <Navigation />
