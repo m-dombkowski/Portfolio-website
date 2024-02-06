@@ -80,9 +80,11 @@ export default function AboutPage() {
                   <SpotifyLink />
                 </div>
               </div>
-              <h1 className="text-3xl font-calc leading-[1.2] sm:text-5xl">
+              <h1 className="text-3xl font-calc leading-[1.2] sm:text-5xl px-6">
                 Frontend Developer
-                <span className="block">from Poland, Wrocław.</span>
+                <span className="block text-2xl sm:text-3xl">
+                  from Poland, Wrocław.
+                </span>
               </h1>
             </div>
             <div
@@ -109,7 +111,7 @@ export default function AboutPage() {
             {...animByBoolean(opacityWithDelay, isSpotifyInView, 1)}
             className="flex flex-col justify-start items-center gap-10"
           >
-            <div className="flex flex-col gap-3 w-[100%]">
+            <div className="flex flex-col gap-3 w-[100%] px-6">
               <h1 className="text-4xl font-calc sm:text-5xl">
                 Like heavy music aswell?
               </h1>
@@ -131,13 +133,29 @@ export default function AboutPage() {
             ref={galleryTitleContainer}
             {...animByBoolean(opacityWithDelay, isGalleryInView, 0.75)}
           >
-            <h1 className="font-calc text-6xl flex justify-center items-center pb-20">
+            <h1 className="font-calc text-4xl flex justify-center items-center  sm:text-6xl px-6">
               Fancy something sweet?
             </h1>
-            <div className="flex justify-center items-center">
+            {deviceType === "desktop" && (
+              <div className="flex justify-center items-center pt-20">
+                <Player
+                  className="w-[80px] h-[80px] lg:w-[124px] lg:h-[124px]"
+                  src="https://lottie.host/7ce71967-4e20-40de-a3c7-d1566bb1727d/AglJY8GMuc.json"
+                  background="transparent"
+                  speed={1}
+                  direction={1}
+                  loop
+                  autoplay
+                ></Player>
+              </div>
+            )}
+          </motion.div>
+          {deviceType === "desktop" ? <GalleryDesktop /> : <GalleryMobile />}
+          {deviceType === "mobile" && (
+            <div className="flex justify-center items-center pb-20">
               <Player
                 className="w-[80px] h-[80px] lg:w-[124px] lg:h-[124px]"
-                src="https://lottie.host/7ce71967-4e20-40de-a3c7-d1566bb1727d/AglJY8GMuc.json"
+                src="https://lottie.host/69a36f5e-6e7c-4889-8357-63a5313d463e/YUmOxomf88.json"
                 background="transparent"
                 speed={1}
                 direction={1}
@@ -145,8 +163,7 @@ export default function AboutPage() {
                 autoplay
               ></Player>
             </div>
-          </motion.div>
-          {deviceType === "desktop" ? <GalleryDesktop /> : <GalleryMobile />}
+          )}
         </div>
       </section>
     </PageWrapper>

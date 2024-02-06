@@ -15,13 +15,14 @@ import "swiper/css/pagination";
 export default function GalleryMobile() {
   const pics = [
     {
-      source: drozdzowka,
-      alt: "raspberry, blueberry bun",
-    },
-    {
       source: ciasteczka,
       alt: "cookies",
     },
+    {
+      source: drozdzowka,
+      alt: "raspberry, blueberry bun",
+    },
+
     {
       source: chmurka,
       alt: "raspberry cloud",
@@ -45,10 +46,11 @@ export default function GalleryMobile() {
   ];
 
   return (
-    <div className="p-[25px] sm:p-0">
+    <div className="px-[25px] pt-[25px] sm:p-0">
       <Swiper
         pagination={true}
-        className="my-[100px] mx-[auto] max-w-[440px] h-[300px] xs1:h-[375px] xs2:h-[450px] xs3:h-[500px]"
+        style={{ padding: "2rem", paddingBottom: "3rem" }}
+        className="my-[50px] mx-[auto] max-w-[440px] h-[300px] xs1:h-[375px] xs2:h-[450px] xs3:h-[500px] bg-[#72b09b] rounded-xl"
         grabCursor={true}
         effect={"creative"}
         creativeEffect={{
@@ -68,7 +70,8 @@ export default function GalleryMobile() {
       >
         {pics.map(({ source, alt }, index) => (
           <SwiperSlide
-            className="flex items-center justify-center w-[100%] h-[100%]"
+            className="flex items-center justify-center w-[100%] h-[100%]
+            rounded-md shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)]"
             key={index}
           >
             <Image
