@@ -92,7 +92,7 @@ export default function AboutPage() {
               </motion.p>
               <motion.p
                 {...animByBoolean(slideLeft, isDescInView, 2)}
-              >{`Now I have over 1.5 year of commercial experience in which I've been mainly focused on working with React, Typescript and Next.js.
+              >{`Now I have over 1.5 years of commercial experience in which I've been mainly focused on working with React, Typescript and Next.js.
             `}</motion.p>
               <motion.p {...animByBoolean(slideLeft, isDescInView, 3)}>
                 {`Outside of my work time I enjoy good coffee, tea. You can also find me ice skating durning winter, roller skating durning summer or doing my new found love, baking.

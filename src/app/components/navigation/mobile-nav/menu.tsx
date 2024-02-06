@@ -2,8 +2,8 @@ import { motion } from "framer-motion";
 import { opacityNav, mountAnim } from "../../../lib/anim";
 import MenuLink from "./menu-link";
 import Link from "next/link";
-import { NavigationData } from "@/app/lib/navData";
-import { socials } from "@/app/lib/socialsData";
+import { NavigationData } from "@/app/lib/nav-data";
+import { socials } from "@/app/lib/socials-data";
 import { Dispatch, SetStateAction } from "react";
 
 export default function Menu({

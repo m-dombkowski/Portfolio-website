@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { NavDataType } from "../../lib/definitions/types";
-import { NavigationData } from "../../lib/navData";
+import { NavigationData } from "../../lib/nav-data";
 
 export default function Navigation({ currentPath }: { currentPath: string }) {
   const NavItemHighlighted = ({ element }: { element: NavDataType }) => {

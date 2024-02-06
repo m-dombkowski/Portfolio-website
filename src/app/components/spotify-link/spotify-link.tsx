@@ -1,5 +1,5 @@
 import { SpotifyDataType } from "@/app/lib/definitions/types";
-import { spotifyData } from "@/app/lib/spotifyData";
+import { spotifyData } from "@/app/lib/spotify-data";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
