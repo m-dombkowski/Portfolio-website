@@ -27,3 +27,12 @@ export type SocialMediaDataType = {
   text: string;
   href: string;
 };
+
+export type CardParallaxDataType = {
+  title: string;
+  description: string;
+  src: string;
+  link: string;
+  color: string;
+  i?: number;
+};
