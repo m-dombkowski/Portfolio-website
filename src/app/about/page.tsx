@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpotify } from "@fortawesome/free-brands-svg-icons/faSpotify";
 import Link from "next/link";
 import { motion, useInView, useScroll } from "framer-motion";
-import { slideLeft, animByBoolean, opacityWithDelay } from "../lib/anim";
+import { anim, opacityWithDelay } from "../lib/anim";
 import { useEffect, useRef, useState } from "react";
 import { Player } from "@lottiefiles/react-lottie-player";
 import useWindowDimensions from "../hooks/useWindowDimension";
@@ -15,6 +15,7 @@ import SpotifyLink from "../components/spotify-link/spotify-link";
 import { Device } from "../lib/definitions/enums";
 import GalleryDesktop from "../components/gallery/gallery-desktop";
 import GalleryMobile from "../components/gallery/gallery-mobile";
+import ParallaxGallery from "../components/gallery/parallax-gallery/gallery";
 
 export default function AboutPage() {
   const descContainer = useRef<HTMLDivElement>(null);
@@ -44,9 +45,9 @@ export default function AboutPage() {
           className="fixed top-0 h-[10px] left-0 right-0 origin-[0%] bg-color-text-darker z-[999]"
           style={{ scaleX: scrollYProgress }}
         />
-        <div className="max-w-[600px] xl:max-w-[900px] pb-32">
-          <div className="flex justify-center flex-col gap-10 pb-20">
-            <div className="flex flex-col gap-6">
+        <div className="max-w-[600px] lg:max-w-[900px] pb-32">
+          <div className="flex justify-center flex-col gap-10 pb-20 lg:pb-0">
+            <div className="flex flex-col gap-6 mb-20">
               <h1 className=" text-4xl font-calc sm:text-6xl">{`Hi! Mateusz here.`}</h1>
               <div className="flex w-100 justify-center flex-col items-center py-10">
                 <Image
@@ -81,28 +82,19 @@ export default function AboutPage() {
                 </span>
               </h1>
             </div>
+            <h1 className="text-3xl font-calc leading-[1.2] sm:text-5xl px-6">
+              A bit about me
+            </h1>
             <div
               ref={descContainer}
               className="flex flex-col gap-8 text-lg text-sans text-color-text-lighter text-justify px-6 font-calc"
             >
-              <motion.p {...animByBoolean(slideLeft, isDescInView, 1)}>
-                {`Back in 2021 I decided to give programming a shot.
-              I can honestly say that it was hell of a ride tumbling head first into a rabbit hole called Frontend Development.
-              Since then I stared my first commercial work, gained ton of knowledge and learned a lot but it's just a beginning`}
-              </motion.p>
-              <motion.p
-                {...animByBoolean(slideLeft, isDescInView, 2)}
-              >{`Now I have over 1.5 years of commercial experience in which I've been mainly focused on working with React, Typescript and Next.js.
-            `}</motion.p>
-              <motion.p {...animByBoolean(slideLeft, isDescInView, 3)}>
-                {`Outside of my work time I enjoy good coffee, tea. You can also find me ice skating durning winter, roller skating durning summer or doing my new found love, baking.
-              I guess I fell in love with baking because simillar as in frontend devlopment you can create something from almost nothing and can see the growth and development of the process. Other than that I really love metalcore and dogs.`}
-              </motion.p>
+              <ParallaxGallery />
             </div>
           </div>
           <motion.div
             ref={sptofiyContainer}
-            {...animByBoolean(opacityWithDelay, isSpotifyInView, 1)}
+            {...anim(opacityWithDelay, 1)}
             className="flex flex-col justify-start items-center gap-10"
           >
             <div className="flex flex-col gap-3 w-[100%] px-6">
@@ -125,7 +117,7 @@ export default function AboutPage() {
         <div className="w-[100%]">
           <motion.div
             ref={galleryTitleContainer}
-            {...animByBoolean(opacityWithDelay, isGalleryInView, 0.75)}
+            {...anim(opacityWithDelay, 0.75)}
           >
             <h1 className="font-calc text-4xl flex justify-center items-center  sm:text-6xl px-6">
               Fancy something sweet?

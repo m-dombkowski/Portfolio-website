@@ -5,9 +5,9 @@ export const mountAnim = { initial: "initial", animate: "enter", exit: "exit" };
 export const anim = (variants: Variants, custom: number | null) => {
   return {
     initial: "initial",
-    animate: "enter",
+    animate: "open",
     open: "open",
-    exit: "exit",
+    // exit: "exit",
     variants,
     custom,
   };
@@ -115,7 +115,7 @@ export const slideLeft = {
     opacity: 1,
     transition: { duration: 0.5, delay: 0.5 * i },
   }),
-  exit: { x: "15px", opacity: 0 },
+  // exit: { x: "15px", opacity: 0 },
 };
 
 export const slideUp = {
@@ -125,10 +125,10 @@ export const slideUp = {
     opacity: 1,
     transition: { duration: 0.5, delay: 0.75 * i },
   }),
-  exit: {
-    y: "15px",
-    opacity: 0,
-  },
+  // exit: {
+  //   y: "15px",
+  //   opacity: 0,
+  // },
 };
 
 export const expand = {
@@ -147,14 +147,14 @@ export const expand = {
       top: "0",
     },
   }),
-  exit: (i: number) => ({
-    height: "100vh",
-    transition: {
-      duration: 0.65,
-      delay: 0.1 * i,
-      ease: [0.215, 0.61, 0.355, 1],
-    },
-  }),
+  // exit: (i: number) => ({
+  //   height: "100vh",
+  //   transition: {
+  //     duration: 0.65,
+  //     delay: 0.1 * i,
+  //     ease: [0.215, 0.61, 0.355, 1],
+  //   },
+  // }),
 };
 
 export const opacityBg = {
@@ -169,9 +169,9 @@ export const opacityBg = {
     },
   },
 
-  exit: {
-    opacity: 1,
-  },
+  // exit: {
+  //   opacity: 1,
+  // },
 };
 
 export const opacity = {
@@ -182,9 +182,9 @@ export const opacity = {
     opacity: 1,
     transition: { duration: 1 },
   },
-  exit: {
-    opacity: 0,
-  },
+  // exit: {
+  //   opacity: 0,
+  // },
 };
 export const opacityWithDelay = {
   initial: {
@@ -194,7 +194,7 @@ export const opacityWithDelay = {
     opacity: 1,
     transition: { duration: 1, delay: i },
   }),
-  exit: {
-    opacity: 0,
-  },
+  // exit: {
+  //   opacity: 0,
+  // },
 };
