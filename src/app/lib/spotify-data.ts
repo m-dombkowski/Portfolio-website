@@ -66,4 +66,29 @@ export const spotifyData: SpotifyDataType[] = [
     song: "Immolation of Night",
     url: "https://open.spotify.com/track/3OOeWlT6cQYNbdJ4qcBipL?si=009228cf37fa42f8",
   },
+  {
+    band: "Spiritbox",
+    song: "Hysteria",
+    url: "https://open.spotify.com/track/2AqKRuEcR0R8iYkBWk5Uqj?si=a5628ec5bdac4f65",
+  },
+  {
+    band: "Spiritbox",
+    song: "Cellar Door",
+    url: "https://open.spotify.com/track/2GWtLHhqPjvZt1aWiBDsTU?si=e9bb3f068a2a4e77",
+  },
+  {
+    band: "Architects",
+    song: "Seeing Red",
+    url: "https://open.spotify.com/track/5EauhH7IW4eDo0SPnP6rIY?si=fad7ed6f8391492b",
+  },
+  {
+    band: "Architects",
+    song: "Royal Beggars",
+    url: "https://open.spotify.com/track/50xyeJL2Hs9FDgtI1ROeB0?si=d50df5616eab44f2",
+  },
+  {
+    band: "Architects",
+    song: "be very afraid",
+    url: "https://open.spotify.com/track/1nXWhLumXogqFeijfa1uJd?si=71eaa73dc65d4686",
+  },
 ];
