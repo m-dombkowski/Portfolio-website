@@ -31,8 +31,11 @@ export type SocialMediaDataType = {
 export type CardParallaxDataType = {
   title: string;
   description: string;
-  src: string;
-  link: string;
+  src: StaticImageData;
+  alt: string;
   color: string;
   i?: number;
+  progress?: MotionValue<number>;
+  range?: number[];
+  targetScale?: number;
 };
