@@ -63,7 +63,7 @@ const Card = ({
               style={{ scale: imageScale }}
               className="w-[100%] h-[100%] "
             >
-              <Image className="object-fit-cover " fill src={src} alt={alt} />
+              <Image className="object-fit-cover" fill src={src} alt={alt} />
             </motion.div>
           </div>
         </div>
