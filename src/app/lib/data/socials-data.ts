@@ -1,4 +1,4 @@
-import { SocialMediaDataType } from "./definitions/types";
+import { SocialMediaDataType } from "../definitions/types";
 
 export const socials: SocialMediaDataType[] = [
   {

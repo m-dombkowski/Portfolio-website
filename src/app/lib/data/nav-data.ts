@@ -1,8 +1,8 @@
-import { NavDataType } from "./definitions/types";
-import ciasteczka from "../../../public/images/food/cookies.jpg";
-import cynamonki from "../../../public/images/food/cynamonki.jpg";
-import pierogi from "../../../public/images/food/pierogi.jpg";
-import drozdzowka from "../../../public/images/food/drozdzowka-maliny.jpg";
+import { NavDataType } from "../definitions/types";
+import ciasteczka from "../../../../public/images/food/cookies.jpg";
+import cynamonki from "../../../../public/images/food/cynamonki.jpg";
+import pierogi from "../../../../public/images/food/pierogi.jpg";
+import drozdzowka from "../../../../public/images/food/drozdzowka-maliny.jpg";
 
 export const NavigationData: NavDataType[] = [
   {

@@ -1,8 +1,8 @@
 import { CardParallaxDataType } from "@/app/lib/definitions/types";
-import Bafi from "../../../public/images/bafi.jpg";
-import Start from "../../../public/images/start.jpg";
-import Winter from "../../../public/images/winter.jpg";
-import Code from "../../../public/images/code.jpg";
+import Bafi from "../../../../public/images/bafi.jpg";
+import Start from "../../../../public/images/start.jpg";
+import Winter from "../../../../public/images/winter.jpg";
+import Code from "../../../../public/images/code.jpg";
 
 export const cards: CardParallaxDataType[] = [
   {
