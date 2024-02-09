@@ -1,6 +1,6 @@
 "use client";
 
-import { cards } from "@/app/lib/card-parallax-data";
+import { cards } from "@/app/lib/data/card-parallax-data";
 import Card from "./card";
 import { useRef } from "react";
 import { useScroll } from "framer-motion";
@@ -17,7 +17,7 @@ export default function ParallaxGallery() {
         const targetScale = 1 - (cards.length - i) * 0.05;
         return (
           <Card
-            key={`p_${i}`}
+            key={i}
             {...card}
             i={i}
             progress={scrollYProgress}
