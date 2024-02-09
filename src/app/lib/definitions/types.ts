@@ -39,3 +39,13 @@ export type CardParallaxDataType = {
   range?: number[];
   targetScale?: number;
 };
+
+enum TECHUSECASE {
+  COMMERCIAL = "commercial",
+  PERSONAL = "personal",
+}
+
+export type TechStackDataType = {
+  name: string;
+  usecase: string[];
+};
