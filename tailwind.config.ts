@@ -15,6 +15,7 @@ const config: Config = {
       xs2: "425px",
       xs3: "500px",
       ...defaultTheme.screens,
+      tv: "2000px",
     },
     backgroundPosition: {
       "p-double-50": "50% 50%",
