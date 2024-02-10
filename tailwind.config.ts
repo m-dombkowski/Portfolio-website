@@ -50,8 +50,18 @@ const config: Config = {
       "fade-left": "fade-left 3s ease-in-out forwards",
       "fade-right": "fade-right 3s ease-in-out forwards",
       slider: "slider 14s linear infinite",
+      "accordion-down": "accordion-down 0.2s ease-out",
+      "accordion-up": "accordion-up 0.2s ease-out",
     },
     keyframes: {
+      "accordion-down": {
+        from: { height: "0" },
+        to: { height: "var(--radix-accordion-content-height)" },
+      },
+      "accordion-up": {
+        from: { height: "var(--radix-accordion-content-height)" },
+        to: { height: "0" },
+      },
       slider: {
         from: {
           transform: "translate3d(0, 0, 0)",
@@ -116,6 +126,6 @@ const config: Config = {
       "bg-dark-gray": "#282828",
     },
   },
-  plugins: [],
+  plugins: [require("tailwindcss-animate")],
 };
 export default config;

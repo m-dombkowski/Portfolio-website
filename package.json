@@ -16,6 +16,9 @@
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@lottiefiles/lottie-player": "^2.0.2",
     "@lottiefiles/react-lottie-player": "^3.5.3",
+    "@radix-ui/react-dialog": "^1.0.5",
+    "@radix-ui/react-hover-card": "^1.0.7",
+    "@radix-ui/react-tooltip": "^1.0.7",
     "@studio-freight/lenis": "^1.0.33",
     "cal-sans": "^1.0.1",
     "clsx": "^2.1.0",
@@ -28,7 +31,9 @@
     "react-dom": "^18",
     "react-simple-typewriter": "^5.0.1",
     "sass": "^1.69.7",
-    "swiper": "^11.0.5"
+    "swiper": "^11.0.5",
+    "tailwind-merge": "^2.2.1",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@types/node": "^20",
