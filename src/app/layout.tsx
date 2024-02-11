@@ -10,8 +10,11 @@ import Navigation from "./components/navigation/navigation";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import { faSpotify } from "@fortawesome/free-brands-svg-icons";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import MobileNav from "./components/navigation/mobile-nav/mobile-nav";
+import useWindowDimensions from "./hooks/useWindowDimension";
+import { Device } from "./lib/definitions/enums";
+import { ScreenSizeContext } from "./lib/context/screenSize";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -29,8 +32,9 @@ export default function RootLayout({
 }) {
   const path = usePathname();
   const mobileNavRef = useRef<HTMLDivElement>(null);
-
+  const { width } = useWindowDimensions();
   const { scrollY } = useScroll();
+  const [deviceType, setDeviceType] = useState<Device>(Device.NONE);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     if (latest >= 250 && mobileNavRef.current) {
@@ -41,21 +45,32 @@ export default function RootLayout({
     }
   });
 
+  useEffect(() => {
+    if (width < 1025) {
+      setDeviceType(Device.MOBILE);
+    } else {
+      setDeviceType(Device.DESKTOP);
+    }
+    console.log(width);
+  }, [width]);
+
   library.add(fas, faSpotify);
 
   return (
     <html lang="en" className={[inter.variable, calSans.variable].join(" ")}>
       <SmoothScroll>
-        <body>
-          <Navigation currentPath={path} />
-          <div
-            className="opacity-0 transition-opacity duration-300"
-            ref={mobileNavRef}
-          >
-            <MobileNav />
-          </div>
-          <AnimatePresence mode="wait">{children}</AnimatePresence>
-        </body>
+        <ScreenSizeContext.Provider value={deviceType}>
+          <body>
+            <Navigation currentPath={path} />
+            <div
+              className="opacity-0 transition-opacity duration-300"
+              ref={mobileNavRef}
+            >
+              <MobileNav />
+            </div>
+            <AnimatePresence mode="wait">{children}</AnimatePresence>
+          </body>
+        </ScreenSizeContext.Provider>
       </SmoothScroll>
     </html>
   );
