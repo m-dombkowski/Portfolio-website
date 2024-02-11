@@ -1,5 +1,6 @@
 import { MotionValue } from "framer-motion";
 import { StaticImageData } from "next/image";
+import React, { ReactElement } from "react";
 
 export type NavDataType = {
   href: string;
@@ -44,4 +45,5 @@ export type TechStackDataType = {
   name: string;
   usecase: string[];
   tooltip: string;
+  svg: React.ReactElement<SVGSVGElement>;
 };

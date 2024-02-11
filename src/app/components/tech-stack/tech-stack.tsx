@@ -33,7 +33,12 @@ export default function TechStack({
               {deviceType === "desktop" ? (
                 <TooltipProvider>
                   <Tooltip>
-                    <TooltipTrigger>{data.name}</TooltipTrigger>
+                    <TooltipTrigger>
+                      <div className="flex flex-col justify-center items-center gap-5">
+                        <div className="w-[48px] h-100">{data.svg}</div>
+                        {data.name}
+                      </div>
+                    </TooltipTrigger>
                     <TooltipContent>
                       <p>{data.tooltip}</p>
                     </TooltipContent>
