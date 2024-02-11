@@ -9,7 +9,7 @@ export const techData: TechStackDataType[] = [
   {
     name: "React",
     usecase: ["commercial", "personal"],
-    tooltip: "2 years",
+    tooltip: "1.5 years",
   },
   {
     name: "Typescript",
@@ -29,32 +29,32 @@ export const techData: TechStackDataType[] = [
   {
     name: "Javasript",
     usecase: ["commercial", "personal"],
-    tooltip: "2 years",
+    tooltip: "1.5 years",
   },
   {
     name: "CSS",
     usecase: ["commercial"],
-    tooltip: "2 years",
+    tooltip: "1.5 years",
   },
   {
     name: "SCSS",
     usecase: ["commercial", "personal"],
-    tooltip: "1.5 ys",
+    tooltip: "1.5 years",
   },
   {
     name: "Tailwind",
     usecase: ["personal"],
-    tooltip: "0.5 y",
+    tooltip: "0.5 year",
   },
   {
     name: "HTML",
     usecase: ["commercial"],
-    tooltip: "2 years",
+    tooltip: "1.5 years",
   },
   {
     name: "Git",
     usecase: ["commercial", "personal"],
-    tooltip: "2 years",
+    tooltip: "1.5 years",
   },
   {
     name: "Supabase",
@@ -69,6 +69,6 @@ export const techData: TechStackDataType[] = [
   {
     name: "Firebase",
     usecase: ["personal"],
-    tooltip: "2 years",
+    tooltip: "1.5 years",
   },
 ];

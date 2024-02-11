@@ -6,37 +6,24 @@ import PageWrapper from "../components/transitions/fade";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpotify } from "@fortawesome/free-brands-svg-icons/faSpotify";
 import Link from "next/link";
-import { motion, useInView, useScroll } from "framer-motion";
+import { motion, useScroll } from "framer-motion";
 import { anim, opacityWithDelay } from "../lib/anim";
-import { useEffect, useRef, useState } from "react";
+import { useContext, useRef } from "react";
 import { Player } from "@lottiefiles/react-lottie-player";
-import useWindowDimensions from "../hooks/useWindowDimension";
 import SpotifyLink from "../components/spotify-link/spotify-link";
-import { Device } from "../lib/definitions/enums";
 import GalleryDesktop from "../components/gallery/gallery-desktop";
 import GalleryMobile from "../components/gallery/gallery-mobile";
 import ParallaxGallery from "../components/gallery/parallax-gallery/gallery";
+import { ScreenSizeContext } from "../lib/context/screenSize";
 
 export default function AboutPage() {
   const descContainer = useRef<HTMLDivElement>(null);
   const sptofiyContainer = useRef<HTMLDivElement>(null);
   const galleryTitleContainer = useRef<HTMLDivElement>(null);
-  const isDescInView = useInView(descContainer);
-  const isSpotifyInView = useInView(sptofiyContainer);
-  const isGalleryInView = useInView(galleryTitleContainer);
-  const [deviceType, setDeviceType] = useState<Device>(Device.NONE);
+
+  const deviceType = useContext(ScreenSizeContext);
 
   const { scrollYProgress } = useScroll();
-
-  const { width } = useWindowDimensions();
-  useEffect(() => {
-    if (width < 1025) {
-      setDeviceType(Device.MOBILE);
-    } else {
-      setDeviceType(Device.DESKTOP);
-    }
-    console.log(width);
-  }, [width]);
 
   return (
     <PageWrapper>

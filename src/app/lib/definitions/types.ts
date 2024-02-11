@@ -43,5 +43,5 @@ export type CardParallaxDataType = {
 export type TechStackDataType = {
   name: string;
   usecase: string[];
-  tooltip?: string;
+  tooltip: string;
 };
