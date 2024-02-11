@@ -4,7 +4,12 @@ import "./globals.css";
 import SmoothScroll from "./components/smooth-scroll/smooth-scroll";
 import LocalFont from "next/font/local";
 import "cal-sans";
-import { AnimatePresence, useMotionValueEvent, useScroll } from "framer-motion";
+import {
+  AnimatePresence,
+  motion,
+  useMotionValueEvent,
+  useScroll,
+} from "framer-motion";
 import { usePathname } from "next/navigation";
 import Navigation from "./components/navigation/navigation";
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -54,6 +59,8 @@ export default function RootLayout({
     console.log(width);
   }, [width]);
 
+  const { scrollYProgress } = useScroll();
+
   library.add(fas, faSpotify);
 
   return (
@@ -61,6 +68,10 @@ export default function RootLayout({
       <SmoothScroll>
         <ScreenSizeContext.Provider value={deviceType}>
           <body>
+            <motion.div
+              className="fixed top-0 h-[10px] left-0 right-0 origin-[0%] bg-color-text-darker z-[999]"
+              style={{ scaleX: scrollYProgress }}
+            />
             <Navigation currentPath={path} />
             <div
               className="opacity-0 transition-opacity duration-300"

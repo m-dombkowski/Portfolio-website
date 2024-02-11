@@ -23,15 +23,9 @@ export default function AboutPage() {
 
   const deviceType = useContext(ScreenSizeContext);
 
-  const { scrollYProgress } = useScroll();
-
   return (
     <PageWrapper>
       <section className="flex flex-col justify-center items-center  m-[auto] text-center ">
-        <motion.div
-          className="fixed top-0 h-[10px] left-0 right-0 origin-[0%] bg-color-text-darker z-[999]"
-          style={{ scaleX: scrollYProgress }}
-        />
         <div className="max-w-[600px] lg:max-w-[900px] pb-32">
           <div className="flex justify-center flex-col gap-10 pb-20 lg:pb-0">
             <div className="flex flex-col gap-6 mb-20">
