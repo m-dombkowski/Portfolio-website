@@ -26,16 +26,21 @@ export default function TechStack({
   const deviceType = useContext(ScreenSizeContext);
   return (
     <motion.div {...anim(opacity, null)} className="pt-20">
-      <ul className="flex gap-16 flex-wrap justify-center">
+      <ul className="flex gap-16 flex-wrap justify-center items-center">
         {filteredData.map((data, index) => {
           return (
-            <div key={index}>
+            <div
+              key={index}
+              className="min-w-[105px] flex justify-center align-center"
+            >
               {deviceType === "desktop" ? (
                 <TooltipProvider>
                   <Tooltip>
                     <TooltipTrigger>
                       <div className="flex flex-col justify-center items-center gap-5">
-                        <div className="w-[48px] h-100">{data.svg}</div>
+                        <div className="p-4 bg-[#fff] rounded-full">
+                          <div className="w-[48px] h-[48px]">{data.svg}</div>
+                        </div>
                         {data.name}
                       </div>
                     </TooltipTrigger>
@@ -46,8 +51,13 @@ export default function TechStack({
                 </TooltipProvider>
               ) : (
                 <Dialog>
-                  <DialogTrigger className="text-xs bg-zinc-900 rounded-full px-[0.75rem] py-[0.5rem] sm:px-3 sm:py-2 sm:px-6 sm:py-3 sm:gap-6 sm:text-base border border-color-text-darker border-2">
-                    {data.name}
+                  <DialogTrigger>
+                    <div className="flex flex-col justify-center items-center gap-5">
+                      <div className="p-4 bg-[#fff] rounded-full">
+                        <div className="w-[48px] h-[48px]">{data.svg}</div>
+                      </div>
+                      {data.name}
+                    </div>
                   </DialogTrigger>
                   <DialogContent>
                     <DialogHeader>

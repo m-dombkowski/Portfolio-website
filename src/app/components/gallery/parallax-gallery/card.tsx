@@ -41,7 +41,7 @@ const Card = ({
       className="h-[100vh] flex items-center justify-center sticky top-0 font-calc"
     >
       <motion.div
-        className="flex flex-col relative h-[500px] w-[300px] rounded-lg p-10 transform-origin-top sm:w-[500px] lg:w-[900px]"
+        className="flex flex-col relative h-[500px] w-[300px] xs2:w-[375px] xs3:w-[450px] rounded-lg p-10 transform-origin-top sm:w-[550px] lg:w-[900px]"
         style={{
           backgroundColor: color,
           scale,

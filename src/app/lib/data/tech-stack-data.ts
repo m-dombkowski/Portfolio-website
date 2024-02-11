@@ -70,7 +70,7 @@ export const techData: TechStackDataType[] = [
     svg: SassSvg(),
   },
   {
-    name: "Tailwind",
+    name: "Tailwind CSS",
     usecase: ["personal"],
     tooltip: "0.5 year",
     svg: TailwindSvg(),

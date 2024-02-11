@@ -40,16 +40,17 @@ export default function WorkPage() {
 
   return (
     <PageWrapper>
-      <section className="flex justify-center items-center flex-col max-w-[700px] m-auto font-calc">
+      <section className="px-10 flex justify-center items-center flex-col max-w-[700px] xl:max-w-[900px] m-auto font-calc">
         <div className="max-w-[600px] xl:max-w-[900px] flex justify-center flex-col items-center font-calc">
-          <h1 className="text-4xl pb-10 sm:text-6xl">Day to day tech stack</h1>
+          <h1 className="text-4xl pb-10 sm:text-6xl text-center">
+            Day to day tech stack
+          </h1>
         </div>
-        <div className="flex gap-16">
+        <div className="flex flex-col-reverse gap-8 sm:gap-16 sm:flex-row">
           <TechStackFilters
             chosenUseCase={chosenUseCase}
             handleUseCase={handleUseCase}
           />
-
           <Dialog>
             <DialogTrigger className="text-xs bg-zinc-900 rounded-full px-[0.75rem] py-[0.5rem] sm:px-3 sm:py-2 sm:px-6 sm:py-3 sm:gap-6 sm:text-base border border-color-text-darker border-2">
               Find out more
@@ -58,7 +59,7 @@ export default function WorkPage() {
               <DialogHeader>
                 <DialogTitle>Information</DialogTitle>
                 <DialogDescription>
-                  {`In order to know how long I've been working with certain tech just hover your cursor over it (if on desktop) or click it (if on mobile).`}
+                  {`In order to know how long I've been working with certain technology/tool just hover your cursor over it (if on desktop) or click it (if on mobile).`}
                 </DialogDescription>
               </DialogHeader>
             </DialogContent>
