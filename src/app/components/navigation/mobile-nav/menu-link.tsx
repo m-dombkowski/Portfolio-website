@@ -63,7 +63,7 @@ export default function MenuLink({
           setIsActive(false);
           toggleMenu(false);
         }}
-        className="text-color-text-lighter uppercase text-[7vw] leading-[7.2vw] m-0 tv:text-[5.5vw] tv:leading-[5.7vw]"
+        className="text-color-text-lighter uppercase text-[7vw] leading-[7.2vw] m-0 tv:text-[5.5vw] tv:leading-[5.7vw] w-[100%] text-center"
       >
         {name}
       </Link>
@@ -73,7 +73,7 @@ export default function MenuLink({
       >
         <div
           ref={inner}
-          className="flex bg-[#D3FD50] absolute whitespace-nowrap h-[100%] top-[100%] "
+          className="flex bg-zinc-300-full absolute whitespace-nowrap h-[100%] top-[100%] "
         >
           {[...Array(2)].map((_, index) => {
             return (

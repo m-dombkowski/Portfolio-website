@@ -59,7 +59,7 @@ export default function WorkPage() {
               <DialogHeader>
                 <DialogTitle>Information</DialogTitle>
                 <DialogDescription>
-                  {`In order to know how long I've been working with certain technology/tool just hover your cursor over it (if on desktop) or click it (if on mobile).`}
+                  {`In order to know how long I've been working with certain technology/tool just hover your cursor over it (desktop) or click it (mobile).`}
                 </DialogDescription>
               </DialogHeader>
             </DialogContent>

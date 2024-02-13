@@ -4,8 +4,9 @@ import { Github, Linkedin, Mail } from "lucide-react";
 import Link from "next/link";
 import { Card } from "../components/card/card";
 import PageWrapper from "../components/transitions/fade";
+import { ContactCardType } from "../lib/definitions/types";
 
-const contacts = [
+const contacts: ContactCardType[] = [
   {
     icon: <Github size={32} color="#d4ede4" />,
     href: "https://github.com/m-dombkowski",
@@ -31,7 +32,7 @@ export default function ContactPage() {
     <PageWrapper>
       <section className="flex flex-col justify-center">
         <div className="flex justify-center">
-          <h1 className="text-3xl mb-16 font-calc lg:text-5xl text-center px-8 md:px-0 xl:text-6xl text-color-text-lighter">{`Choose the way to connect that suits you best`}</h1>
+          <h1 className="text-3xl mb-16 font-calc lg:text-5xl text-center px-8 md:px-0 xl:text-6xl text-color-text-primary">{`Choose the way to connect that suits you best`}</h1>
         </div>
         <div className="container flex items-center justify-center px-4 mx-auto font-sans text-center">
           <div className="grid w-full grid-cols-1 gap-8 mx-auto mb-8 sm:mt-0 sm:grid-cols-3 lg:mt-16 lg:gap-16 ">

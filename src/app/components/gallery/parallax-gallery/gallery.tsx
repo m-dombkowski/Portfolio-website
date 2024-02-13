@@ -12,7 +12,10 @@ export default function ParallaxGallery() {
     offset: ["start start", "end end"],
   });
   return (
-    <main ref={container} className="my-[-100px] sm:mb-[-50px] lg:mb-0">
+    <main
+      ref={container}
+      className="my-[-100px] sm:mb-[-50px] lg:mb-0 lg:mt-[-150px]"
+    >
       {cards.map((card, i) => {
         const targetScale = 1 - (cards.length - i) * 0.05;
         return (

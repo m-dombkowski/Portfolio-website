@@ -117,18 +117,27 @@ export const slideLeft = {
   }),
   // exit: { x: "15px", opacity: 0 },
 };
+export const slideRight = {
+  initial: { x: "15px", opacity: 0 },
+  open: (i: number) => ({
+    x: 0,
+    opacity: 1,
+    transition: { duration: 0.5, delay: i },
+  }),
+  exit: { x: "15px", opacity: 0 },
+};
 
 export const slideUp = {
-  initial: { y: "15px", opacity: "0" },
+  initial: { y: "25px", opacity: "0" },
   open: (i: number) => ({
     y: 0,
     opacity: 1,
     transition: { duration: 0.5, delay: 0.75 * i },
   }),
-  // exit: {
-  //   y: "15px",
-  //   opacity: 0,
-  // },
+  exit: {
+    y: "25px",
+    opacity: 0,
+  },
 };
 
 export const expand = {
