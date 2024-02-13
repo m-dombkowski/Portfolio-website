@@ -38,10 +38,18 @@ export default function RootLayout({
   const path = usePathname();
   const mobileNavRef = useRef<HTMLDivElement>(null);
   const { width } = useWindowDimensions();
-  const { scrollY } = useScroll();
+  const { scrollY, scrollYProgress } = useScroll();
   const [deviceType, setDeviceType] = useState<Device>(Device.NONE);
+  const [scrollValue, setScrollValue] = useState<number>(0);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
+    if (scrollValue === 0) {
+      setScrollValue(latest);
+    }
+    if (latest === 0) {
+      setScrollValue(0);
+    }
+
     if (latest >= 250 && mobileNavRef.current) {
       mobileNavRef.current.style.opacity = "1";
     }
@@ -56,10 +64,7 @@ export default function RootLayout({
     } else {
       setDeviceType(Device.DESKTOP);
     }
-    console.log(width);
   }, [width]);
-
-  const { scrollYProgress } = useScroll();
 
   library.add(fas, faSpotify);
 
@@ -68,10 +73,12 @@ export default function RootLayout({
       <SmoothScroll>
         <ScreenSizeContext.Provider value={deviceType}>
           <body>
-            <motion.div
-              className="fixed top-0 h-[10px] left-0 right-0 origin-[0%] bg-color-text-darker z-[999]"
-              style={{ scaleX: scrollYProgress }}
-            />
+            {scrollValue === 0 ? null : (
+              <motion.div
+                className="fixed top-0 h-[10px] left-0 right-0 origin-[0%] bg-color-text-darker z-[999]"
+                style={{ scaleX: scrollYProgress }}
+              />
+            )}
             <Navigation currentPath={path} />
             <div
               className="opacity-0 transition-opacity duration-300"
