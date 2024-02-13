@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { anim, opacity } from "../../lib/anim";
+import { anim, opacity, slideUp } from "../../lib/anim";
 import { useContext } from "react";
 import { ScreenSizeContext } from "@/app/lib/context/screenSize";
 import {
@@ -25,12 +25,13 @@ export default function TechStack({
 }) {
   const deviceType = useContext(ScreenSizeContext);
   return (
-    <motion.div {...anim(opacity, null)} className="pt-20">
+    <div className="pt-20">
       <ul className="flex gap-16 flex-wrap justify-center items-center">
         {filteredData.map((data, index) => {
           return (
-            <div
-              key={index}
+            <motion.div
+              {...anim(slideUp, index * 0.1)}
+              key={`k_${Math.random()}`} // passing math random because if key is the same (like when index is passed) then the anim function will only animate elements with new "key" so basicaly only if  array will expand
               className="min-w-[105px] flex justify-center align-center"
             >
               {deviceType === "desktop" ? (
@@ -67,10 +68,10 @@ export default function TechStack({
                   </DialogContent>
                 </Dialog>
               )}
-            </div>
+            </motion.div>
           );
         })}
       </ul>
-    </motion.div>
+    </div>
   );
 }
