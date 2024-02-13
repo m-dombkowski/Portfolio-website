@@ -1,6 +1,13 @@
 import { MotionValue } from "framer-motion";
 import { StaticImageData } from "next/image";
-import React, { ReactElement } from "react";
+import React from "react";
+
+export type ContactCardType = {
+  icon: JSX.Element;
+  href: string;
+  description: string;
+  label: string;
+};
 
 export type NavDataType = {
   href: string;
