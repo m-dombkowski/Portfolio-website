@@ -23,6 +23,7 @@ import GalleryDesktop from "../components/gallery/gallery-desktop";
 import GalleryMobile from "../components/gallery/gallery-mobile";
 import ParallaxGallery from "../components/gallery/parallax-gallery/gallery";
 import { ScreenSizeContext } from "../lib/context/screenSize";
+import SliderText from "../components/slider-text/slider-text";
 
 export default function AboutPage() {
   const helloContainer = useRef<HTMLDivElement>(null);
@@ -88,13 +89,13 @@ export default function AboutPage() {
                   >
                     <motion.p
                       {...animByBoolean(slideRight, helloDescInView, 0.3)}
-                    >{`Even though I wrote my first "Hello World" somewhere around 2020/2021 it all started long time ago around 2014 in the game called World of Warcraft where I met 3 guys that after few years would've started pushing me to check this thing called Javascript and later kept on pushing to not leave it and keep grinding.`}</motion.p>
+                    >{`Even though I wrote my first "Hello World" somewhere around 2019/2020 it all started long time ago around 2014 in the game called World of Warcraft where I met 3 guys who after few years started pushing me to check this thing called Javascript and later kept on pushing to not leave it and keep grinding.`}</motion.p>
                     <motion.p
                       {...animByBoolean(slideRight, helloDescInView, 0.6)}
-                    >{`In 2021 I decided to switch my carrer path and after a bit over 1 year of commitment, hard work it paid off and i landed my first job as a frontend developer.`}</motion.p>
+                    >{`In 2021 I decided to switch my carrer path and after a bit over a year of commitment and hard work it paid off and I landed my first commercial job as a Frontend Developer.`}</motion.p>
                     <motion.p
                       {...animByBoolean(slideRight, helloDescInView, 0.9)}
-                    >{`My main goal is to always create pixel perfect, engaging and accessible experience wheter it's a private project, commercial work or freelance job.`}</motion.p>
+                    >{`My main goal is to always create pixel perfect, engaging and accessible experience wheter it's a private or commercial project.`}</motion.p>
                   </div>
                 </div>
               </div>
@@ -138,9 +139,9 @@ export default function AboutPage() {
             ref={foodGalleryContainer}
             {...animByBoolean(slideUp, foodInView, 1)}
           >
-            <h1 className="font-calc text-4xl flex justify-center items-center  sm:text-6xl px-6">
-              Fancy something sweet?
-            </h1>
+            <div className="pb-10 font-calc text-color-text-primary text-5xl sm:text-7xl lg:text-9xl 2xl:text-[11rem]">
+              <SliderText />
+            </div>
             {deviceType === "desktop" && (
               <div className="flex justify-center items-center pt-20">
                 <Player
