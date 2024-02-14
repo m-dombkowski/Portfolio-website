@@ -64,7 +64,7 @@ export default function GalleryDesktop() {
   ];
 
   return (
-    <div ref={container} className="h-[300vh] relative mt-[25vh] mb-[100vh]">
+    <div ref={container} className="h-[300vh] relative mt-[25vh] mb-[50vh]">
       <div className="sticky overflow-hidden top-0 h-[100vh]">
         {pictures.map(({ source, scale, alt }, index) => {
           return (
