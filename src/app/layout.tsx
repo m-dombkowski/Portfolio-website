@@ -1,7 +1,7 @@
 "use client";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import SmoothScroll from "./components/smooth-scroll/smooth-scroll";
+import SmoothScroll from "./lib/smooth-scroll/smooth-scroll";
 import LocalFont from "next/font/local";
 import "cal-sans";
 import {

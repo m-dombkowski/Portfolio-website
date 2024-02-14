@@ -29,7 +29,7 @@ export const cards: CardParallaxDataType[] = [
     description:
       "Outside of my work time I enjoy good coffee, tea. You can also find me ice skating durning winter, roller skating durning summer, occasionally hiking or doing something I fell in love with last year, baking.",
     src: Winter,
-    alt: "person on top of a mountain durning winter",
+    alt: "author on top of a mountain durning winter",
     color: "#3e5f54",
   },
   {
@@ -37,7 +37,7 @@ export const cards: CardParallaxDataType[] = [
     description:
       "Guess I fell in love with baking because simillar as in programming you can create something from almost nothing and you're able to see the growth and development of your project wheter it's a cake or appliaction. Other than that I really love metalcore and dogs. Actually planning on getting/adopting one myself this year. Pictured my friend's dog, Bafi <3",
     src: Bafi,
-    alt: "cutest puppy face",
+    alt: "cutest puppy face you've ever seen",
     color: "#314c43",
   },
 ];
