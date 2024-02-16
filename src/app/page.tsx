@@ -19,7 +19,7 @@ export default function HomePage() {
           >
             <motion.p
               className="mb-2 text-2xl"
-              {...animByBoolean(slideUp, isInView, 0.6)}
+              {...animByBoolean(slideUp, isInView, 0.4)}
             >
               Hey there! My name is{" "}
             </motion.p>
@@ -29,41 +29,42 @@ export default function HomePage() {
             >
               Mateusz Dombkowski
             </motion.h1>
+            <div className="max-w-[500px] flex flex-col justify-center items-center m-auto gap-3 lg:gap-5  lg:m-0 lg:items-flex-start lg:max-w-[unset]">
+              <motion.p
+                className="xl:max-w-[750px]"
+                {...animByBoolean(slideUp, isInView, 0.8)}
+              >
+                {`I'm a Devloper passionate about everything code related with a focus on Frontend, especially `}
+                <span className="text-color-text-darker">
+                  <Link href="/work">React, Next.js, Typescript</Link>
+                </span>
+                {`.`}
+              </motion.p>
+              <motion.p {...animByBoolean(slideUp, isInView, 1.2)}>
+                {`Outside of work I'm a big fan of `}
+                <span className="text-color-text-darker">
+                  <Typewriter
+                    words={["baking.", "gaming.", "dogs 🐕."]}
+                    loop={false}
+                  />
+                </span>
+              </motion.p>
+              <motion.p {...animByBoolean(slideUp, isInView, 1.6)}>
+                {`More about me can be found `}
+                <span className="text-color-text-darker">
+                  <Link href="/about">here</Link>
+                </span>
+                {`.`}
+              </motion.p>
 
-            <motion.p
-              className="xl:max-w-[750px]"
-              {...animByBoolean(slideUp, isInView, 1.2)}
-            >
-              {`I'm a Devloper passionate about everything code related with a focus on Frontend, especially React, Next.js, Typescript.`}
-            </motion.p>
-            <motion.span
-              className="max-w-[245px] block m-[auto] sm:max-w-[unset] sm:m-[unset]"
-              {...animByBoolean(slideUp, isInView, 1.8)}
-            >
-              {`  I also love baking but more about that on `}
-              <span className="text-light-brown">
-                <Link href="/about">another</Link>
-              </span>
-              {" page."}
-            </motion.span>
-
-            <motion.p
-              className="lg:min-w-[720px]"
-              {...animByBoolean(slideUp, isInView, 2.4)}
-            >
-              At the moment looking for a new full-time position as a{" "}
-              <span className="text-color-text-darker">
-                <Typewriter
-                  words={[
-                    "Frontend Developer.",
-                    "Frontend Engineer.",
-                    "React Developer.",
-                    "React Engineer.",
-                  ]}
-                  loop={false}
-                />
-              </span>
-            </motion.p>
+              <motion.p {...animByBoolean(slideUp, isInView, 2)}>
+                {`At the moment looking for a new full-time position as a `}
+                <span className="text-color-text-darker">
+                  <Link href="/contact">Frontend Developer</Link>
+                </span>
+                {`.`}
+              </motion.p>
+            </div>
           </div>
         </div>
         {/* <motion.div className="flex flex-col gap-20 min-h-[450px] justify-center items-center lg:min-h-screen sm:min-h-[50vh] md:min-h-[90vh]">
