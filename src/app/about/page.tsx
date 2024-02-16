@@ -24,6 +24,7 @@ import GalleryMobile from "../components/gallery/gallery-mobile";
 import ParallaxGallery from "../components/gallery/parallax-gallery/gallery";
 import { ScreenSizeContext } from "../lib/context/screenSize";
 import SliderText from "../components/slider-text/slider-text";
+import FoodResult from "../components/food-result/food-result";
 
 export default function AboutPage() {
   const helloContainer = useRef<HTMLDivElement>(null);
@@ -64,7 +65,7 @@ export default function AboutPage() {
                       }?w=${width}&q=${quality || 75}`;
                     }}
                   />
-                  <div className="w-[250px] bg-bg-dark-gray h-[120px] flex justify-center items-center gap-5 text-sm sm:w-[375px] sm:gap-8 sm:text-xl">
+                  <div className="w-[250px] bg-bg-dark-gray h-[75px] flex justify-center items-center gap-5 text-sm sm:w-[375px] sm:gap-8 sm:h-[120px] sm:text-xl">
                     <Link
                       target="_blank"
                       href="https://open.spotify.com/user/hevrak?si=3764935cfac041dd"
@@ -81,7 +82,7 @@ export default function AboutPage() {
                 </motion.div>
                 <div className="flex flex-col font-calc justify-center items-center">
                   <h1 className="text-2xl leading-[1.2] sm:text-4xl px-6 mb-12">
-                    Frontend Developer working remotly from Poland, Wrocław.
+                    Frontend Developer working remotely from Poland, Wrocław.
                   </h1>
                   <div
                     ref={helloDescContainer}
@@ -171,6 +172,7 @@ export default function AboutPage() {
             </div>
           )}
         </div>
+        <FoodResult />
       </section>
     </PageWrapper>
   );

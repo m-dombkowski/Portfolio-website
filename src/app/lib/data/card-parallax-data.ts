@@ -9,7 +9,7 @@ export const cards: CardParallaxDataType[] = [
     title: "Beginnings",
     description: `Back in 2021 I decided to give programming a shot.
       I can honestly say that it was hell of a ride tumbling head first into a rabbit hole called Frontend Development.
-      Since then I stared my first commercial work, gained ton of knowledge and learned a lot, however I know it's just a beginning.`,
+      Since then I stared my first commercial work, gained tons of knowledge and learned a lot, however I know it's just a beginning.`,
     src: Start,
     alt: "Screen with some code",
     color: "#568576",
