@@ -29,7 +29,7 @@ export default function HomePage() {
             >
               Mateusz Dombkowski
             </motion.h1>
-            <div className="max-w-[500px] flex flex-col justify-center items-center m-auto gap-3 lg:gap-5  lg:m-0 lg:items-flex-start lg:max-w-[unset]">
+            <div className="max-w-[500px] flex flex-col justify-center items-center m-auto gap-3 lg:gap-5  lg:m-0 lg:max-w-[unset] lg:items-start">
               <motion.p
                 className="xl:max-w-[750px]"
                 {...animByBoolean(slideUp, isInView, 0.8)}
@@ -44,7 +44,7 @@ export default function HomePage() {
                 {`Outside of work I'm a big fan of `}
                 <span className="text-color-text-darker">
                   <Typewriter
-                    words={["baking.", "gaming.", "dogs 🐕."]}
+                    words={["baking.", "gaming.", "dogs 🐕.", "metalcore."]}
                     loop={false}
                   />
                 </span>
