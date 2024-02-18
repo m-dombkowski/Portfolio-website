@@ -64,23 +64,23 @@ export const hideToLeft = {
   },
   open: {
     opacity: 0,
+    x: "-55px",
 
-    x: "-35px",
     transition: {
-      duration: 0.5,
+      duration: 1,
       ease: [0.33, 1, 0.68, 1],
     },
   },
   exit: {
     opacity: 1,
-    x: 0,
+    x: "0px",
   },
 };
 
 export const bigSlideUp = {
   initial: { y: "-150px", opacity: "0" },
   open: (i: number) => ({
-    y: "-250px",
+    y: "-175px",
     opacity: 1,
     transition: { duration: 0.5, delay: 0.75 * i },
   }),
