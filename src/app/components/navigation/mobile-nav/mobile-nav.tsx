@@ -9,7 +9,7 @@ export default function MobileNav() {
   const [isActive, setIsActive] = useState<boolean>(false);
 
   return (
-    <div>
+    <div className="font-sans">
       <Burger
         toggleMenu={setMenuIsOpen}
         isActive={isActive}

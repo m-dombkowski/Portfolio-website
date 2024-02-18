@@ -2,7 +2,7 @@ import { useState } from "react";
 import PositiveFeedback from "./positive-feedback";
 import NegativeFeedback from "./negative-feedback";
 import { motion } from "framer-motion";
-import { animByBoolean, hideToLeft } from "@/app/lib/anim";
+import { animByBoolean, hideElement } from "@/app/lib/anim";
 import { cn } from "@/app/lib/utils";
 
 enum FoodResultEnum {
@@ -14,14 +14,10 @@ export default function FoodResult() {
   const [hide, setHide] = useState<boolean>(false);
 
   return (
-    <div
-      className={cn(
-        "flex-col flex justify-start items-start relative my-[25vh] min-h-[460px]"
-      )}
-    >
+    <div className="flex-col flex justify-start items-start relative my-[30vh] min-h-[375px] min-w-[650px]">
       <motion.div
-        {...animByBoolean(hideToLeft, hide, null)}
-        className="flex justify-start items-center flex-col mb-[5rem]"
+        {...animByBoolean(hideElement, hide, null)}
+        className="flex justify-start items-center flex-col mx-[auto]"
       >
         <h1 className="text-4xl  sm:text-5xl pb-10">Liked what you saw?</h1>
         <div className="flex gap-10">

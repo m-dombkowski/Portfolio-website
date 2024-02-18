@@ -57,35 +57,31 @@ export const rotateX = {
   },
 };
 
-export const hideToLeft = {
+export const hideElement = {
   initial: {
     opacity: 1,
-    x: 0,
   },
   open: {
     opacity: 0,
-    x: "-55px",
-
     transition: {
-      duration: 1,
+      duration: 0.5,
       ease: [0.33, 1, 0.68, 1],
     },
   },
   exit: {
     opacity: 1,
-    x: "0px",
   },
 };
 
 export const bigSlideUp = {
-  initial: { y: "-150px", opacity: "0" },
+  initial: { y: "-125px", opacity: "0" },
   open: (i: number) => ({
-    y: "-175px",
+    y: "-145px",
     opacity: 1,
     transition: { duration: 0.5, delay: 0.75 * i },
   }),
   exit: {
-    y: "-150px",
+    y: "-125px",
     opacity: 0,
   },
 };
@@ -222,7 +218,7 @@ export const opacity = {
   },
   open: {
     opacity: 1,
-    transition: { duration: 1 },
+    transition: { duration: 0.5 },
   },
   exit: {
     opacity: 0,
