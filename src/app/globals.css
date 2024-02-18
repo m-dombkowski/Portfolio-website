@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: Calc;
+  src: url("../../public/fonts/CalSans-SemiBold.ttf");
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -71,6 +76,7 @@
 
 body {
   color: rgb(var(--foreground-rgb));
+  font-family: "Calc";
   /* background: linear-gradient(
       to bottom,
       transparent,

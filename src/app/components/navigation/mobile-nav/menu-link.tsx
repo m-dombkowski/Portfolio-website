@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { mountAnim, rotateX } from "../../../lib/anim";
 import Link from "next/link";
-import { clsx } from "clsx";
 import gsap from "gsap";
 import { NavDataType } from "@/app/lib/definitions/types";
 import { Dispatch, SetStateAction, useRef } from "react";
