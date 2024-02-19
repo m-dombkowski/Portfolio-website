@@ -7,15 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpotify } from "@fortawesome/free-brands-svg-icons/faSpotify";
 import Link from "next/link";
 import { motion, useInView } from "framer-motion";
-import {
-  anim,
-  animByBoolean,
-  opacity,
-  opacityWithDelay,
-  slideLeft,
-  slideRight,
-  slideUp,
-} from "../lib/anim";
+import { animByBoolean, opacity, slideRight, slideUp } from "../lib/anim";
 import { useContext, useRef } from "react";
 import { Player } from "@lottiefiles/react-lottie-player";
 import SpotifyLink from "../components/spotify-link/spotify-link";

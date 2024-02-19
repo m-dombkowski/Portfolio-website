@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { anim, opacity, slideUp } from "../../lib/anim";
+import { anim, slideUp } from "../../lib/anim";
 import { useContext } from "react";
 import { ScreenSizeContext } from "@/app/lib/context/screenSize";
 import {
