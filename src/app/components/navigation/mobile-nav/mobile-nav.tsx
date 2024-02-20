@@ -1,11 +1,16 @@
-import { useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 import Burger from "./burger";
 import { AnimatePresence } from "framer-motion";
 import StairsNavTransition from "../../transitions/stairs-nav";
 import Menu from "./menu";
 
-export default function MobileNav() {
-  const [menuIsOpen, setMenuIsOpen] = useState<boolean>(false);
+export default function MobileNav({
+  menuIsOpen,
+  setMenuIsOpen,
+}: {
+  menuIsOpen: boolean;
+  setMenuIsOpen: Dispatch<SetStateAction<boolean>>;
+}) {
   const [isActive, setIsActive] = useState<boolean>(false);
 
   return (

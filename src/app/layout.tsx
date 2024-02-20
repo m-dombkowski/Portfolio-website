@@ -42,15 +42,22 @@ export default function RootLayout({
   const { width } = useWindowDimensions();
   const { scrollY } = useScroll();
   const [deviceType, setDeviceType] = useState<Device>(Device.NONE);
+  const [menuIsOpen, setMenuIsOpen] = useState<boolean>(false);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
-    if (latest >= 200 && mobileNavRef.current) {
+    if (latest >= 250 && mobileNavRef.current && !menuIsOpen) {
       mobileNavRef.current.style.opacity = "1";
     }
-    if (latest < 200 && mobileNavRef.current) {
+    if (latest < 250 && mobileNavRef.current && !menuIsOpen) {
       mobileNavRef.current.style.opacity = "0";
     }
   });
+
+  useEffect(() => {
+    if (scrollY.getPrevious() < 250 && mobileNavRef.current && !menuIsOpen) {
+      mobileNavRef.current.style.opacity = "0";
+    }
+  }, [menuIsOpen, scrollY]);
 
   useEffect(() => {
     if (width < 1025) {
@@ -73,7 +80,10 @@ export default function RootLayout({
               className="opacity-0 transition-opacity duration-300"
               ref={mobileNavRef}
             >
-              <MobileNav />
+              <MobileNav
+                menuIsOpen={menuIsOpen}
+                setMenuIsOpen={setMenuIsOpen}
+              />
             </div>
             <AnimatePresence mode="wait">{children}</AnimatePresence>
             <Footer />
