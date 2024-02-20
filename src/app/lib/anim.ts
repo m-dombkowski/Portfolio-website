@@ -168,6 +168,18 @@ export const slideUp = {
     opacity: 0,
   },
 };
+export const slideDown = {
+  initial: { y: "-25px", opacity: "0" },
+  open: (i: number) => ({
+    y: 0,
+    opacity: 1,
+    transition: { duration: 0.5, delay: 0.15 * i },
+  }),
+  exit: {
+    y: "-25px",
+    opacity: 0,
+  },
+};
 
 export const expand = {
   initial: {

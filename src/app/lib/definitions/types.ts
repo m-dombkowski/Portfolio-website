@@ -54,3 +54,14 @@ export type TechStackDataType = {
   tooltip: string;
   svg: React.ReactElement<SVGSVGElement>;
 };
+
+export type TechStackFooterType = {
+  name: string;
+  technology: string;
+  icon: JSX.Element;
+};
+
+export type ContactFooterType = {
+  name: string;
+  href: string;
+};

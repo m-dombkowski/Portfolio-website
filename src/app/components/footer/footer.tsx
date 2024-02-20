@@ -14,8 +14,15 @@ import {
   VercelSvg,
 } from "@/app/lib/data/tech-stack-svgs";
 import { Typewriter } from "react-simple-typewriter";
+import { motion, useInView } from "framer-motion";
+import { anim, animByBoolean, slideDown, slideUp } from "@/app/lib/anim";
+import {
+  ContactFooterType,
+  TechStackFooterType,
+} from "@/app/lib/definitions/types";
+import { useRef } from "react";
 
-const links = [
+const contactLinks: ContactFooterType[] = [
   {
     name: "CV",
     href: "#",
@@ -39,7 +46,7 @@ const links = [
   },
 ];
 
-const techstack = [
+const techstack: TechStackFooterType[] = [
   {
     name: "Code",
     technology: "Next.js",
@@ -63,8 +70,15 @@ const techstack = [
 ];
 
 export default function Footer() {
+  const footerRef = useRef<HTMLElement>(null);
+  const isFooterInView = useInView(footerRef);
+  // TODO: change padding top (put it to page itself as margin/padding bottom) so it can be animated
   return (
-    <footer className="m-auto flex justify-center items-center py-32 gap-20 flex-col xl:flex-row xl:gap-32 xl:items-start">
+    <motion.footer
+      ref={footerRef}
+      {...animByBoolean(slideUp, isFooterInView, null)}
+      className="m-auto flex justify-center items-center py-32 gap-20 flex-col xl:flex-row xl:gap-32 xl:items-start"
+    >
       <div className="flex flex-col gap-10 items-center">
         <div className="w-[250px] bg-bg-dark-gray h-[75px] flex justify-center items-center gap-5 text-sm sm:w-[350px] sm:gap-12 sm:h-[120px] sm:text-xl rounded-full">
           <Link
@@ -75,7 +89,7 @@ export default function Footer() {
             <FontAwesomeIcon size="3x" color="#8fdcc2" icon={faSpotify} />
           </Link>
 
-          <div className="text-xs sm:text-sm lg">
+          <div className="text-xs sm:text-sm lg:text-base">
             <span className="pb-1 inline-block">
               On repeat
               <Typewriter
@@ -98,14 +112,18 @@ export default function Footer() {
                 Technologies
               </HoverCardTrigger>
               <HoverCardContent>
-                <h1 className="text-xl mb-5 text-center">
+                <motion.h1
+                  {...anim(slideDown, null)}
+                  className="text-xl mb-5 text-center"
+                >
                   Technologies and tools used to build this website
-                </h1>
+                </motion.h1>
                 <div className="flex gap-10 flex-col sm:flex-row">
                   <ul className="flex flex-col justify-between gap-4 text-base ">
                     {techstack.map((tech, index) => {
                       return (
-                        <li
+                        <motion.li
+                          {...anim(slideDown, index + 3)}
                           key={index}
                           className="flex items-center gap-3 w-[200px]"
                         >
@@ -117,11 +135,14 @@ export default function Footer() {
                           <span className="my-auto">
                             {`${tech.name}: ${tech.technology}`}
                           </span>
-                        </li>
+                        </motion.li>
                       );
                     })}
                   </ul>
-                  <div className="flex flex-col gap-5 text-lg">
+                  <motion.div
+                    {...anim(slideDown, 7)}
+                    className="flex flex-col gap-5 text-lg"
+                  >
                     <p>
                       CalcSans and Inter used as fonts. Animations made with
                       Framer Motion and Green Sock a.k.a GSAP.
@@ -135,7 +156,7 @@ export default function Footer() {
                         repository
                       </Link>
                     </p>
-                  </div>
+                  </motion.div>
                 </div>
               </HoverCardContent>
             </HoverCard>
@@ -146,7 +167,7 @@ export default function Footer() {
         <div className="flex flex-col items-center lg:items-start">
           <h1 className="text-3xl mb-10">Contact info</h1>
           <ul className="flex flex-col gap-5 items-center lg:items-start">
-            {links.map((link, index) => {
+            {contactLinks.map((link, index) => {
               return (
                 <li key={index} className="text-xl">
                   <Link
@@ -162,12 +183,14 @@ export default function Footer() {
           </ul>
         </div>
         <div className="max-w-[500px] px-10 lg:px-0">
-          <h1 className="text-3xl mb-10 text-center">Recruitment status</h1>
+          <h1 className="text-3xl mb-10 text-center xl:text-left">
+            Recruitment status
+          </h1>
           <p className="text-sm text-justify leading-8 sm:text-lg">
-            {`Always opened and happy for a chat, if you're looking for a Frontend Developer for a role on site or hybrid model in Wroclaw/Krakow or remotely anywhere in Poland feel free to contact me the way that suits you best. I'm always open for a new opportunities so if the work would be in any other "big" polish city or abroad I will consider reloacation.`}
+            {`Always happy and open for a chat, if you're looking for a Frontend Developer for a role on site or hybrid model in Wroclaw/Krakow or remotely anywhere in Poland feel free to contact me the way that suits you best. I'm always open for a new opportunities so if the work would be in any other "big" polish city or abroad I will consider reloacation.`}
           </p>
         </div>
       </div>
-    </footer>
+    </motion.footer>
   );
 }
