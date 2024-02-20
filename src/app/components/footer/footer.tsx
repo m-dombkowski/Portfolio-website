@@ -184,11 +184,14 @@ export default function Footer() {
         </div>
         <div className="max-w-[500px] px-10 lg:px-0">
           <h1 className="text-3xl mb-10 text-center xl:text-left">
-            Recruitment status
+            Open to work
           </h1>
-          <p className="text-sm text-justify leading-8 sm:text-lg">
-            {`Always happy and open for a chat, if you're looking for a Frontend Developer for a role on site or hybrid model in Wroclaw/Krakow or remotely anywhere in Poland feel free to contact me the way that suits you best. I'm always open for a new opportunities so if the work would be in any other "big" polish city or abroad I will consider reloacation.`}
-          </p>
+          <div className="text-sm text-justify leading-8 sm:text-lg flex flex-col gap-5">
+            <p>
+              {`Always happy and open for a chat, if you're looking for a Frontend Developer for a role on site or hybrid model in Wroclaw/Krakow or remotely anywhere in Poland feel free to contact me the way that suits you best.`}
+            </p>
+            <p>{`I'm always open for a new opportunities so if the offer would be really good but not in stated cities feel free to contact me anyway, I might consider reloacation.`}</p>
+          </div>
         </div>
       </div>
     </motion.footer>
