@@ -1,6 +1,7 @@
 import { animByBoolean, bigSlideUp } from "@/app/lib/anim";
 import { motion } from "framer-motion";
-import { Instagram } from "lucide-react";
+import stopItMeme from "../../../../public/images/feedback/oh-stop-it.jpg";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function PositiveFeedback({
@@ -11,14 +12,21 @@ export default function PositiveFeedback({
   return (
     <motion.div
       {...animByBoolean(bigSlideUp, isTitleHidden, 0)}
-      className="flex flex-col gap-8 justify-center items-center px-10 text-sm sm:text-lg max-w-[650px]"
+      className="flex flex-col gap-8 justify-center items-center px-10 text-sm sm:text-lg max-w-[650px] w-[300px] sm:w-unset m-auto"
     >
       <div>
         <h1 className="text-6xl">Thanks!</h1>
         <h2 className="text-4xl">I really appreciate it.</h2>
       </div>
-      <div className="flex justify-center items-center gap-10">
-        <p className="text-justify">
+      <div className="w-[300px] h-auto sm:w-[400px]">
+        <Image
+          alt="meme showing blushing character"
+          src={stopItMeme}
+          className="w-100 h-100 rounded-lg"
+        />
+      </div>
+      <div className="flex justify-center items-center gap-10 flex-col sm:flex-row">
+        <p className="text-justify text-lg ">
           Feel free to check out my Instagram page where I post (in highlights)
           all of my cooking/baking attempts on making tasty and sweet thingies
         </p>
