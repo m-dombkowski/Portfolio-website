@@ -22,6 +22,7 @@ import { Device } from "./lib/definitions/enums";
 import { ScreenSizeContext } from "./lib/context/screenSize";
 import Footer from "./components/footer/footer";
 import ScrollProgressBar from "./components/scroll-progress-bar/scroll-progress-bar";
+import Cursor from "./components/cursor/cursor";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -74,6 +75,7 @@ export default function RootLayout({
       <SmoothScroll>
         <ScreenSizeContext.Provider value={deviceType}>
           <body>
+            {deviceType === "desktop" && <Cursor />}
             <ScrollProgressBar />
             <Navigation currentPath={path} />
             <div
