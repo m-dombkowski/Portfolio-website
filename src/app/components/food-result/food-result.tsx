@@ -1,9 +1,9 @@
 import { useState } from "react";
-import PositiveFeedback from "./positive-feedback";
 import NegativeFeedback from "./negative-feedback";
 import { AnimatePresence, motion } from "framer-motion";
 import { animByBoolean, hideElement } from "@/app/lib/anim";
-import { cn } from "@/app/lib/utils";
+import Feedback from "./feedback-template";
+import { positiveFeedback } from "@/app/lib/data/feedback-data";
 
 enum FoodResultEnum {
   positive = "positive",
@@ -14,7 +14,7 @@ export default function FoodResult() {
   const [hide, setHide] = useState<boolean>(false);
 
   return (
-    <div className="flex-col flex justify-start items-start relative my-[30vh] min-h-[375px] min-w-[650px]">
+    <div className="flex-col flex justify-start items-start relative mt-[35vh] mb-24 min-h-[375px] min-w-[650px]">
       {!hide && (
         <motion.div
           {...animByBoolean(hideElement, hide, null)}
@@ -45,7 +45,7 @@ export default function FoodResult() {
       )}
 
       {foodResult === FoodResultEnum.positive && (
-        <PositiveFeedback isTitleHidden={hide} />
+        <Feedback hidePreviousFeedback={hide} feedbackData={positiveFeedback} />
       )}
       {foodResult === FoodResultEnum.negative && (
         <NegativeFeedback isTitleHidden={hide} />
