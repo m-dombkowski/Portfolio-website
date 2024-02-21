@@ -65,3 +65,11 @@ export type ContactFooterType = {
   name: string;
   href: string;
 };
+
+export type FeedbackDataType = {
+  title: string;
+  subTitle: string | null;
+  meme: StaticImageData;
+  alt: string;
+  description: string;
+};
