@@ -74,14 +74,14 @@ export const hideElement = {
 };
 
 export const bigSlideUp = {
-  initial: { y: "-125px", opacity: "0" },
+  initial: { y: "-20px", opacity: "0" },
   open: (i: number) => ({
-    y: "-145px",
+    y: "-75px",
     opacity: 1,
     transition: { duration: 0.5, delay: 0.75 * i },
   }),
   exit: {
-    y: "-125px",
+    y: "-20px",
     opacity: 0,
   },
 };

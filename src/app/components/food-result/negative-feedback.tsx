@@ -1,4 +1,10 @@
-import { animByBoolean, bigSlideUp } from "@/app/lib/anim";
+import {
+  anim,
+  animByBoolean,
+  bigSlideUp,
+  hideElement,
+  opacity,
+} from "@/app/lib/anim";
 import { motion } from "framer-motion";
 import KevinChilliGIF from "../../../../public/images/feedback/kevins-famous-chilli.gif";
 import KevinCookiesGIF from "../../../../public/images/feedback/kevin-cookies.gif";
@@ -24,9 +30,9 @@ export default function NegativeFeedback({
   return (
     <motion.div
       {...animByBoolean(bigSlideUp, isTitleHidden, 0)}
-      className="flex flex-col gap-8 justify-center items-center px-10 text-sm sm:text-lg max-w-[650px] w-[330px] sm:w-unset m-auto"
+      className="flex flex-col gap-8 justify-center items-center px-10 text-sm sm:text-lg max-w-[650px] w-[330px] sm:w-[unset] m-auto"
     >
-      {!sorryKevin && <h1 className="text-2xl">Why are you like that?</h1>}
+      {!sorryKevin && <h1 className="text-3xl">Why are you like that?</h1>}
 
       <h2
         className={cn(
@@ -47,14 +53,30 @@ export default function NegativeFeedback({
           Sorry Kevin
         </button>
       )}
+      {!sorryKevin ? (
+        <motion.div
+          {...anim(opacity, null)}
+          className="w-[300px] h-auto sm:w-[480px] relative"
+        >
+          <Image
+            className="w-100 h-100 rounded-lg"
+            alt="Kevin from The Office TV Series"
+            src={KevinChilliGIF}
+          />
+        </motion.div>
+      ) : (
+        <motion.div
+          {...animByBoolean(opacity, sorryKevin, null)}
+          className="w-[300px] h-auto sm:w-[480px] relative"
+        >
+          <Image
+            className="w-100 h-100 rounded-lg"
+            alt="Kevin from The Office TV Series"
+            src={KevinCookiesGIF}
+          />
+        </motion.div>
+      )}
 
-      <div className="w-[300px] h-auto sm:w-[480px] relative">
-        <Image
-          className="w-100 h-100 rounded-lg"
-          alt="Kevin from The Office TV Series"
-          src={!sorryKevin ? KevinChilliGIF : KevinCookiesGIF}
-        />
-      </div>
       <div className="flex gap-5 flex-col sm:flex-row sm:gap-10">
         <button
           onClick={() => {}}
