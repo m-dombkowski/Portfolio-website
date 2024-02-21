@@ -18,7 +18,7 @@ import {
   TypescriptSvg,
   VercelSvg,
   ViteSvg,
-} from "./tech-stack-svgs";
+} from "./svgs";
 
 export const techData: TechStackDataType[] = [
   {

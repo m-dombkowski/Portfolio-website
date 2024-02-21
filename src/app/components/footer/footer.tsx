@@ -12,7 +12,7 @@ import {
   TailwindSvg,
   TypescriptSvg,
   VercelSvg,
-} from "@/app/lib/data/tech-stack-svgs";
+} from "@/app/lib/data/svgs";
 import { Typewriter } from "react-simple-typewriter";
 import { motion, useInView } from "framer-motion";
 import { anim, animByBoolean, slideDown, slideUp } from "@/app/lib/anim";
@@ -77,7 +77,7 @@ export default function Footer() {
     <motion.footer
       ref={footerRef}
       {...animByBoolean(slideUp, isFooterInView, null)}
-      className="m-auto flex justify-center items-center py-32 gap-20 flex-col xl:flex-row xl:gap-32 xl:items-start"
+      className="m-auto flex justify-center items-center my-32 gap-20 flex-col xl:flex-row xl:gap-32 xl:items-start"
     >
       <div className="flex flex-col gap-10 items-center">
         <div className="w-[250px] bg-bg-dark-gray h-[75px] flex justify-center items-center gap-5 text-sm sm:w-[350px] sm:gap-12 sm:h-[120px] sm:text-xl rounded-full">
@@ -90,7 +90,7 @@ export default function Footer() {
           </Link>
 
           <div className="text-xs sm:text-sm lg:text-base">
-            <span className="pb-1 inline-block">
+            <span className="pb-1 inline-block w-[90px]">
               On repeat
               <Typewriter
                 words={[" ..."]}

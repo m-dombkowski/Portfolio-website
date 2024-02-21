@@ -1,10 +1,9 @@
 "use client";
 import Image, { StaticImageData } from "next/image";
-import { CardParallaxDataType } from "@/app/lib/definitions/types";
 import { useRef } from "react";
 import { MotionValue, motion, useScroll, useTransform } from "framer-motion";
 
-const Card = ({
+export default function Card({
   title,
   description,
   src,
@@ -24,7 +23,7 @@ const Card = ({
   progress: MotionValue<number>;
   range: number[];
   targetScale: number;
-}) => {
+}) {
   const container = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: container,
@@ -53,7 +52,7 @@ const Card = ({
         </h2>
         <div className="flex flex-col h-[100%] mt-4 gap-4 lg:flex-row lg:gap-12">
           <div className="w-[100%] top-0 lg:top-[5%] lg:w-[40%] lg:relative">
-            <p className="text-xs text-justify sm:text-sm lg:first-letter:text-4xl lg:text-lg">
+            <p className="text-xs text-justify sm:text-sm lg:first-letter:text-2xl lg:text-lg ">
               {description}
             </p>
           </div>
@@ -61,7 +60,7 @@ const Card = ({
           <div className="relative w-[100%] h-[100%] rounded-xl overflow-hidden lg:w-[60%] shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)]">
             <motion.div
               style={{ scale: imageScale }}
-              className="w-[100%] h-[100%] "
+              className="w-[100%] h-[100%] relative"
             >
               <Image className="object-fit-cover" fill src={src} alt={alt} />
             </motion.div>
@@ -70,6 +69,4 @@ const Card = ({
       </motion.div>
     </div>
   );
-};
-
-export default Card;
+}
