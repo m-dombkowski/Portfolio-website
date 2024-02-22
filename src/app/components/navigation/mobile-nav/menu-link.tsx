@@ -78,7 +78,7 @@ export default function MenuLink({
             return (
               <div
                 key={index}
-                className="flex items-center animate-[slider_14s_linear_infinite] transition-opacity duration-[500ms] relative opacity-0 group-hover:opacity-100"
+                className="flex items-center animate-[slider_14s_linear_infinite] transition-opacity duration-500 relative opacity-0 group-hover:opacity-100"
               >
                 <SliderContent description={description} image={image} />
               </div>
