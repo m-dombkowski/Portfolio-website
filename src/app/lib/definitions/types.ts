@@ -73,3 +73,10 @@ export type FeedbackDataType = {
   alt: string;
   description: string;
 };
+
+export type KevinsDataType = {
+  title: string;
+  subtitle: string | null;
+  gif: StaticImageData;
+  gifAlt: string;
+};
