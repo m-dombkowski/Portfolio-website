@@ -17,14 +17,6 @@ import ParallaxGallery from "../components/gallery/parallax-gallery/gallery";
 import { ScreenSizeContext } from "../lib/context/screenSize";
 import SliderText from "../components/slider-text/slider-text";
 import FoodResult from "../components/food-result/food-result";
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "About me. Mateusz Dombkowski",
-  description:
-    "Page talking about my coding journey but also about what I do in my time off work while not coding",
-  // metadataBase: new URL("https://next-learn-dashboard.vercel.sh"),
-};
 
 export default function AboutPage() {
   const helloContainer = useRef<HTMLDivElement>(null);

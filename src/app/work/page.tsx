@@ -14,13 +14,7 @@ import {
 } from "@/app/components/ui/dialog";
 import TechStack from "../components/tech-stack/tech-stack";
 import TechStackFilters from "../components/tech-stack/tech-stack-filters";
-import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Work. Mateusz Dombkowski",
-  description: "Page where user can see my commercial and private work",
-  // metadataBase: new URL("https://next-learn-dashboard.vercel.sh"),
-};
 
 export default function WorkPage() {
   const [filteredData, setFilteredData] = useState<TechStackDataType[]>([]);
@@ -59,7 +53,7 @@ export default function WorkPage() {
             handleUseCase={handleUseCase}
           />
           <Dialog>
-            <DialogTrigger className="text-xs bg-zinc-900 rounded-full px-[0.75rem] py-[0.5rem] sm:px-3 sm:py-2 sm:px-6 sm:py-3 sm:gap-6 sm:text-base border border-color-text-darker border-2">
+            <DialogTrigger className="text-xs bg-zinc-900 rounded-full px-[0.75rem] py-[0.5rem]  sm:px-6 sm:py-3 sm:gap-6 sm:text-base border-color-text-darker border-2">
               Find out more
             </DialogTrigger>
             <DialogContent>

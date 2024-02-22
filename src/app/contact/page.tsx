@@ -5,13 +5,6 @@ import Link from "next/link";
 import { Card } from "../components/card/card";
 import PageWrapper from "../components/transitions/fade";
 import { ContactCardType } from "../lib/definitions/types";
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Contact. Mateusz Dombkowski",
-  description: "Contact page with different contact options",
-  // metadataBase: new URL("https://next-learn-dashboard.vercel.sh"),
-};
 
 const contacts: ContactCardType[] = [
   {
@@ -53,7 +46,7 @@ export default function ContactPage() {
                     <h1 className="text-3xl mb-5 font-calc text-color-text-lighter">
                       {contact.label}
                     </h1>
-                    <p className="text-lg mb-40 sm:mb-28 sm: text-base text-color-text-lighter">
+                    <p className="text-lg mb-40 sm:mb-28 sm:text-base text-color-text-lighter">
                       {contact.description}
                     </p>
                   </div>
