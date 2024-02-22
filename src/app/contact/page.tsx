@@ -5,6 +5,13 @@ import Link from "next/link";
 import { Card } from "../components/card/card";
 import PageWrapper from "../components/transitions/fade";
 import { ContactCardType } from "../lib/definitions/types";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact. Mateusz Dombkowski",
+  description: "Contact page with different contact options",
+  // metadataBase: new URL("https://next-learn-dashboard.vercel.sh"),
+};
 
 const contacts: ContactCardType[] = [
   {

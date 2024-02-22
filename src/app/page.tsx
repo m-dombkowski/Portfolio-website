@@ -4,6 +4,13 @@ import { opacity, slideUp, animByBoolean } from "./lib/anim";
 import { Typewriter } from "react-simple-typewriter";
 import { useRef } from "react";
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Homepage. Mateusz Dombkowski",
+  description: "Website's Homepage",
+  // metadataBase: new URL("https://next-learn-dashboard.vercel.sh"),
+};
 
 export default function HomePage() {
   const descContainer = useRef<HTMLDivElement>(null);
@@ -14,7 +21,7 @@ export default function HomePage() {
       <main className="flex flex-col items-center justify-center font-calc">
         <div className=" flex flex-col justify-center text-center lg:text-left">
           <div
-            className="mt-32 mb-16 flex flex-col text-sm px-8 gap-3 sm:text-base md:px-40 lg:text-xl lg:px-52 lg:gap-5 xl:p-0 xl: mb-32"
+            className="mt-32 mb-16 flex flex-col text-sm px-8 gap-3 sm:text-base md:px-40 lg:text-xl lg:px-52 lg:gap-5 xl:p-0 xl:mb-32"
             ref={descContainer}
           >
             <motion.p
@@ -42,7 +49,7 @@ export default function HomePage() {
               </motion.p>
               <motion.p {...animByBoolean(slideUp, isInView, 1.2)}>
                 {`Outside of work I'm a big fan of `}
-                <span className="text-color-text-darker">
+                <span className="text-color-text-darker ">
                   <Typewriter
                     words={["baking.", "gaming.", "dogs 🐕.", "metalcore."]}
                     loop={false}
@@ -67,9 +74,6 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-        {/* <motion.div className="flex flex-col gap-20 min-h-[450px] justify-center items-center lg:min-h-screen sm:min-h-[50vh] md:min-h-[90vh]">
-            <Navigation />
-          </motion.div> */}
       </main>
     </>
   );

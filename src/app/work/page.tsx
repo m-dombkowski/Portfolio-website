@@ -14,6 +14,13 @@ import {
 } from "@/app/components/ui/dialog";
 import TechStack from "../components/tech-stack/tech-stack";
 import TechStackFilters from "../components/tech-stack/tech-stack-filters";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Work. Mateusz Dombkowski",
+  description: "Page where user can see my commercial and private work",
+  // metadataBase: new URL("https://next-learn-dashboard.vercel.sh"),
+};
 
 export default function WorkPage() {
   const [filteredData, setFilteredData] = useState<TechStackDataType[]>([]);
