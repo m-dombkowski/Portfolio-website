@@ -8,6 +8,14 @@ import {
   HoverCardTrigger,
 } from "@/app/components/ui/hover-card";
 import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/app/components/ui/dialog";
+import {
   NextSvg,
   TailwindSvg,
   TypescriptSvg,
@@ -107,59 +115,65 @@ export default function Footer() {
         <div className="flex  items-center gap-5 justify-center text flex-col sm:flex-row">
           <p className="text-base sm:text-xl">© 2024 Mateusz Dombkowski</p>
           <div>
-            <HoverCard>
-              <HoverCardTrigger className="underline cursor-pointer">
+            <Dialog>
+              <DialogTrigger className="underline cursor-pointer text-color-text-primary">
                 Technologies
-              </HoverCardTrigger>
-              <HoverCardContent>
-                <motion.h1
-                  {...anim(slideDown, null)}
-                  className="text-xl mb-5 text-center"
-                >
-                  Technologies and tools used to build this website
-                </motion.h1>
-                <div className="flex gap-10 flex-col sm:flex-row">
-                  <ul className="flex flex-col justify-between gap-4 text-base ">
-                    {techstack.map((tech, index) => {
-                      return (
-                        <motion.li
-                          {...anim(slideDown, index + 3)}
-                          key={index}
-                          className="flex items-center gap-3 w-[200px]"
-                        >
-                          <div className="p-2 bg-[#fff] inline-block rounded-full">
-                            <div className="w-[20px] h-[20px] ">
-                              {tech.icon}
-                            </div>
-                          </div>
-                          <span className="my-auto">
-                            {`${tech.name}: ${tech.technology}`}
-                          </span>
-                        </motion.li>
-                      );
-                    })}
-                  </ul>
-                  <motion.div
-                    {...anim(slideDown, 7)}
-                    className="flex flex-col gap-5 text-lg"
-                  >
-                    <p>
-                      CalcSans and Inter used as fonts. Animations made with
-                      Framer Motion and Green Sock a.k.a GSAP.
-                    </p>
-                    <p>
-                      For detailed information and code check{" "}
-                      <Link
-                        target="_blank"
-                        href="https://github.com/m-dombkowski/Portfolio-website"
+              </DialogTrigger>
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle>
+                    <motion.h1
+                      {...anim(slideDown, null)}
+                      className="text-xl mb-5 text-center text-[#fff]"
+                    >
+                      Technologies and tools used to build this website
+                    </motion.h1>
+                  </DialogTitle>
+                  <DialogDescription>
+                    <div className="flex gap-10 flex-col sm:flex-row">
+                      <ul className="flex flex-col justify-between gap-4 text-base ">
+                        {techstack.map((tech, index) => {
+                          return (
+                            <motion.li
+                              {...anim(slideDown, index + 3)}
+                              key={index}
+                              className="flex items-center gap-3 w-[200px]"
+                            >
+                              <div className="p-2 bg-[#fff] inline-block rounded-full">
+                                <div className="w-[20px] h-[20px] ">
+                                  {tech.icon}
+                                </div>
+                              </div>
+                              <span className="my-auto">
+                                {`${tech.name}: ${tech.technology}`}
+                              </span>
+                            </motion.li>
+                          );
+                        })}
+                      </ul>
+                      <motion.div
+                        {...anim(slideDown, 7)}
+                        className="flex flex-col gap-5 text-lg"
                       >
-                        repository
-                      </Link>
-                    </p>
-                  </motion.div>
-                </div>
-              </HoverCardContent>
-            </HoverCard>
+                        <p>
+                          CalcSans and Inter used as fonts. Animations made with
+                          Framer Motion and Green Sock a.k.a GSAP.
+                        </p>
+                        <p>
+                          For detailed information and code check{" "}
+                          <Link
+                            target="_blank"
+                            href="https://github.com/m-dombkowski/Portfolio-website"
+                          >
+                            repository
+                          </Link>
+                        </p>
+                      </motion.div>
+                    </div>
+                  </DialogDescription>
+                </DialogHeader>
+              </DialogContent>
+            </Dialog>
           </div>
         </div>
       </div>
