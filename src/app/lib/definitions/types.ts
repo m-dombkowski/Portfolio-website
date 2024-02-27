@@ -80,3 +80,12 @@ export type KevinsDataType = {
   gif: StaticImageData;
   gifAlt: string;
 };
+
+export type TimelineDataType = {
+  img: StaticImageData;
+  imgAlt: string;
+  date: string;
+  jobTitle: string;
+  companyName: string;
+  description: JSX.Element;
+};
