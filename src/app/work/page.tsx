@@ -14,7 +14,7 @@ import {
 } from "@/app/components/ui/dialog";
 import TechStack from "../components/tech-stack/tech-stack";
 import TechStackFilters from "../components/tech-stack/tech-stack-filters";
-
+import Timeline from "../components/timeline/timeline";
 
 export default function WorkPage() {
   const [filteredData, setFilteredData] = useState<TechStackDataType[]>([]);
@@ -43,7 +43,7 @@ export default function WorkPage() {
     <PageWrapper>
       <section className="px-10 flex justify-center items-center flex-col max-w-[700px] xl:max-w-[900px] m-auto font-calc">
         <div className="max-w-[600px] xl:max-w-[900px] flex justify-center flex-col items-center font-calc">
-          <h1 className="text-4xl pb-10 sm:text-6xl text-center">
+          <h1 className="text-4xl mb-20 sm:text-6xl text-center">
             Day to day tech stack
           </h1>
         </div>
@@ -67,6 +67,15 @@ export default function WorkPage() {
           </Dialog>
         </div>
         <TechStack filteredData={filteredData} />
+        <div className="mt-40">
+          <h1 className="text-4xl mb-20 sm:text-6xl text-center">
+            Commercial experience
+          </h1>
+          <Timeline />
+        </div>
+        <div className="mt-40">
+          <h1 className="text-4xl mb-20 sm:text-6xl text-center">Projects</h1>
+        </div>
       </section>
     </PageWrapper>
   );
