@@ -15,6 +15,7 @@ import {
 import TechStack from "../components/tech-stack/tech-stack";
 import TechStackFilters from "../components/tech-stack/tech-stack-filters";
 import Timeline from "../components/timeline/timeline";
+import ProjectCard from "../components/project-card/project-card";
 
 export default function WorkPage() {
   const [filteredData, setFilteredData] = useState<TechStackDataType[]>([]);
@@ -73,8 +74,33 @@ export default function WorkPage() {
           </h1>
           <Timeline />
         </div>
-        <div className="mt-40">
+        <div className="mt-40 xl:w-[1200px] transition duration-500">
           <h1 className="text-4xl mb-20 sm:text-6xl text-center">Projects</h1>
+          <div className="grid grid-cols-1 gap-8 mx-auto font-sans  lg:grid-cols-2 ">
+            <div className="flex flex-col w-full gap-8">
+              <ProjectCard
+                date="March 2024"
+                projectTitle="Portfolio"
+                description="Website that you're currently looking at"
+                href="#"
+              />
+              <ProjectCard
+                date="Work in progress"
+                projectTitle="Blog"
+                description="Blog website build with cms and ability to sign up for newsletter"
+                href="#"
+              />
+            </div>
+            <div className="grid">
+              <ProjectCard
+                date="Work in progress"
+                projectTitle="Weather"
+                description="Weather checking application with beautiful visuals, database connection, account where user can bookmark his favorite cities"
+                href="#"
+                bottomLink={true}
+              />
+            </div>
+          </div>
         </div>
       </section>
     </PageWrapper>
