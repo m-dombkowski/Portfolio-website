@@ -19,7 +19,7 @@ export default function Timeline() {
               <h2 className=" text-base">{company.date}</h2>
               <h1 className="text-3xl">{company.jobTitle}</h1>
               <h2 className="text-2xl">{company.companyName}</h2>
-              <div className="max-w-[250px] lg:max-w-[500px] flex flex-col gap-4">
+              <div className="max-w-[250px] lg:max-w-[500px] flex flex-col gap-4 font-sans">
                 {company.description}
               </div>
             </div>
