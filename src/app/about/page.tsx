@@ -106,27 +106,6 @@ export default function AboutPage() {
               <ParallaxGallery />
             </motion.div>
           </div>
-          <motion.div
-            {...animByBoolean(slideUp, spotifyInView, 1)}
-            ref={spotifyContainer}
-            className="flex flex-col justify-start items-center gap-10"
-          >
-            <div className="flex flex-col gap-3 w-[100%] px-6">
-              <h1 className="text-4xl font-calc sm:text-5xl">
-                Like heavy music aswell?
-              </h1>
-              <h2 className="text-3xl font-calc text-color-text-darker sm:text-4xl">
-                Feel free to check out my Spotify playlist
-              </h2>
-            </div>
-            <iframe
-              className="rounded-[12px] w-[300px] h-[152px] sm:w-[600px]"
-              src="https://open.spotify.com/embed/playlist/0Vm128JrgFdU44nQToJtql?utm_source=generator&theme=0"
-              allowFullScreen={undefined}
-              allow="fullscreen"
-              loading="lazy"
-            ></iframe>
-          </motion.div>
         </div>
         <div className="w-[100%]">
           <motion.div

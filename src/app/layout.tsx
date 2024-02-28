@@ -75,7 +75,7 @@ export default function RootLayout({
       <SmoothScroll>
         <ScreenSizeContext.Provider value={deviceType}>
           <body>
-            {deviceType === "desktop" && <Cursor />}
+            {/* {deviceType === "desktop" && <Cursor />} */}
             <ScrollProgressBar />
             <Navigation currentPath={path} />
             <div
