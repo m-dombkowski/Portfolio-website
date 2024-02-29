@@ -22,12 +22,10 @@ export default function AboutPage() {
   const helloContainer = useRef<HTMLDivElement>(null);
   const helloDescContainer = useRef<HTMLDivElement>(null);
   const parallaxContainer = useRef<HTMLDivElement>(null);
-  const spotifyContainer = useRef<HTMLDivElement>(null);
   const foodGalleryContainer = useRef<HTMLDivElement>(null);
   const helloInView = useInView(helloContainer);
   const helloDescInView = useInView(helloDescContainer);
   const parallaxInView = useInView(parallaxContainer);
-  const spotifyInView = useInView(spotifyContainer);
   const foodInView = useInView(foodGalleryContainer);
 
   const deviceType = useContext(ScreenSizeContext);

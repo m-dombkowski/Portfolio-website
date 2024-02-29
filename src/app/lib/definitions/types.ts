@@ -71,7 +71,8 @@ export type FeedbackDataType = {
   subTitle: string | null;
   meme: StaticImageData;
   alt: string;
-  description: string;
+  description: string | null;
+  showSocial?: boolean;
 };
 
 export type KevinsDataType = {

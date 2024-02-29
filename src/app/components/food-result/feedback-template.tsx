@@ -34,13 +34,15 @@ export default function Feedback({
       </div>
       <div className="flex justify-center items-center gap-10 flex-col sm:flex-row">
         <p className="text-justify text-lg">{feedbackData.description}</p>
-        <Link
-          className="transition duration-300 flex gap-3 items-center p-4 border-2 rounded-3xl bg-zinc-900 hover:bg-zinc-nav-active"
-          href="https://www.instagram.com/mateusz.dombkowski/"
-          target="_blank"
-        >
-          <InstagramSvg />
-        </Link>
+        {feedbackData.showSocial !== false && (
+          <Link
+            className="transition duration-300 flex gap-3 items-center p-4 border-2 rounded-3xl bg-zinc-900 hover:bg-zinc-nav-active"
+            href="https://www.instagram.com/mateusz.dombkowski/"
+            target="_blank"
+          >
+            <InstagramSvg />
+          </Link>
+        )}
       </div>
     </motion.div>
   );
