@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Card } from "../card/card";
 import {
   Sheet,
@@ -9,37 +8,28 @@ import {
   SheetTrigger,
 } from "@/app/components/ui/sheet";
 import ProjectInfo from "./project-card-info";
+import { useState } from "react";
+import { getRandomFromArray } from "@/app/lib/utils";
+import { ProjectCardType } from "@/app/lib/definitions/types";
 
-type ProjectCardProps = {
-  date: string;
-  projectTitle: string;
-  description: string;
-  href: string;
-  bottomLink?: boolean;
-};
+export default function ProjectCard({ ...project }: ProjectCardType) {
+  const [height] = useState(getRandomFromArray(["250px", "350px", "300px"]));
 
-export default function ProjectCard({
-  date,
-  projectTitle,
-  description,
-  href,
-  bottomLink,
-}: ProjectCardProps) {
   return (
-    <>
+    <div className="w-full mb-8">
       <Sheet>
-        <SheetTrigger>
+        <SheetTrigger className="w-full">
           <Card>
-            <div className="group h-full">
-              <div className="flex flex-col justify-start text-justify items-start  flex-wrap text-color-text-lighter h-full">
-                <span className="pt-10 px-10 mb-5">{date}</span>
-                <h1 className="px-10 text-4xl mb-7 font-calc text-color-text-primary">
-                  {projectTitle}
+            <div className="group" style={{ height }}>
+              <div className="flex flex-col justify-start text-justify items-start flex-wrap text-color-text-lighter h-full">
+                <span className="pt-10 px-10 mb-5">{project.date}</span>
+                <h1 className="px-10 text-4xl mb-7 font-calc text-color-text-primary text-left">
+                  {project.projectTitle}
                 </h1>
                 <p className="px-10 mb-10 text-lg  sm:text-base text-color-text-lighter">
-                  {description}
+                  {project.briefDescription}
                 </p>
-                {bottomLink && (
+                {height === "350px" && (
                   <p className="relative pl-10 mt-auto mb-10 text-color-text-lighter">
                     Read more{" "}
                     <span className="absolute -right-6 transition-[right] duration-300 group-hover:-right-8">
@@ -51,19 +41,18 @@ export default function ProjectCard({
             </div>
           </Card>
         </SheetTrigger>
-        <SheetContent>
+
+        <SheetContent className="overflow-y-auto font-calc">
           <SheetHeader>
-            <SheetTitle className="text-center text-6xl mt-14 mb-6">
-              {projectTitle}
+            <SheetTitle className="text-left text-3xl mt-4 mb-4 text-color-text-primary">
+              {project.projectTitle}
             </SheetTitle>
-            <SheetDescription>
-              <div>
-                <ProjectInfo description={description} />
-              </div>
+            <SheetDescription className="flex-1 overflow-auto">
+              <ProjectInfo {...project} />
             </SheetDescription>
           </SheetHeader>
         </SheetContent>
       </Sheet>
-    </>
+    </div>
   );
 }

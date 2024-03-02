@@ -16,6 +16,7 @@ import TechStack from "../components/tech-stack/tech-stack";
 import TechStackFilters from "../components/tech-stack/tech-stack-filters";
 import Timeline from "../components/timeline/timeline";
 import ProjectCard from "../components/project-card/project-card";
+import { projectData } from "../lib/data/projects-data";
 
 export default function WorkPage() {
   const [filteredData, setFilteredData] = useState<TechStackDataType[]>([]);
@@ -42,7 +43,7 @@ export default function WorkPage() {
 
   return (
     <PageWrapper>
-      <section className="px-10 flex justify-center items-center flex-col max-w-[700px] xl:max-w-[900px] m-auto font-calc">
+      <section className="px-10 flex justify-center items-center flex-col max-w-[700px] xl:max-w-[900px] m-auto font-calc overscroll-contain">
         <div className="max-w-[600px] xl:max-w-[900px] flex justify-center flex-col items-center font-calc">
           <h1 className="text-4xl mb-20 sm:text-6xl text-center">
             Day to day tech stack
@@ -74,32 +75,16 @@ export default function WorkPage() {
           </h1>
           <Timeline />
         </div>
-        <div className="mt-40 xl:w-[1200px] transition duration-500">
+        <div className="mt-40 md:w-[700px] lg:w-[900px] xl:w-[1200px] transition duration-500">
           <h1 className="text-4xl mb-20 sm:text-6xl text-center">Projects</h1>
-          <div className="grid grid-cols-1 gap-8 mx-auto font-sans  lg:grid-cols-2 ">
-            <div className="flex flex-col w-full gap-8">
-              <ProjectCard
-                date="March 2024"
-                projectTitle="Portfolio"
-                description="Website that you're currently looking at"
-                href="#"
-              />
-              <ProjectCard
-                date="Work in progress"
-                projectTitle="Blog"
-                description="Blog website build with cms and ability to sign up for newsletter"
-                href="#"
-              />
-            </div>
-            <div className="grid">
-              <ProjectCard
-                date="Work in progress"
-                projectTitle="Weather"
-                description="Weather checking application with beautiful visuals, database connection, account where user can bookmark his favorite cities"
-                href="#"
-                bottomLink={true}
-              />
-            </div>
+          <div className="gap-8 mx-auto font-sans columns-1 md:columns-2">
+            {projectData.map((project, index) => {
+              return (
+                <div key={index}>
+                  <ProjectCard {...project} />
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>

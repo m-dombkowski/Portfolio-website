@@ -90,3 +90,15 @@ export type TimelineDataType = {
   companyName: string;
   description: JSX.Element;
 };
+
+export type ProjectCardType = {
+  date: string;
+  projectTitle: string;
+  briefDescription: string;
+  img: StaticImageData;
+  alt: string;
+  description: string;
+  technologies: string[];
+  repoLink: string;
+  websiteLink: string | null;
+};
