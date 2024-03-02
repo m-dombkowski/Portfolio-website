@@ -48,7 +48,7 @@ export default function ProjectInfo({ ...projectData }: ProjectCardType) {
           >
             <span className="group relative">
               Website
-              <span className="absolute -right-6 transition-[right] duration-300 group-hover:-right-8">
+              <span className="absolute -right-4 inset-y-0 transition-[right] duration-300 group-hover:-right-6">
                 →
               </span>
             </span>
@@ -61,7 +61,7 @@ export default function ProjectInfo({ ...projectData }: ProjectCardType) {
         >
           <span className="group relative m-auto">
             Github
-            <span className="absolute -right-6 transition-[right] duration-300 group-hover:-right-8">
+            <span className="absolute -right-4 inset-y-0  transition-[right] duration-300 group-hover:-right-6">
               →
             </span>
           </span>
