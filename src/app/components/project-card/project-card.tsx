@@ -13,7 +13,7 @@ import { getRandomFromArray } from "@/app/lib/utils";
 import { ProjectCardType } from "@/app/lib/definitions/types";
 
 export default function ProjectCard({ ...project }: ProjectCardType) {
-  const [height] = useState(getRandomFromArray(["250px", "350px", "300px"]));
+  const [height] = useState(getRandomFromArray(["275px", "355px", "315px"]));
 
   return (
     <div className="w-full mb-8">

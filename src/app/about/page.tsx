@@ -106,10 +106,7 @@ export default function AboutPage() {
           </div>
         </div>
         <div className="w-[100%]">
-          <motion.div
-            ref={foodGalleryContainer}
-            {...animByBoolean(slideUp, foodInView, 1)}
-          >
+          <div>
             <div className="pb-10 font-calc text-color-text-primary text-5xl sm:text-7xl lg:text-9xl 2xl:text-[11rem]">
               <SliderText />
             </div>
@@ -126,7 +123,7 @@ export default function AboutPage() {
                 ></Player>
               </div>
             )}
-          </motion.div>
+          </div>
           {deviceType === "desktop" ? <GalleryDesktop /> : <GalleryMobile />}
           {deviceType === "mobile" && (
             <div className="flex justify-center items-center pb-20">

@@ -15,8 +15,8 @@ export const NeonetDescription = () => {
         <Link href="https://www.neo24.pl"> Neo24</Link> websites.
       </p>
       <p>
-        As well as development, bug fixing, and optimization our Magento plugin
-        for Chrome
+        As well as development, bug fixing, and optimization of our Magento
+        plugin for Chrome.
       </p>
     </>
   );
