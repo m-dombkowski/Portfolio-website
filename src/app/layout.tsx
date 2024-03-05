@@ -23,6 +23,8 @@ import { ScreenSizeContext } from "./lib/context/screenSize";
 import Footer from "./components/footer/footer";
 import ScrollProgressBar from "./components/scroll-progress-bar/scroll-progress-bar";
 import Cursor from "./components/cursor/cursor";
+import { MyThemeContextProvider } from "./lib/context/theme";
+import ThemeButton from "./components/theme/theme-button";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -73,24 +75,28 @@ export default function RootLayout({
   return (
     <html lang="en" className={[inter.variable, calSans.variable].join(" ")}>
       <SmoothScroll>
-        <ScreenSizeContext.Provider value={deviceType}>
-          <body>
-            {/* {deviceType === "desktop" && <Cursor />} */}
-            <ScrollProgressBar />
-            <Navigation currentPath={path} />
-            <div
-              className="opacity-0 transition-opacity duration-300"
-              ref={mobileNavRef}
-            >
-              <MobileNav
-                menuIsOpen={menuIsOpen}
-                setMenuIsOpen={setMenuIsOpen}
-              />
-            </div>
-            <AnimatePresence mode="wait">{children}</AnimatePresence>
-            <Footer />
-          </body>
-        </ScreenSizeContext.Provider>
+        <MyThemeContextProvider>
+          <ScreenSizeContext.Provider value={deviceType}>
+            <body>
+              {/* {deviceType === "desktop" && <Cursor />} */}
+              <ScrollProgressBar />
+              <Navigation currentPath={path} />
+              <ThemeButton />
+
+              <div
+                className="opacity-0 transition-opacity duration-300"
+                ref={mobileNavRef}
+              >
+                <MobileNav
+                  menuIsOpen={menuIsOpen}
+                  setMenuIsOpen={setMenuIsOpen}
+                />
+              </div>
+              <AnimatePresence mode="wait">{children}</AnimatePresence>
+              <Footer />
+            </body>
+          </ScreenSizeContext.Provider>
+        </MyThemeContextProvider>
       </SmoothScroll>
     </html>
   );
