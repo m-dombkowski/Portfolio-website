@@ -9,6 +9,7 @@ const config: Config = {
     "./src/app/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: "class",
   theme: {
     screens: {
       xs1: "350px",
