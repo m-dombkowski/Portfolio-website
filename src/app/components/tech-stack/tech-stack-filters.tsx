@@ -40,13 +40,15 @@ export default function TechStackFilters({
   const UseCaseButton = ({ name }: { name: string }) => {
     return (
       <li className="py-2 px-[0.55rem] sm:py-3 sm:px-6 ">
-        <div className="text-color-text-lighter z-[10] relative ">{name}</div>
+        <div className="dark:text-color-text-lighter z-[10] relative ">
+          {name}
+        </div>
       </li>
     );
   };
 
   return (
-    <ul className="flex gap-4 justify-center items-center text-xs bg-zinc-900 rounded-full px-[0.75rem] py-[0.5rem] sm:px-3 sm:py-2 sm:px-6 sm:py-3 sm:gap-6 sm:text-base sm:gap-10">
+    <ul className="flex gap-4 justify-center items-center text-xs bg-zinc-900 rounded-full px-[0.75rem] py-[0.5rem] sm:px-3 sm:py-2 md:px-6 md:py-3 sm:gap-6 sm:text-base md:gap-10">
       {filterButtons.map((button, index) => {
         console.log(button.value[0], chosenUseCase[0]);
         return button.value[1] === chosenUseCase[1] &&

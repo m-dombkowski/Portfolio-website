@@ -36,14 +36,14 @@ export default function Home() {
                 {...animByBoolean(slideUp, isInView, 0.8)}
               >
                 {`I'm a Devloper passionate about everything code related with a focus on Frontend, especially `}
-                <span className="text-color-text-darker">
+                <span className="dark:text-color-text-darker ">
                   <Link href="/work">React, Next.js, Typescript</Link>
                 </span>
                 {`.`}
               </motion.p>
               <motion.p {...animByBoolean(slideUp, isInView, 1.2)}>
                 {`Outside of work I'm a big fan of `}
-                <span className="text-color-text-darker ">
+                <span className=" text-color-text-light-mode-dark dark:text-color-text-darker">
                   <Typewriter
                     words={["baking.", "gaming.", "dogs 🐕.", "metalcore."]}
                     loop={false}
@@ -52,7 +52,7 @@ export default function Home() {
               </motion.p>
               <motion.p {...animByBoolean(slideUp, isInView, 1.6)}>
                 {`More about me can be found `}
-                <span className="text-color-text-darker">
+                <span className="dark:text-color-text-darker">
                   <Link href="/about">here</Link>
                 </span>
                 {`.`}
@@ -60,7 +60,7 @@ export default function Home() {
 
               <motion.p {...animByBoolean(slideUp, isInView, 2)}>
                 {`At the moment looking for a new full-time position as a `}
-                <span className="text-color-text-darker">
+                <span className="dark:text-color-text-darker">
                   <Link href="/contact">Frontend Developer</Link>
                 </span>
                 {`.`}

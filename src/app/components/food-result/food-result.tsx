@@ -27,7 +27,7 @@ export default function FoodResult() {
                 setHide(true);
                 setFoodResult(FoodResultEnum.positive);
               }}
-              className="transition duration-300 text-xl bg-zinc-nav-active rounded-full text-color-text-lighter z-[10] py-3 px-6 hover:bg-[#444447]"
+              className="transition duration-300 text-xl bg-zinc-nav-active rounded-full dark:text-color-text-lighter z-[10] py-3 px-6 hover:bg-[#444447]"
             >
               Yep 😋
             </button>
@@ -36,7 +36,7 @@ export default function FoodResult() {
                 setHide(true);
                 setFoodResult(FoodResultEnum.negative);
               }}
-              className="transition duration-300 text-xl bg-zinc-nav-active rounded-full text-color-text-lighter z-[10] py-3 px-6 hover:bg-[#444447]"
+              className="transition duration-300 text-xl bg-zinc-nav-active rounded-full dark:text-color-text-lighter z-[10] py-3 px-6 hover:bg-[#444447]"
             >
               Nope 😬
             </button>

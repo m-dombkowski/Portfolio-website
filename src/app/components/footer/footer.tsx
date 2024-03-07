@@ -85,16 +85,16 @@ export default function Footer() {
     <motion.footer
       ref={footerRef}
       {...animByBoolean(slideUp, isFooterInView, null)}
-      className="m-auto flex justify-center items-center my-32 gap-20 flex-col xl:flex-row xl:gap-32 xl:items-start"
+      className="m-auto flex justify-center items-center my-40 gap-20 flex-col xl:flex-row xl:gap-32 xl:items-start"
     >
       <div className="flex flex-col gap-10 items-center">
-        <div className="w-[250px] bg-bg-dark-gray h-[75px] flex justify-center items-center gap-5 text-sm sm:w-[350px] sm:gap-12 sm:h-[120px] sm:text-xl rounded-full">
+        <div className="w-[250px] bg-light-bg dark:bg-bg-dark-gray h-[75px] flex justify-center items-center gap-5 text-sm sm:w-[350px] sm:gap-12 sm:h-[120px] sm:text-xl rounded-full">
           <Link
             target="_blank"
             href="https://open.spotify.com/user/hevrak?si=3764935cfac041dd"
           >
             {" "}
-            <FontAwesomeIcon size="3x" color="#8fdcc2" icon={faSpotify} />
+            <FontAwesomeIcon size="3x" color="#357b71" icon={faSpotify} />
           </Link>
 
           <div className="text-xs sm:text-sm lg:text-base">
@@ -116,15 +116,15 @@ export default function Footer() {
           <p className="text-base sm:text-xl">© 2024 Mateusz Dombkowski</p>
           <div>
             <Dialog>
-              <DialogTrigger className="underline cursor-pointer text-color-text-primary">
+              <DialogTrigger className="underline text-color-text-light-mode-dark cursor-pointer dark:text-color-text-primary">
                 Technologies
               </DialogTrigger>
-              <DialogContent>
+              <DialogContent className=" bg-background-light">
                 <DialogHeader>
                   <DialogTitle>
                     <motion.h1
                       {...anim(slideDown, null)}
-                      className="text-xl mb-5 text-center text-[#fff]"
+                      className="text-xl mb-5 text-center text-color-text-primary-light-mode dark:text-[#fff]"
                     >
                       Technologies and tools used to build this website
                     </motion.h1>
@@ -139,7 +139,7 @@ export default function Footer() {
                               key={index}
                               className="flex items-center gap-3 w-[200px]"
                             >
-                              <div className="p-2 bg-[#fff] inline-block rounded-full">
+                              <div className="p-2 bg-[#fff] border border-color-text-primary-light-mode dark:border-0 inline-block rounded-full">
                                 <div className="w-[20px] h-[20px] ">
                                   {tech.icon}
                                 </div>
@@ -183,14 +183,17 @@ export default function Footer() {
           <ul className="flex flex-col gap-5 items-center lg:items-start">
             {contactLinks.map((link, index) => {
               return (
-                <li key={index} className="text-xl">
+                <li key={index} className="text-xl relative group ">
                   <Link
                     href={link.href}
-                    className="text-[#fff] transition duration-300 hover:text-color-text-primary"
+                    className="transition hover:text-color-text-light-mode duration-300 dark:hover:text-color-text-primary"
                     target="_blank"
                   >
                     {link.name}
                   </Link>
+                  <span className="absolute -right-5  transition duration-300 text-color-text-light-mode-dark opacity-0 group-hover:opacity-100 ">
+                    →
+                  </span>
                 </li>
               );
             })}

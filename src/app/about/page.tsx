@@ -96,7 +96,7 @@ export default function AboutPage() {
             <motion.div
               {...animByBoolean(slideUp, parallaxInView, 1)}
               ref={parallaxContainer}
-              className="flex flex-col gap-8 text-lg text-sans text-color-text-lighter text-justify px-6 font-calc items-center"
+              className="flex flex-col gap-8 text-lg text-sans dark:text-color-text-lighter text-justify px-6 font-calc items-center"
             >
               <h1 className="text-3xl font-calc leading-[1.2] sm:text-5xl px-6">
                 A bit about me
@@ -107,7 +107,7 @@ export default function AboutPage() {
         </div>
         <div className="w-[100%]">
           <div>
-            <div className="pb-10 font-calc text-color-text-primary text-5xl sm:text-7xl lg:text-9xl 2xl:text-[11rem]">
+            <div className="pb-10 font-calc dark:text-color-text-primary text-5xl sm:text-7xl lg:text-9xl 2xl:text-[11rem]">
               <SliderText />
             </div>
             {deviceType === "desktop" && (

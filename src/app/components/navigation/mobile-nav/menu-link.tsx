@@ -62,7 +62,7 @@ export default function MenuLink({
           setIsActive(false);
           toggleMenu(false);
         }}
-        className="text-color-text-lighter uppercase text-[7vw] leading-[7.2vw] m-0 tv:text-[5.5vw] tv:leading-[5.7vw] w-[100%] text-center"
+        className="dark:text-color-text-lighter uppercase text-[7vw] leading-[7.2vw] m-0 tv:text-[5.5vw] tv:leading-[5.7vw] w-[100%] text-center"
       >
         {name}
       </Link>

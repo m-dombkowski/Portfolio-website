@@ -50,7 +50,7 @@ export default function NegativeFeedback({
                 setHideFirstFeedback(true);
                 setNegativeQuestionResult(NegativeQuestionResultEnum.positive);
               }}
-              className="transition duration-300 text-lg bg-zinc-nav-active rounded-full text-color-text-lighter z-[10] py-3 px-6 hover:bg-[#444447]"
+              className="transition duration-300 text-lg bg-zinc-nav-active rounded-full dark:text-color-text-lighter z-[10] py-3 px-6 hover:bg-[#444447]"
             >
               Ok, I changed my mind
             </button>
@@ -59,7 +59,7 @@ export default function NegativeFeedback({
                 setHideFirstFeedback(true);
                 setNegativeQuestionResult(NegativeQuestionResultEnum.negative);
               }}
-              className="transition duration-300 text-lg bg-zinc-nav-active rounded-full text-color-text-lighter z-[10] py-3 px-6 hover:bg-[#444447]"
+              className="transition duration-300 text-lg bg-zinc-nav-active rounded-full dark:text-color-text-lighter z-[10] py-3 px-6 hover:bg-[#444447]"
             >
               Still think it was awful
             </button>
