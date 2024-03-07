@@ -4,7 +4,7 @@ import { cn } from "@/app/lib/utils";
 import { Player } from "@lottiefiles/react-lottie-player";
 
 export default function ThemeButton() {
-  const themeCtx: { isDarkMode?: boolean; toggleThemeHandler: () => void } =
+  const themeCtx: { isDarkTheme?: boolean; toggleThemeHandler: () => void } =
     useContext(MyThemeContext);
   const [isChecked, setIsChecked] = useState<boolean>(true);
 
@@ -13,8 +13,14 @@ export default function ThemeButton() {
   }
 
   useEffect(() => {
-    themeCtx.isDarkMode ? setIsChecked(true) : setIsChecked(false);
-  }, [themeCtx.isDarkMode]);
+    const isInitialDark: boolean = JSON.parse(
+      localStorage.getItem("isDarkTheme")!
+    );
+
+    console.log(isInitialDark, isChecked);
+    isInitialDark ? setIsChecked(true) : setIsChecked(false);
+    console.log(isInitialDark, isChecked);
+  }, []);
 
   return (
     <div className="fixed left-5 top-5 z-[99999]">

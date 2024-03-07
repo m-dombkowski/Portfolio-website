@@ -25,10 +25,11 @@ export function MyThemeContextProvider(
       // document!.querySelector("body")!.classList.add("dark");
       setIsDarkTheme(false);
     } else {
-      const isDarkTheme: boolean = JSON.parse(
+      const isDarkThemeInStorage: boolean = JSON.parse(
         localStorage.getItem("isDarkTheme")!
       );
-      isDarkTheme && document!.querySelector("body")!.classList.add("dark");
+      isDarkThemeInStorage &&
+        document!.querySelector("body")!.classList.add("dark");
       setIsDarkTheme(() => {
         return isDarkTheme;
       });
@@ -41,19 +42,19 @@ export function MyThemeContextProvider(
     );
     setIsDarkTheme(!isDarkTheme);
     toggleDarkClassToBody();
-    setValueToLocalStorage();
+    setValueToLocalStorage(isDarkTheme);
   }
 
   function toggleDarkClassToBody(): void {
     document!.querySelector("body")!.classList.toggle("dark");
   }
 
-  function setValueToLocalStorage(): void {
+  function setValueToLocalStorage(isDarkTheme: boolean): void {
     localStorage.setItem("isDarkTheme", `${!isDarkTheme}`);
   }
 
   return (
-    <MyThemeContext.Provider value={{ isDarkTheme: false, toggleThemeHandler }}>
+    <MyThemeContext.Provider value={{ isDarkTheme, toggleThemeHandler }}>
       {props.children}
     </MyThemeContext.Provider>
   );
