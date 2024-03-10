@@ -43,7 +43,7 @@ export default function WorkPage() {
 
   return (
     <PageWrapper>
-      <section className="px-10 flex justify-center items-center flex-col max-w-[700px] xl:max-w-[900px] m-auto font-calc overscroll-contain">
+      <section className="px-10 flex justify-center items-center flex-col max-w-[700px] xl:max-w-[900px] m-auto font-calc overscroll-contain mt-40">
         <div className="max-w-[600px] xl:max-w-[900px] flex justify-center flex-col items-center font-calc">
           <h1 className="text-4xl mb-20 sm:text-6xl text-center">
             Day to day tech stack

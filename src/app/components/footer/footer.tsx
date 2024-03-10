@@ -184,14 +184,10 @@ export default function Footer() {
             {contactLinks.map((link, index) => {
               return (
                 <li key={index} className="text-xl relative group ">
-                  <Link
-                    href={link.href}
-                    className="transition hover:text-color-text-light-mode duration-300 dark:hover:text-color-text-primary"
-                    target="_blank"
-                  >
+                  <Link href={link.href} target="_blank">
                     {link.name}
                   </Link>
-                  <span className="absolute -right-5  transition duration-300 text-color-text-light-mode-dark opacity-0 group-hover:opacity-100 ">
+                  <span className="absolute -right-5  transition duration-300 text-color-text-light-mode-dark dark:text-color-text-primary opacity-0 group-hover:opacity-100 ">
                     →
                   </span>
                 </li>

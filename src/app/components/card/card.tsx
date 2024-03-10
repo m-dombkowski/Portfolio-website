@@ -23,7 +23,7 @@ export const Card: React.FC<PropsWithChildren> = ({ children }) => {
       <div className="pointer-events-none">
         <div className="absolute inset-0 transition duration-500 [mask-image:linear-gradient(white,transparent)]" />
         <motion.div
-          className="absolute inset-0 bg-gradient-to-br opacity-20 from-[#d4ede4] via-[#7bbea8] to-[#8fdcc2]  transition duration-500 group-hover:opacity-30"
+          className="absolute inset-0 dark:bg-gradient-to-br opacity-20 dark:from-[#d4ede4] dark:via-[#7bbea8] dark:to-[#8fdcc2] bg-gradient-to-br from-[#025a4e] via-[#02483e] to-[#025146]  transition duration-500 group-hover:opacity-30"
           style={style}
         />
         <motion.div

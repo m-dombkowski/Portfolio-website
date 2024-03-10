@@ -32,7 +32,7 @@ export default function AboutPage() {
 
   return (
     <PageWrapper>
-      <section className="flex flex-col justify-center items-center  m-[auto] text-center ">
+      <section className="flex flex-col justify-center items-center  m-[auto] text-center mt-40">
         <div className="max-w-[600px] lg:max-w-[1050px] pb-32">
           <div className="flex justify-center flex-col gap-10 pb-20 lg:pb-0">
             <div className="flex flex-col gap-6 mb-20">

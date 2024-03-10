@@ -30,7 +30,7 @@ const contacts: ContactCardType[] = [
 export default function ContactPage() {
   return (
     <PageWrapper>
-      <section className="flex flex-col justify-center">
+      <section className="flex flex-col justify-center mt-40">
         <div className="flex justify-center">
           <h1 className="text-3xl mb-16 font-calc lg:text-5xl text-center px-8 md:px-0 xl:text-6xl dark:text-color-text-primary">{`Choose the way to connect that suits you best`}</h1>
         </div>

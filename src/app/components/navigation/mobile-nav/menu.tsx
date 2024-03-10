@@ -41,9 +41,9 @@ export default function Menu({
               href={el.href}
               key={index}
               target="_blank"
-              className="text-[2.5vw] border-2 border-[#fff] text-[#fff] rounded-full py-0 px-5"
+              className=" text-[2.5vw] border-2 bg-nav-light-bg-highlight dark:bg-black dark:border-[#fff]  rounded-full py-0 px-5"
             >
-              {el.text}
+              <span className="dark:text-[#fff]">{el.text}</span>
             </Link>
           );
         })}

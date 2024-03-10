@@ -54,7 +54,7 @@ export default function MenuLink({
       variants={rotateX}
       {...mountAnim}
       custom={index}
-      className="group relative border-t flex justify-center pointer origin-top last-of-type:border-b"
+      className="group relative dark:border-[#fff] border-black  border-t-2 flex justify-center pointer origin-top last-of-type:border-b-2"
     >
       <Link
         href={href}
@@ -62,9 +62,9 @@ export default function MenuLink({
           setIsActive(false);
           toggleMenu(false);
         }}
-        className="dark:text-color-text-lighter uppercase text-[7vw] leading-[7.2vw] m-0 tv:text-[5.5vw] tv:leading-[5.7vw] w-[100%] text-center"
+        className=" uppercase text-[7vw] leading-[7.2vw] m-0 tv:text-[5.5vw] tv:leading-[5.7vw] w-[100%] text-center"
       >
-        {name}
+        <span className="dark:text-color-text-lighter">{name}</span>
       </Link>
       <div
         ref={outer}
@@ -72,7 +72,7 @@ export default function MenuLink({
       >
         <div
           ref={inner}
-          className="flex bg-zinc-300-full absolute whitespace-nowrap h-[100%] top-[100%] "
+          className="flex dark:bg-zinc-300-full bg-dark-bg absolute whitespace-nowrap h-[100%] top-[100%] "
         >
           {[...Array(2)].map((_, index) => {
             return (
@@ -101,13 +101,13 @@ const SliderContent = ({
       <div className="h-[6vw] w-[16vw] relative overflow-hidden rounded-[3vw] ml-[1vw] mr-[1vw] flex">
         <Image src={image} fill alt="image" className="object-cover" />
       </div>
-      <p className="text-[#000] uppercase text-[7vw] leading-[7.2vw] m-0 ">
+      <p className="dark:text-[#000] text-color-text-lighter uppercase text-[7vw] leading-[7.2vw] m-0 ">
         {description}
       </p>
       <div className="h-[6vw] w-[16vw] relative overflow-hidden rounded-[3vw] ml-[1vw] mr-[1vw] flex">
         <Image src={image} fill alt="image" className="object-cover" />
       </div>
-      <p className="text-[#000] uppercase text-[7vw] leading-[7.2vw] m-0">
+      <p className="dark:text-[#000] text-color-text-lighter uppercase text-[7vw] leading-[7.2vw] m-0">
         {description}
       </p>
     </>

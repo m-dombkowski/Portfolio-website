@@ -17,7 +17,7 @@ export default function ScrollProgressBar() {
     <>
       {scrollValue === 0 ? null : (
         <motion.div
-          className="fixed top-0 h-[10px] left-0 right-0 origin-[0%] bg-color-text-darker z-[999]"
+          className="fixed top-0 h-[10px] left-0 right-0 origin-[0%] dark:bg-color-text-darker bg-color-text-primary-light-mode z-[999]"
           style={{ scaleX: scrollYProgress }}
         />
       )}

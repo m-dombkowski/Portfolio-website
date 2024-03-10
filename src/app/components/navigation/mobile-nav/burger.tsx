@@ -1,4 +1,5 @@
 "use client";
+import { cn } from "@/app/lib/utils";
 import styles from "./styles.module.scss";
 import { Dispatch, SetStateAction } from "react";
 
@@ -21,10 +22,21 @@ export default function Burger({
   };
 
   return (
-    <div onClick={handleClick} className={styles.mobileNav}>
-      <div className={styles.bgMobileNav}></div>
+    <div
+      onClick={handleClick}
+      className={cn("bg-[#a6a29b] dark:bg-[#18181b]", styles.mobileNav)}
+    >
       <div
-        className={`${styles.burger} ${isActive ? styles.burgerActive : ""}`}
+        className={cn(
+          "bg-burger-light dark:bg-burger-dark",
+          styles.bgMobileNav
+        )}
+      ></div>
+      <div
+        className={cn(
+          " after:bg-[#131313] dark:after:bg-[#fff] before:bg-[#131313] dark:before:bg-[#fff]",
+          `${styles.burger} ${isActive ? styles.burgerActive : ""}`
+        )}
       ></div>
     </div>
   );

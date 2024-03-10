@@ -45,6 +45,10 @@ const config: Config = {
         galaxy: "url('/public/galaxy-bg.png')",
         "mobile-nav-gradient":
           "radial-gradient(circle at center , blue 50%, transparent 50%)",
+        "burger-dark":
+          "radial-gradient(circle at center, #2f2f32b3 50%,transparent 50%);",
+        "burger-light":
+          "radial-gradient(circle at center, #beb9b2 50%,transparent 50% )",
       },
     },
     animation: {

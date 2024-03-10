@@ -21,7 +21,7 @@ const Stair = ({ i }: { i: number }) => {
       variants={height}
       {...mountAnim}
       custom={4 - i}
-      className="w-[20vw] h-[100%] bg-black"
+      className="w-[20vw] h-[100%] bg-[#d5d0c8] dark:bg-black"
     ></motion.div>
   );
 };
@@ -31,7 +31,7 @@ const Background = () => {
     <motion.div
       variants={background}
       {...mountAnim}
-      className="w-[100%] h-[100%] absolute bg-black"
+      className="w-[100%] h-[100%] absolute bg-[#d5d0c8] dark:bg-black"
     ></motion.div>
   );
 };
