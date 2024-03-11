@@ -14,7 +14,7 @@ export default function FoodResult() {
   const [hide, setHide] = useState<boolean>(false);
 
   return (
-    <div className="flex-col flex justify-start items-start relative mt-[35vh] mb-24 min-h-[375px] min-w-[650px]">
+    <div className="flex-col flex justify-start items-start relative mt-[20vh] sm:mt-[37vh] sm:mb-24 mb-12 min-h-[375px] min-w-[300px] sm:min-w-[650px]">
       {!hide && (
         <motion.div
           {...animByBoolean(hideElement, hide, null)}
@@ -27,7 +27,7 @@ export default function FoodResult() {
                 setHide(true);
                 setFoodResult(FoodResultEnum.positive);
               }}
-              className="transition duration-300 text-xl bg-zinc-nav-active rounded-full dark:text-color-text-lighter z-[10] py-3 px-6 hover:bg-[#444447]"
+              className="transition duration-300 text-xl shadow-[0_3px_10px_rgb(0,0,0,0.2)] bg-nav-light-bg-highlight hover:bg-[#dcd9d7] dark:bg-zinc-nav-active rounded-full dark:text-color-text-lighter z-[10] py-3 px-6 dark:hover:bg-[#444447]"
             >
               Yep 😋
             </button>
@@ -36,7 +36,7 @@ export default function FoodResult() {
                 setHide(true);
                 setFoodResult(FoodResultEnum.negative);
               }}
-              className="transition duration-300 text-xl bg-zinc-nav-active rounded-full dark:text-color-text-lighter z-[10] py-3 px-6 hover:bg-[#444447]"
+              className="transition duration-300 text-xl shadow-[0_3px_10px_rgb(0,0,0,0.2)] bg-nav-light-bg-highlight hover:bg-[#dcd9d7] dark:bg-zinc-nav-active rounded-full dark:text-color-text-lighter z-[10] py-3 px-6 dark:hover:bg-[#444447]"
             >
               Nope 😬
             </button>

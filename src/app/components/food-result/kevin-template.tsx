@@ -19,19 +19,21 @@ export default function KevinTemplate({
       {!apologized && (
         <button
           onClick={() => setApologized && setApologized(true)}
-          className="transition duration-300 text-lg bg-zinc-nav-active rounded-full dark:text-color-text-lighter z-[10] py-3 px-6 hover:bg-[#444447]"
+          className="transition duration-300 text-lg shadow-[0_3px_10px_rgb(0,0,0,0.2)] bg-nav-light-bg-highlight hover:bg-[#dcd9d7] dark:bg-zinc-nav-active rounded-full dark:text-color-text-lighter z-[10] py-3 px-6 dark:hover:bg-[#444447]"
         >
           Sorry Kevin
         </button>
       )}
       <motion.div className="w-[300px] h-auto sm:w-[480px] relative">
-        <Image
-          className="w-100 h-100 rounded-lg"
-          alt={kevinsData.gifAlt}
-          src={kevinsData.gif}
-          placeholder="blur"
-          blurDataURL="iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsv3OoHgAG3QKuq5tTVwAAAABJRU5ErkJggg=="
-        />
+        {kevinsData.gif && kevinsData.gifAlt && (
+          <Image
+            className="w-100 h-100 rounded-lg"
+            alt={kevinsData.gifAlt}
+            src={kevinsData.gif}
+            placeholder="blur"
+            blurDataURL="iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsv3OoHgAG3QKuq5tTVwAAAABJRU5ErkJggg=="
+          />
+        )}
       </motion.div>
     </div>
   );

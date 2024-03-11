@@ -8,31 +8,41 @@ import { faSpotify } from "@fortawesome/free-brands-svg-icons/faSpotify";
 import Link from "next/link";
 import { motion, useInView } from "framer-motion";
 import { animByBoolean, opacity, slideRight, slideUp } from "../lib/anim";
-import { useContext, useRef } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { Player } from "@lottiefiles/react-lottie-player";
 import SpotifyLink from "../components/spotify-link/spotify-link";
 import GalleryDesktop from "../components/gallery/gallery-desktop";
 import GalleryMobile from "../components/gallery/gallery-mobile";
 import ParallaxGallery from "../components/gallery/parallax-gallery/gallery";
-import { ScreenSizeContext } from "../lib/context/screenSize";
+
 import SliderText from "../components/slider-text/slider-text";
 import FoodResult from "../components/food-result/food-result";
+import { ScreenSizeContext } from "../lib/context/screenSize";
+import MyThemeContext from "../lib/context/theme";
 
 export default function AboutPage() {
   const helloContainer = useRef<HTMLDivElement>(null);
   const helloDescContainer = useRef<HTMLDivElement>(null);
   const parallaxContainer = useRef<HTMLDivElement>(null);
-  const foodGalleryContainer = useRef<HTMLDivElement>(null);
   const helloInView = useInView(helloContainer);
   const helloDescInView = useInView(helloDescContainer);
   const parallaxInView = useInView(parallaxContainer);
-  const foodInView = useInView(foodGalleryContainer);
+  const { deviceType } = useContext(ScreenSizeContext);
+  const { isDarkTheme } = useContext(MyThemeContext);
 
-  const deviceType = useContext(ScreenSizeContext);
+  const [darkTheme, setDarkTheme] = useState<boolean>(true);
+
+  useEffect(() => {
+    const isInitialDark: boolean = JSON.parse(
+      localStorage.getItem("isDarkTheme")!
+    );
+    isInitialDark ? setDarkTheme(true) : setDarkTheme(false);
+    console.log(isDarkTheme);
+  }, [isDarkTheme]);
 
   return (
     <PageWrapper>
-      <section className="flex flex-col justify-center items-center  m-[auto] text-center mt-40">
+      <section className="flex flex-col justify-center items-center  m-[auto] text-center mt-20 sm:mt-40">
         <div className="max-w-[600px] lg:max-w-[1050px] pb-32">
           <div className="flex justify-center flex-col gap-10 pb-20 lg:pb-0">
             <div className="flex flex-col gap-6 mb-20">
@@ -56,7 +66,7 @@ export default function AboutPage() {
                       }?w=${width}&q=${quality || 75}`;
                     }}
                   />
-                  <div className="w-[250px] bg-bg-dark-gray h-[75px] flex justify-center items-center gap-5 text-sm sm:w-[375px] sm:gap-8 sm:h-[120px] sm:text-xl">
+                  <div className="w-[250px]  bg-nav-light-bg-highlight dark:bg-bg-dark-gray h-[75px] flex justify-center items-center gap-5 text-sm sm:w-[375px] sm:gap-8 sm:h-[120px] sm:text-xl shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]">
                     <Link
                       target="_blank"
                       href="https://open.spotify.com/user/hevrak?si=3764935cfac041dd"
@@ -64,7 +74,7 @@ export default function AboutPage() {
                       {" "}
                       <FontAwesomeIcon
                         size="3x"
-                        color="#8fdcc2"
+                        color="#357b71"
                         icon={faSpotify}
                       />
                     </Link>
@@ -98,10 +108,10 @@ export default function AboutPage() {
               ref={parallaxContainer}
               className="flex flex-col gap-8 text-lg text-sans dark:text-color-text-lighter text-justify px-6 font-calc items-center"
             >
-              <h1 className="text-3xl font-calc leading-[1.2] sm:text-5xl px-6">
+              <h1 className="text-3xl font-calc leading-[1.2] sm:text-5xl px-6 mb-10">
                 A bit about me
               </h1>
-              <ParallaxGallery />
+              <ParallaxGallery darkTheme={darkTheme} />
             </motion.div>
           </div>
         </div>
@@ -114,7 +124,11 @@ export default function AboutPage() {
               <div className="flex justify-center items-center pt-20">
                 <Player
                   className="w-[80px] h-[80px] lg:w-[124px] lg:h-[124px]"
-                  src="https://lottie.host/7ce71967-4e20-40de-a3c7-d1566bb1727d/AglJY8GMuc.json"
+                  src={
+                    darkTheme
+                      ? "https://lottie.host/7ce71967-4e20-40de-a3c7-d1566bb1727d/AglJY8GMuc.json"
+                      : "https://lottie.host/db44a044-1120-4eec-ab0c-456508ac6742/ZlYgkvncIA.json"
+                  }
                   background="transparent"
                   speed={1}
                   direction={1}

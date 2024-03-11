@@ -5,7 +5,7 @@ import Card from "./card";
 import { useRef } from "react";
 import { useScroll } from "framer-motion";
 
-export default function ParallaxGallery() {
+export default function ParallaxGallery({ darkTheme }: { darkTheme: boolean }) {
   const container = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: container,
@@ -26,6 +26,7 @@ export default function ParallaxGallery() {
             progress={scrollYProgress}
             range={[i * 0.25, 1]}
             targetScale={targetScale}
+            darkTheme={darkTheme}
           />
         );
       })}

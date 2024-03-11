@@ -17,13 +17,11 @@ export default function ThemeButton() {
       localStorage.getItem("isDarkTheme")!
     );
 
-    console.log(isInitialDark, isChecked);
     isInitialDark ? setIsChecked(true) : setIsChecked(false);
-    console.log(isInitialDark, isChecked);
   }, []);
 
   return (
-    <div className="fixed left-5 top-5 z-[99999]">
+    <div className="fixed left-4 top-4 z-[99999]">
       <input
         type="checkbox"
         id="toggle"
