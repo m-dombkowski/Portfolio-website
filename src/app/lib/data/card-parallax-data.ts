@@ -12,7 +12,8 @@ export const cards: CardParallaxDataType[] = [
       Since then I stared my first commercial work, gained tons of knowledge and learned a lot, however I know it's just a beginning.`,
     src: Start,
     alt: "Screen with some code",
-    color: "#568576",
+    lightColor: "#aba9a7",
+    darkColor: "#568576",
   },
 
   {
@@ -21,7 +22,8 @@ export const cards: CardParallaxDataType[] = [
       "Now I have over 1.5 years of commercial experience in which I've been mainly focused on working with React, Typescript, CSS. In this time I also learned a lot oustide of my commercial work, doing side projects with technologies like Next.js, Tailwind, Supabase, Firebase, various types of APIs and many more",
     src: Code,
     alt: "Opened laptop with some code",
-    color: "#4a7265",
+    lightColor: "#c3c1bf",
+    darkColor: "#4a7265",
   },
 
   {
@@ -30,7 +32,8 @@ export const cards: CardParallaxDataType[] = [
       "Outside of my work time I enjoy good coffee, tea. You can also find me ice skating durning winter, roller skating durning summer, occasionally hiking or doing something I fell in love with last year, baking.",
     src: Winter,
     alt: "author on top of a mountain durning winter",
-    color: "#3e5f54",
+    lightColor: "#dcd9d7",
+    darkColor: "#3e5f54",
   },
   {
     title: "Baking, dogs, music",
@@ -38,6 +41,7 @@ export const cards: CardParallaxDataType[] = [
       "Guess I fell in love with baking because simillar as in programming you can create something from almost nothing and you're able to see the growth and development of your project wheter it's a cake or appliaction. Other than that I really love metalcore and dogs. Actually planning on getting/adopting one myself this year. Pictured my friend's dog, Bafi <3",
     src: Bafi,
     alt: "cutest puppy face you've ever seen",
-    color: "#314c43",
+    lightColor: "#f4f1ef",
+    darkColor: "#314c43",
   },
 ];
