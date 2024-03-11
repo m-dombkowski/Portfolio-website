@@ -13,7 +13,4 @@ export const kevinsDefaultData: KevinsDataType = {
 export const kevinSecretData: KevinsDataType = {
   title: "Ok, we're cool now but you still need to answer the question though",
   subtitle: null,
-  gif: KevinCookiesGIF,
-  gifAlt:
-    "GIF of Kevin from The Office TV Series spinning on a chair and saying 'cookies, aye?",
 };

@@ -41,7 +41,8 @@ export type CardParallaxDataType = {
   description: string;
   src: StaticImageData;
   alt: string;
-  color: string;
+  lightColor: string;
+  darkColor: string;
   i?: number;
   progress?: MotionValue<number>;
   range?: number[];
@@ -78,8 +79,8 @@ export type FeedbackDataType = {
 export type KevinsDataType = {
   title: string;
   subtitle: string | null;
-  gif: StaticImageData;
-  gifAlt: string;
+  gif?: StaticImageData;
+  gifAlt?: string;
 };
 
 export type TimelineDataType = {
