@@ -23,7 +23,7 @@ export default function TechStack({
 }: {
   filteredData: TechStackDataType[];
 }) {
-  const deviceType = useContext(ScreenSizeContext);
+  const { deviceType } = useContext(ScreenSizeContext);
   return (
     <div className="pt-20">
       <ul className="flex gap-16 flex-wrap justify-center items-center">
