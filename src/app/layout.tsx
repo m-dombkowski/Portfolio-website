@@ -4,27 +4,21 @@ import "./globals.css";
 import SmoothScroll from "./lib/smooth-scroll/smooth-scroll";
 import LocalFont from "next/font/local";
 import "cal-sans";
-import {
-  AnimatePresence,
-  motion,
-  useMotionValueEvent,
-  useScroll,
-} from "framer-motion";
+import { AnimatePresence, useMotionValueEvent, useScroll } from "framer-motion";
 import { usePathname } from "next/navigation";
 import Navigation from "./components/navigation/navigation";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import { faSpotify } from "@fortawesome/free-brands-svg-icons";
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import MobileNav from "./components/navigation/mobile-nav/mobile-nav";
+import Footer from "./components/footer/footer";
+import ScrollProgressBar from "./components/scroll-progress-bar/scroll-progress-bar";
+import MyThemeContext, { MyThemeContextProvider } from "./lib/context/theme";
+import ThemeButton from "./components/theme/theme-button";
 import useWindowDimensions from "./hooks/useWindowDimension";
 import { Device } from "./lib/definitions/enums";
 import { ScreenSizeContext } from "./lib/context/screenSize";
-import Footer from "./components/footer/footer";
-import ScrollProgressBar from "./components/scroll-progress-bar/scroll-progress-bar";
-import Cursor from "./components/cursor/cursor";
-import { MyThemeContextProvider } from "./lib/context/theme";
-import ThemeButton from "./components/theme/theme-button";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -50,38 +44,35 @@ export default function RootLayout({
   useMotionValueEvent(scrollY, "change", (latest) => {
     if (latest >= 250 && mobileNavRef.current && !menuIsOpen) {
       mobileNavRef.current.style.opacity = "1";
+      mobileNavRef.current.style.pointerEvents = "auto";
     }
     if (latest < 250 && mobileNavRef.current && !menuIsOpen) {
       mobileNavRef.current.style.opacity = "0";
+      mobileNavRef.current.style.pointerEvents = "none";
     }
   });
 
   useEffect(() => {
     if (scrollY.getPrevious() < 250 && mobileNavRef.current && !menuIsOpen) {
       mobileNavRef.current.style.opacity = "0";
+      mobileNavRef.current.style.pointerEvents = "none";
     }
   }, [menuIsOpen, scrollY]);
 
   useEffect(() => {
-    if (width < 1025) {
-      setDeviceType(Device.MOBILE);
-    } else {
-      setDeviceType(Device.DESKTOP);
-    }
+    width < 1025 ? setDeviceType(Device.MOBILE) : setDeviceType(Device.DESKTOP);
   }, [width]);
 
   library.add(fas, faSpotify);
-
   return (
     <html lang="en" className={[inter.variable, calSans.variable].join(" ")}>
       <SmoothScroll>
         <MyThemeContextProvider>
-          <ScreenSizeContext.Provider value={deviceType}>
+          <ScreenSizeContext.Provider value={{ deviceType }}>
             <body>
-              {/* {deviceType === "desktop" && <Cursor />} */}
               <ScrollProgressBar />
               <Navigation currentPath={path} />
-              <ThemeButton />
+              {deviceType === "desktop" && <ThemeButton />}
 
               <div
                 className="opacity-0 transition-opacity duration-300"
