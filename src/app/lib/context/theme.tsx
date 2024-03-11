@@ -25,14 +25,16 @@ export function MyThemeContextProvider(
       // document!.querySelector("body")!.classList.add("dark");
       setIsDarkTheme(false);
     } else {
-      const isDarkThemeInStorage: boolean = JSON.parse(
-        localStorage.getItem("isDarkTheme")!
-      );
-      isDarkThemeInStorage &&
-        document!.querySelector("body")!.classList.add("dark");
-      setIsDarkTheme(() => {
-        return isDarkTheme;
-      });
+      if (localStorage.getItem("isDarkTheme") === "true") {
+        const isDarkThemeInStorage: boolean = JSON.parse(
+          localStorage.getItem("isDarkTheme")!
+        );
+        isDarkThemeInStorage &&
+          document!.querySelector("body")!.classList.add("dark");
+        setIsDarkTheme(true);
+      } else if (localStorage.getItem("isDarkTheme") === "false") {
+        setIsDarkTheme(false);
+      }
     }
   }
 
