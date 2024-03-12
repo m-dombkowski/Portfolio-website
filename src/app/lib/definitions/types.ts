@@ -96,7 +96,7 @@ export type ProjectCardType = {
   date: string;
   projectTitle: string;
   briefDescription: string;
-  img: StaticImageData;
+  gifs: string[];
   alt: string;
   description: string;
   technologies: string[];
