@@ -55,12 +55,12 @@ export default function WorkPage() {
             handleUseCase={handleUseCase}
           />
           <Dialog>
-            <DialogTrigger className="text-xs bg-zinc-900 rounded-full px-[0.75rem] py-[0.5rem]  sm:px-6 sm:py-3 sm:gap-6 sm:text-base border-color-text-darker border-2">
+            <DialogTrigger className="text-xs bg-nav-light-bg-highlight dark:bg-zinc-900 rounded-full px-[0.75rem] py-[0.5rem]  sm:px-6 sm:py-3 sm:gap-6 sm:text-base border-0 dark:border-color-text-darker dark:border-2 shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
               Find out more
             </DialogTrigger>
-            <DialogContent>
+            <DialogContent className="bg-background-light">
               <DialogHeader>
-                <DialogTitle>Information</DialogTitle>
+                <DialogTitle className="text-2xl">Information</DialogTitle>
                 <DialogDescription>
                   {`In order to know how long I've been working with certain technology/tool just hover your cursor over it (desktop) or click it (mobile).`}
                 </DialogDescription>
