@@ -143,7 +143,11 @@ export default function AboutPage() {
             <div className="flex justify-center items-center pb-20">
               <Player
                 className="w-[80px] h-[80px] lg:w-[124px] lg:h-[124px]"
-                src="https://lottie.host/69a36f5e-6e7c-4889-8357-63a5313d463e/YUmOxomf88.json"
+                src={
+                  darkTheme
+                    ? "https://lottie.host/69a36f5e-6e7c-4889-8357-63a5313d463e/YUmOxomf88.json"
+                    : "https://lottie.host/c99e8ad5-beb0-4ff0-b0b5-e7c2005c5757/bYP7hVCvEZ.json"
+                }
                 background="transparent"
                 speed={1}
                 direction={1}

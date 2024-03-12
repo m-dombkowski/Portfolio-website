@@ -50,7 +50,7 @@ export default function GalleryMobile() {
       <Swiper
         pagination={true}
         style={{ padding: "2rem", paddingBottom: "3rem" }}
-        className="my-[50px] mx-[auto] max-w-[440px] h-[300px] xs1:h-[375px] xs2:h-[450px] xs3:h-[500px] bg-[#72b09b] rounded-xl"
+        className="my-[50px] mx-[auto] max-w-[440px] h-[300px] xs1:h-[375px] xs2:h-[450px] xs3:h-[500px] bg-nav-light-bg-highlight dark:bg-[#72b09b] rounded-xl shadow-[0_2.8px_2.2px_rgba(0,_0,_0,_0.034),_0_6.7px_5.3px_rgba(0,_0,_0,_0.048),_0_12.5px_10px_rgba(0,_0,_0,_0.06),_0_22.3px_17.9px_rgba(0,_0,_0,_0.072),_0_41.8px_33.4px_rgba(0,_0,_0,_0.086),_0_100px_80px_rgba(0,_0,_0,_0.12)]"
         grabCursor={true}
         effect={"creative"}
         creativeEffect={{
@@ -90,3 +90,5 @@ export default function GalleryMobile() {
     </div>
   );
 }
+// 025a4e
+// 4c6763
