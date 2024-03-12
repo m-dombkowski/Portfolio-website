@@ -1,8 +1,7 @@
 "use client";
 import Image, { StaticImageData } from "next/image";
-import { useContext, useEffect, useRef, useState } from "react";
+import {  useRef } from "react";
 import { MotionValue, motion, useScroll, useTransform } from "framer-motion";
-import MyThemeContext from "@/app/lib/context/theme";
 
 export default function Card({
   title,

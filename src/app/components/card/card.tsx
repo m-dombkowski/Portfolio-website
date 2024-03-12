@@ -18,12 +18,12 @@ export const Card: React.FC<PropsWithChildren> = ({ children }) => {
   return (
     <div
       onMouseMove={onMouseMove}
-      className="h-full group overflow-hidden relative duration-700 border rounded-xl border-white md:gap-8 bg-[transparent]"
+      className="h-full group overflow-hidden relative duration-700 border rounded-xl border-white md:gap-8 bg-[transparent] shadow-[0_2.8px_2.2px_rgba(0,_0,_0,_0.034),_0_6.7px_5.3px_rgba(0,_0,_0,_0.048),_0_12.5px_10px_rgba(0,_0,_0,_0.06),_0_22.3px_17.9px_rgba(0,_0,_0,_0.072),_0_41.8px_33.4px_rgba(0,_0,_0,_0.086),_0_100px_80px_rgba(0,_0,_0,_0.12)]"
     >
       <div className="pointer-events-none">
         <div className="absolute inset-0 transition duration-500 [mask-image:linear-gradient(white,transparent)]" />
         <motion.div
-          className="absolute inset-0 dark:bg-gradient-to-br opacity-20 dark:from-[#d4ede4] dark:via-[#7bbea8] dark:to-[#8fdcc2] bg-gradient-to-br from-[#025a4e] via-[#02483e] to-[#025146]  transition duration-500 group-hover:opacity-30"
+          className="absolute inset-0 dark:bg-gradient-to-br opacity-20 dark:from-[#d4ede4] dark:via-[#7bbea8] dark:to-[#8fdcc2] bg-gradient-to-br from-[#013f37] via-[#01362f] to-[#01362f]  transition duration-500 group-hover:opacity-30"
           style={style}
         />
         <motion.div
