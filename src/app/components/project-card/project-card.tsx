@@ -16,11 +16,11 @@ export default function ProjectCard({ ...project }: ProjectCardType) {
   const [height] = useState(getRandomFromArray(["275px", "355px", "315px"]));
 
   return (
-    <div className="w-full mb-8">
+    <div className="w-full mb-8 ">
       <Sheet>
-        <SheetTrigger className="w-full">
+        <SheetTrigger className="w-full  rounded-xl shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,_rgba(0,0,0,0.3)_0px_3px_7px_-3px]">
           <Card>
-            <div className="group" style={{ height }}>
+            <div className="group " style={{ height }}>
               <div className="flex flex-col justify-start text-justify items-start flex-wrap dark:text-color-text-lighter h-full">
                 <span className="pt-10 px-10 mb-5">{project.date}</span>
                 <h1 className="px-10 text-4xl mb-7 font-calc dark:text-color-text-primary text-left">
@@ -44,7 +44,7 @@ export default function ProjectCard({ ...project }: ProjectCardType) {
 
         <SheetContent className="overflow-y-auto font-calc">
           <SheetHeader>
-            <SheetTitle className="text-left text-3xl mt-4 mb-4 dark:text-color-text-primary">
+            <SheetTitle className="text-left text-3xl mt-4 mb-4 text-color-text-primary-light-mode dark:text-color-text-primary">
               {project.projectTitle}
             </SheetTitle>
             <SheetDescription className="flex-1 overflow-auto">

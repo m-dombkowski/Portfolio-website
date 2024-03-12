@@ -11,9 +11,9 @@ export default function Timeline() {
               <Image
                 src={company.img}
                 alt={company.imgAlt}
-                className="w-16 h-16 rounded-full z-10 relative"
+                className="w-16 h-16 rounded-full z-10 relative border border-color-text-primary-light-mode dark:border-color-text-lighter"
               />
-              <div className="absolute h-full w-[1px] bg-color-text-lighter left-0 ml-8 top-0" />
+              <div className="absolute h-full w-[1px] bg-color-text-primary-light-mode dark:bg-color-text-lighter left-0 ml-8 top-0" />
             </div>
             <div className="flex flex-col gap-4 pl-12">
               <h2 className=" text-base">{company.date}</h2>

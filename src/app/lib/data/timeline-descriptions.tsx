@@ -11,8 +11,16 @@ export const NeonetDescription = () => {
       </p>
       <p>
         My tasks also included creating and modyfing Landing Pages on
-        <Link href="https://www.neonet.pl"> Neonet</Link> and{" "}
-        <Link href="https://www.neo24.pl"> Neo24</Link> websites.
+        <Link className="underline" href="https://www.neonet.pl">
+          {" "}
+          Neonet
+        </Link>{" "}
+        and{" "}
+        <Link className="underline" href="https://www.neo24.pl">
+          {" "}
+          Neo24
+        </Link>{" "}
+        websites.
       </p>
       <p>
         As well as development, bug fixing, and optimization of our Magento

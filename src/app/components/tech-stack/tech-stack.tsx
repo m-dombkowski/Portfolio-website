@@ -39,13 +39,13 @@ export default function TechStack({
                   <Tooltip>
                     <TooltipTrigger>
                       <div className="flex flex-col justify-center items-center gap-5">
-                        <div className="p-4 bg-[#fff] rounded-full">
+                        <div className="p-4 bg-[#fff] rounded-full shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]">
                           <div className="w-[48px] h-[48px]">{data.svg}</div>
                         </div>
                         {data.name}
                       </div>
                     </TooltipTrigger>
-                    <TooltipContent>
+                    <TooltipContent className=" bg-nav-light-bg-highlight">
                       <p>{data.tooltip}</p>
                     </TooltipContent>
                   </Tooltip>
@@ -60,7 +60,7 @@ export default function TechStack({
                       {data.name}
                     </div>
                   </DialogTrigger>
-                  <DialogContent>
+                  <DialogContent className="bg-background-light">
                     <DialogHeader>
                       <DialogTitle>{data.name}</DialogTitle>
                       <DialogDescription>{data.tooltip}</DialogDescription>
