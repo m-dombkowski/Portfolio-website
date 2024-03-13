@@ -1,11 +1,9 @@
-import KevinChilliGIF from "../../../../public/images/feedback/kevins-famous-chilli.gif";
-import KevinCookiesGIF from "../../../../public/images/feedback/kevin-cookies.gif";
 import { KevinsDataType } from "../definitions/types";
 
 export const kevinsDefaultData: KevinsDataType = {
   title: "Why are you like that?",
   subtitle: "Kevin dropped his famous chilli because of you",
-  gif: KevinChilliGIF,
+  gif: "https://i.ibb.co/fGphrb1/kevins-famous-chilli.gif",
   gifAlt:
     "GIF of Kevin from The Office TV Series dropping his famous chilli on the ground",
 };

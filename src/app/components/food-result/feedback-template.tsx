@@ -23,9 +23,10 @@ export default function Feedback({
           {feedbackData.subTitle}
         </h1>
       </div>
-      <div className="transition duration-300">
+      <div className="w-[300px] h-[200px] sm:w-[500px] sm:h-[330px] transition duration-300 relative">
         <Image
-          className="w-100 h-100 rounded-lg "
+          fill={true}
+          className=" rounded-lg "
           alt={feedbackData.alt}
           src={feedbackData.meme}
           placeholder="blur"

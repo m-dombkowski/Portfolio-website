@@ -1,7 +1,6 @@
 "use client";
 
 import Image, { ImageLoaderProps } from "next/image";
-import portrait from "../../../public/images/me.jpg";
 import PageWrapper from "../components/transitions/fade";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpotify } from "@fortawesome/free-brands-svg-icons/faSpotify";
@@ -53,19 +52,16 @@ export default function AboutPage() {
               >
                 <motion.div
                   {...animByBoolean(opacity, helloInView, null)}
-                  className="flex w-100 justify-center flex-col items-center "
+                  className="flex w-full justify-center flex-col items-center "
                 >
-                  <Image
-                    className="w-[250px] h-[100%] rounded-t-full sm:w-[375px]"
-                    src={portrait ? portrait : "/me.jpg"}
-                    alt="picture of me"
-                    placeholder="blur"
-                    loader={({ src, width, quality }: ImageLoaderProps) => {
-                      return `${
-                        portrait.src ? portrait.src : src
-                      }?w=${width}&q=${quality || 75}`;
-                    }}
-                  />
+                  <div className="w-[250px] h-[300px] sm:h-[450px] rounded-t-full sm:w-[375px] relative">
+                    <Image
+                      fill={true}
+                      className="w-full h-full rounded-t-full "
+                      src="https://i.ibb.co/58cRyYn/me.jpg"
+                      alt="picture of me"
+                    />
+                  </div>
                   <div className="w-[250px]  bg-nav-light-bg-highlight dark:bg-bg-dark-gray h-[75px] flex justify-center items-center gap-5 text-sm sm:w-[375px] sm:gap-8 sm:h-[120px] sm:text-xl shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]">
                     <Link
                       target="_blank"

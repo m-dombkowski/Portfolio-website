@@ -8,11 +8,14 @@ export default function Timeline() {
         return (
           <li key={index} className="relative flex">
             <div className="min-w-16">
-              <Image
-                src={company.img}
-                alt={company.imgAlt}
-                className="w-16 h-16 rounded-full z-10 relative border border-color-text-primary-light-mode dark:border-color-text-lighter"
-              />
+              <div className="relative w-16 h-16">
+                <Image
+                  fill
+                  src={company.img}
+                  alt={company.imgAlt}
+                  className="w-full h-full rounded-full z-10 relative border border-color-text-primary-light-mode dark:border-color-text-lighter"
+                />
+              </div>
               <div className="absolute h-full w-[1px] bg-color-text-primary-light-mode dark:bg-color-text-lighter left-0 ml-8 top-0" />
             </div>
             <div className="flex flex-col gap-4 pl-12">

@@ -15,7 +15,7 @@ export type NavDataType = {
   name: string;
   speed: number;
   index: number;
-  image: StaticImageData;
+  image: string;
 };
 
 export type SpotifyDataType = {
@@ -25,7 +25,7 @@ export type SpotifyDataType = {
 };
 
 export type FoodGalleryPicType = {
-  source: StaticImageData;
+  source: string;
   scale: MotionValue<number>;
   alt: string;
 };
@@ -39,7 +39,7 @@ export type SocialMediaDataType = {
 export type CardParallaxDataType = {
   title: string;
   description: string;
-  src: StaticImageData;
+  src: string;
   alt: string;
   lightColor: string;
   darkColor: string;
@@ -70,7 +70,7 @@ export type ContactFooterType = {
 export type FeedbackDataType = {
   title: string;
   subTitle: string | null;
-  meme: StaticImageData;
+  meme: string;
   alt: string;
   description: string | null;
   showSocial?: boolean;
@@ -79,12 +79,12 @@ export type FeedbackDataType = {
 export type KevinsDataType = {
   title: string;
   subtitle: string | null;
-  gif?: StaticImageData;
+  gif?: string;
   gifAlt?: string;
 };
 
 export type TimelineDataType = {
-  img: StaticImageData;
+  img: string;
   imgAlt: string;
   date: string;
   jobTitle: string;

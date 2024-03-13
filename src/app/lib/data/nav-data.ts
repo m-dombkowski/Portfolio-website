@@ -1,8 +1,4 @@
 import { NavDataType } from "../definitions/types";
-import ciasteczka from "../../../../public/images/food/cookies.jpg";
-import cynamonki from "../../../../public/images/food/cynamonki.jpg";
-import pierogi from "../../../../public/images/food/pierogi.jpg";
-import drozdzowka from "../../../../public/images/food/drozdzowka-maliny.jpg";
 
 export const NavigationData: NavDataType[] = [
   {
@@ -11,7 +7,7 @@ export const NavigationData: NavDataType[] = [
     name: "Home",
     speed: 0.35,
     index: 0,
-    image: ciasteczka,
+    image: "https://i.ibb.co/djNs2Y7/cookies.jpg",
   },
   {
     href: "/about",
@@ -19,7 +15,7 @@ export const NavigationData: NavDataType[] = [
     name: "About",
     speed: 0.65,
     index: 1,
-    image: cynamonki,
+    image: "https://i.ibb.co/nkcZw3Z/cynamonki.jpg",
   },
   {
     href: "/work",
@@ -27,7 +23,7 @@ export const NavigationData: NavDataType[] = [
     name: "Work",
     speed: 0.65,
     index: 2,
-    image: pierogi,
+    image: "https://i.ibb.co/sw5Mm9m/pierogi.jpg",
   },
   {
     href: "/contact",
@@ -35,6 +31,6 @@ export const NavigationData: NavDataType[] = [
     name: "Contact",
     speed: 0.8,
     index: 3,
-    image: drozdzowka,
+    image: "https://i.ibb.co/DkYXypS/drozdzowka-maliny.jpg",
   },
 ];

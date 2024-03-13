@@ -1,6 +1,6 @@
 "use client";
 import Image, { StaticImageData } from "next/image";
-import {  useRef } from "react";
+import { useRef } from "react";
 import { MotionValue, motion, useScroll, useTransform } from "framer-motion";
 
 export default function Card({
@@ -18,7 +18,7 @@ export default function Card({
 }: {
   title: string;
   description: string;
-  src: StaticImageData;
+  src: string;
   alt: string;
   darkColor: string;
   lightColor: string;

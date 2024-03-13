@@ -2,14 +2,8 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import Image, { ImageLoaderProps } from "next/image";
 import styles from "./styles.module.scss";
-import brownie from "../../../../public/images/food/brownie-kokos.png";
-import chmurka from "../../../../public/images/food/chmurka.jpg";
-import ciasteczka from "../../../../public/images/food/cookies.jpg";
-import cynamonki from "../../../../public/images/food/cynamonki.jpg";
-import drozdzowka from "../../../../public/images/food/drozdzowka-maliny.jpg";
-import jagodzianka from "../../../../public/images/food/jagodzianka.jpg";
-import sernik from "../../../../public/images/food/sernik.jpg";
 import { FoodGalleryPicType } from "@/app/lib/definitions/types";
+import { cn } from "@/app/lib/utils";
 
 export default function GalleryDesktop() {
   const container = useRef<HTMLDivElement>(null);
@@ -27,37 +21,37 @@ export default function GalleryDesktop() {
 
   const pictures: FoodGalleryPicType[] = [
     {
-      source: drozdzowka,
+      source: "https://i.ibb.co/DkYXypS/drozdzowka-maliny.jpg",
       scale: scale4,
       alt: "raspberry filled bun",
     },
     {
-      source: ciasteczka,
+      source: "https://i.ibb.co/djNs2Y7/cookies.jpg",
       scale: scale5,
       alt: "cookies",
     },
     {
-      source: chmurka,
+      source: "https://i.ibb.co/GdXDbVG/chmurka.jpg",
       scale: scale6,
       alt: "raspberry cloud",
     },
     {
-      source: sernik,
+      source: "https://i.ibb.co/LR7DgX7/sernik.jpg",
       scale: scale9,
       alt: "blueberry cheesecake",
     },
     {
-      source: cynamonki,
+      source: "https://i.ibb.co/nkcZw3Z/cynamonki.jpg",
       scale: scale6,
       alt: "cinnamon rolls",
     },
     {
-      source: jagodzianka,
+      source: "https://i.ibb.co/FJh8X6L/jagodzianka.jpg",
       scale: scale8,
       alt: "blueberry filled bun",
     },
     {
-      source: brownie,
+      source: "https://i.ibb.co/NCMkTJH/brownie-kokos.png",
       scale: scale9,
       alt: "brownie",
     },
@@ -69,17 +63,13 @@ export default function GalleryDesktop() {
         {pictures.map(({ source, scale, alt }, index) => {
           return (
             <motion.div key={index} style={{ scale }} className={styles.el}>
-              <div className={styles.imageContainer}>
+              <div className={cn(styles.imageContainer, "relative")}>
                 <Image
+                  fill
                   className="object-cover"
+                  style={{ width: "100%", height: "100%" }}
                   src={source}
                   alt={alt}
-                  placeholder="blur"
-                  loader={({ src, width, quality }: ImageLoaderProps) => {
-                    return `${source.src ? source.src : src}?w=${width}&q=${
-                      quality || 75
-                    }`;
-                  }}
                 />
               </div>
             </motion.div>

@@ -1,10 +1,9 @@
 import { TimelineDataType } from "../definitions/types";
-import NeonetLogo from "../../../../public/images/neonet-logo.jpg";
 import { NeonetDescription } from "./timeline-descriptions";
 
 export const timelineData: TimelineDataType[] = [
   {
-    img: NeonetLogo,
+    img: "https://i.ibb.co/qj4tf6c/neonet-logo.jpg",
     imgAlt: "Neonet's logo",
     date: "Sep 2022 - present",
     jobTitle: "Junior Frontend Developer",

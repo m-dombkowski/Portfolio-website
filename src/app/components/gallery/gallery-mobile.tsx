@@ -1,10 +1,3 @@
-import brownie from "../../../../public/images/food/brownie-kokos.png";
-import chmurka from "../../../../public/images/food/chmurka.jpg";
-import ciasteczka from "../../../../public/images/food/cookies.jpg";
-import cynamonki from "../../../../public/images/food/cynamonki.jpg";
-import drozdzowka from "../../../../public/images/food/drozdzowka-maliny.jpg";
-import jagodzianka from "../../../../public/images/food/jagodzianka.jpg";
-import sernik from "../../../../public/images/food/sernik.jpg";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCreative, Pagination } from "swiper/modules";
 import Image, { ImageLoaderProps } from "next/image";
@@ -15,32 +8,32 @@ import "swiper/css/pagination";
 export default function GalleryMobile() {
   const pics = [
     {
-      source: ciasteczka,
+      source: "https://i.ibb.co/djNs2Y7/cookies.jpg",
       alt: "cookies",
     },
     {
-      source: drozdzowka,
+      source: "https://i.ibb.co/wwmfHqG/drozdzowka.jpg",
       alt: "raspberry, blueberry bun",
     },
 
     {
-      source: chmurka,
+      source: "https://i.ibb.co/GdXDbVG/chmurka.jpg",
       alt: "raspberry cloud",
     },
     {
-      source: sernik,
+      source: "https://i.ibb.co/LR7DgX7/sernik.jpg",
       alt: "blueberry cheesecake",
     },
     {
-      source: cynamonki,
+      source: "https://i.ibb.co/nkcZw3Z/cynamonki.jpg",
       alt: "cinnamon rolls",
     },
     {
-      source: jagodzianka,
+      source: "https://i.ibb.co/FJh8X6L/jagodzianka.jpg",
       alt: "blueberry filled bun",
     },
     {
-      source: brownie,
+      source: "https://i.ibb.co/NCMkTJH/brownie-kokos.png",
       alt: "brownie",
     },
   ];
@@ -71,18 +64,14 @@ export default function GalleryMobile() {
         {pics.map(({ source, alt }, index) => (
           <SwiperSlide
             className="flex items-center justify-center w-[100%] h-[100%]
-            rounded-md shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)]"
+            rounded-md shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)] relative"
             key={index}
           >
             <Image
-              className="w-[100%] h-[100%]"
+              fill
               src={source}
               alt={alt}
-              loader={({ src, width, quality }: ImageLoaderProps) => {
-                return `${source.src ? source.src : src}?w=${width}&q=${
-                  quality || 75
-                }`;
-              }}
+              style={{ width: "100%", height: "100%" }}
             />
           </SwiperSlide>
         ))}

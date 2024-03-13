@@ -1,4 +1,5 @@
 import { KevinsDataType } from "@/app/lib/definitions/types";
+import { cn } from "@/app/lib/utils";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Dispatch, SetStateAction } from "react";
@@ -24,9 +25,15 @@ export default function KevinTemplate({
           Sorry Kevin
         </button>
       )}
-      <motion.div className="w-[300px] h-auto sm:w-[480px] relative">
+      <motion.div
+        className={cn(
+          kevinsData.gif ? "h-[240px]" : "h-0",
+          "w-[300px]  sm:w-[480px]  relative transition-height duration-300"
+        )}
+      >
         {kevinsData.gif && kevinsData.gifAlt && (
           <Image
+            fill
             className="w-100 h-100 rounded-lg"
             alt={kevinsData.gifAlt}
             src={kevinsData.gif}

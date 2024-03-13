@@ -94,7 +94,7 @@ const SliderContent = ({
   image,
 }: {
   description: string;
-  image: StaticImageData;
+  image: string;
 }) => {
   return (
     <>
@@ -104,7 +104,7 @@ const SliderContent = ({
       <p className="dark:text-[#000] text-color-text-lighter uppercase text-[7vw] leading-[7.2vw] m-0 ">
         {description}
       </p>
-      <div className="h-[6vw] w-[16vw] relative overflow-hidden rounded-[3vw] ml-[1vw] mr-[1vw] flex">
+      <div className="sm:h-[6vw] sm:w-[16vw] relative overflow-hidden rounded-[3vw] ml-[1vw] mr-[1vw] flex">
         <Image src={image} fill alt="image" className="object-cover" />
       </div>
       <p className="dark:text-[#000] text-color-text-lighter uppercase text-[7vw] leading-[7.2vw] m-0">
