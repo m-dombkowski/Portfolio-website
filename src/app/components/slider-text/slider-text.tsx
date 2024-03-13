@@ -12,6 +12,7 @@ export default function SliderText() {
   const direction = useRef<number>(-1);
 
   const animate = useCallback(() => {
+    if (!slider.current) return;
     if (xPercent.current < -100) {
       xPercent.current = 0;
     } else if (xPercent.current > 0) {

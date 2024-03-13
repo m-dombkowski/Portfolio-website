@@ -4,7 +4,7 @@ import { motion, useInView } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
 import { useRef } from "react";
 import Link from "next/link";
-import { opacity, slideUp, animByBoolean } from "@/app/lib/anim";
+import { slideUp, animByBoolean } from "@/app/lib/anim";
 
 export default function Home() {
   const descContainer = useRef<HTMLDivElement>(null);
@@ -24,15 +24,12 @@ export default function Home() {
             >
               Hey there! My name is{" "}
             </motion.p>
-            <motion.h1
-              {...animByBoolean(opacity, isInView, null)}
-              className="text-4xl text-dark-text-primary  mb-2 md:text-6xl lg:text-7xl"
-            >
+            <h1 className="text-4xl text-dark-text-primary  mb-2 md:text-6xl lg:text-7xl">
               Mateusz Dombkowski
-            </motion.h1>
+            </h1>
             <div className="max-w-[500px] flex flex-col justify-center items-center m-auto gap-3 lg:gap-5  lg:m-0 lg:max-w-[unset] lg:items-start">
               <motion.p
-                className="xl:max-w-[750px]"
+                className="w-[100%] xl:max-w-[750px]"
                 {...animByBoolean(slideUp, isInView, 0.8)}
               >
                 {`I'm a Devloper passionate about everything code related with a focus on Frontend, especially `}

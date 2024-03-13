@@ -36,7 +36,6 @@ export default function AboutPage() {
       localStorage.getItem("isDarkTheme")!
     );
     isInitialDark ? setDarkTheme(true) : setDarkTheme(false);
-    console.log(isDarkTheme);
   }, [isDarkTheme]);
 
   return (
@@ -54,9 +53,11 @@ export default function AboutPage() {
                   {...animByBoolean(opacity, helloInView, null)}
                   className="flex w-full justify-center flex-col items-center "
                 >
-                  <div className="w-[250px] h-[300px] sm:h-[450px] rounded-t-full sm:w-[375px] relative">
+                  <div className="w-[250px] h-[300px] sm:h-[450px] sm:w-[375px] rounded-t-full  relative">
                     <Image
                       fill={true}
+                      priority={true}
+                      sizes="(min-width: 640px) 375px, 250px"
                       className="w-full h-full rounded-t-full "
                       src="https://i.ibb.co/58cRyYn/me.jpg"
                       alt="picture of me"

@@ -69,6 +69,7 @@ export default function GalleryMobile() {
           >
             <Image
               fill
+              sizes="100%"
               src={source}
               alt={alt}
               style={{ width: "100%", height: "100%" }}

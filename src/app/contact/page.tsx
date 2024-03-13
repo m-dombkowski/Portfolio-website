@@ -18,7 +18,6 @@ export default function ContactPage() {
       localStorage.getItem("isDarkTheme")!
     );
     isInitialDark ? setDarkTheme(true) : setDarkTheme(false);
-    console.log(isDarkTheme);
   }, [isDarkTheme]);
 
   const contacts: ContactCardType[] = [

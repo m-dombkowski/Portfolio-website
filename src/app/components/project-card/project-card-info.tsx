@@ -48,7 +48,6 @@ export default function ProjectInfo({ ...projectData }: ProjectCardType) {
         </h2>
         <div className="flex flex-wrap gap-3">
           {projectData.technologies.map((tech, index) => {
-            console.log(projectData.technologies);
             return (
               <span
                 key={index}
