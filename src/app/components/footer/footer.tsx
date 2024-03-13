@@ -92,6 +92,7 @@ export default function Footer() {
           <Link
             target="_blank"
             href="https://open.spotify.com/user/hevrak?si=3764935cfac041dd"
+            aria-label="link to my spotify profile"
           >
             {" "}
             <FontAwesomeIcon size="3x" color="#357b71" icon={faSpotify} />

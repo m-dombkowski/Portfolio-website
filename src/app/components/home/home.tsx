@@ -50,7 +50,7 @@ export default function Home() {
               <motion.p {...animByBoolean(slideUp, isInView, 1.6)}>
                 {`More about me can be found `}
                 <span className="dark:text-color-text-darker">
-                  <Link href="/about">here</Link>
+                  <Link href="/about">on this page</Link>
                 </span>
                 {`.`}
               </motion.p>

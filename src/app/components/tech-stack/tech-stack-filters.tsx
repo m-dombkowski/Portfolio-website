@@ -27,23 +27,23 @@ export default function TechStackFilters({
 
   const UseCaseButtonHighlighted = ({ name }: { name: string }) => {
     return (
-      <li className="relative py-2 px-[0.55rem] sm:py-3 sm:px-6">
+      <div className="relative py-2 px-[0.55rem] sm:py-3 sm:px-6">
         <div className="z-[10] relative ">{name}</div>
         <motion.div
           layoutId="bg-tech"
-          className="absolute bg-nav-light-bg-highlight dark:bg-zinc-nav-active w-[100%] h-[100%] top-0 left-0 rounded-full pointer-events-none"
+          className="absolute bg-nav-light-bg-highlight text-color-text-light-mode-dark  dark:bg-zinc-nav-active w-[100%] h-[100%] top-0 left-0 rounded-full pointer-events-none"
         ></motion.div>
-      </li>
+      </div>
     );
   };
 
   const UseCaseButton = ({ name }: { name: string }) => {
     return (
-      <li className="py-2 px-[0.55rem] sm:py-3 sm:px-6 ">
-        <div className="dark:text-color-text-lighter z-[10] relative ">
+      <div className="py-2 px-[0.55rem] sm:py-3 sm:px-6 ">
+        <div className="text-color-text-light-mode-dark dark:text-color-text-lighter z-[10] relative ">
           {name}
         </div>
-      </li>
+      </div>
     );
   };
 
@@ -52,13 +52,17 @@ export default function TechStackFilters({
       {filterButtons.map((button, index) => {
         return button.value[1] === chosenUseCase[1] &&
           button.value[0] === chosenUseCase[0] ? (
-          <button key={index} onClick={() => handleUseCase(button.value)}>
-            <UseCaseButtonHighlighted name={button.name} />
-          </button>
+          <li>
+            <button key={index} onClick={() => handleUseCase(button.value)}>
+              <UseCaseButtonHighlighted name={button.name} />
+            </button>
+          </li>
         ) : (
-          <button key={index} onClick={() => handleUseCase(button.value)}>
-            <UseCaseButton name={button.name} />
-          </button>
+          <li>
+            <button key={index} onClick={() => handleUseCase(button.value)}>
+              <UseCaseButton name={button.name} />
+            </button>
+          </li>
         );
       })}
     </ul>

@@ -29,7 +29,7 @@ export default function TechStack({
       <ul className="flex gap-16 flex-wrap justify-center items-center">
         {filteredData.map((data, index) => {
           return (
-            <motion.div
+            <motion.li
               {...anim(slideUp, index * 0.1)}
               key={`k_${Math.random()}`} // passing math random because if key is the same (like when index is passed) then the anim function will only animate elements with new "key" so basicaly only if  array will expand
               className="min-w-[105px] flex justify-center align-center"
@@ -68,7 +68,7 @@ export default function TechStack({
                   </DialogContent>
                 </Dialog>
               )}
-            </motion.div>
+            </motion.li>
           );
         })}
       </ul>
