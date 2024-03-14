@@ -51,14 +51,14 @@ export default function TechStackFilters({
       {filterButtons.map((button, index) => {
         return button.value[1] === chosenUseCase[1] &&
           button.value[0] === chosenUseCase[0] ? (
-          <li>
-            <button key={index} onClick={() => handleUseCase(button.value)}>
+          <li key={index}>
+            <button onClick={() => handleUseCase(button.value)}>
               <UseCaseButtonHighlighted name={button.name} />
             </button>
           </li>
         ) : (
-          <li>
-            <button key={index} onClick={() => handleUseCase(button.value)}>
+          <li key={index}>
+            <button onClick={() => handleUseCase(button.value)}>
               <UseCaseButton name={button.name} />
             </button>
           </li>
