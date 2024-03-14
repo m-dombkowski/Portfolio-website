@@ -11,7 +11,7 @@ export default function Timeline() {
               <div className="relative w-16 h-16">
                 <Image
                   fill
-                  sizes="16px"
+                  sizes="64px"
                   src={company.img}
                   alt={company.imgAlt}
                   className="w-full h-full rounded-full z-10 relative border border-color-text-primary-light-mode dark:border-color-text-lighter"

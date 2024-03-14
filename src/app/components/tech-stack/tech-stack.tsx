@@ -45,7 +45,7 @@ export default function TechStack({
                         {data.name}
                       </div>
                     </TooltipTrigger>
-                    <TooltipContent className=" bg-nav-light-bg-highlight">
+                    <TooltipContent className="bg-nav-light-bg-highlight text-color-text-light-mode-dark">
                       <p>{data.tooltip}</p>
                     </TooltipContent>
                   </Tooltip>
