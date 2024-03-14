@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import Image, { ImageLoaderProps } from "next/image";
+import Image from "next/image";
 import styles from "./styles.module.scss";
 import { FoodGalleryPicType } from "@/app/lib/definitions/types";
 import { cn } from "@/app/lib/utils";

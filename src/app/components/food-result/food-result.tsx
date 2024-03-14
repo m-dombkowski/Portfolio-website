@@ -1,6 +1,6 @@
 import { useState } from "react";
 import NegativeFeedback from "./negative-feedback";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { animByBoolean, hideElement } from "@/app/lib/anim";
 import Feedback from "./feedback-template";
 import { positiveFeedback } from "@/app/lib/data/feedback-data";

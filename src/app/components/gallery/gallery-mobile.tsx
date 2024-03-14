@@ -1,6 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCreative, Pagination } from "swiper/modules";
-import Image, { ImageLoaderProps } from "next/image";
+import Image from "next/image";
 import "swiper/css";
 import "swiper/css/effect-creative";
 import "swiper/css/pagination";

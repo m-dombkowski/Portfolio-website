@@ -1,6 +1,4 @@
 import { ProjectCardType } from "../definitions/types";
-import Bafi from "../../../../public/images/bafi.jpg";
-import test from "../../../../public/images/opossum-404.jpg";
 
 export const projectData: ProjectCardType[] = [
   {

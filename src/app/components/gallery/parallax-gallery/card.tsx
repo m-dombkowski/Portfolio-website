@@ -1,5 +1,5 @@
 "use client";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import { useRef } from "react";
 import { MotionValue, motion, useScroll, useTransform } from "framer-motion";
 

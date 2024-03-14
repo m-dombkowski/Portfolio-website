@@ -4,7 +4,7 @@ import Link from "next/link";
 import gsap from "gsap";
 import { NavDataType } from "@/app/lib/definitions/types";
 import { Dispatch, SetStateAction, useRef } from "react";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 
 export default function MenuLink({
   data,

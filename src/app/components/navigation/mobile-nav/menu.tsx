@@ -4,16 +4,8 @@ import MenuLink from "./menu-link";
 import Link from "next/link";
 import { NavigationData } from "@/app/lib/data/nav-data";
 import { socials } from "@/app/lib/data/socials-data";
-import {
-  Dispatch,
-  SetStateAction,
-  useContext,
-  useEffect,
-  useState,
-} from "react";
+import { Dispatch, SetStateAction, useContext } from "react";
 import ThemeButton from "../../theme/theme-button";
-import useWindowDimensions from "@/app/hooks/useWindowDimension";
-import { Device } from "@/app/lib/definitions/enums";
 import { ScreenSizeContext } from "@/app/lib/context/screenSize";
 
 export default function Menu({

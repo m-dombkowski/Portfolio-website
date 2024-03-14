@@ -1,5 +1,5 @@
 import { MotionValue } from "framer-motion";
-import { StaticImageData } from "next/image";
+
 import React from "react";
 
 export type ContactCardType = {

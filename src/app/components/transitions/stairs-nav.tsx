@@ -1,5 +1,4 @@
 import React from "react";
-import styles from "./style.module.scss";
 import { height, background, mountAnim } from "../../lib/anim";
 import { motion } from "framer-motion";
 

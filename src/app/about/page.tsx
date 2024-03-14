@@ -1,6 +1,6 @@
 "use client";
 
-import Image, { ImageLoaderProps } from "next/image";
+import Image from "next/image";
 import PageWrapper from "../components/transitions/fade";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpotify } from "@fortawesome/free-brands-svg-icons/faSpotify";

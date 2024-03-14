@@ -3,11 +3,6 @@ import Link from "next/link";
 import SpotifyLink from "../spotify-link/spotify-link";
 import { faSpotify } from "@fortawesome/free-brands-svg-icons/faSpotify";
 import {
-  HoverCard,
-  HoverCardContent,
-  HoverCardTrigger,
-} from "@/app/components/ui/hover-card";
-import {
   Dialog,
   DialogContent,
   DialogDescription,
