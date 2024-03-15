@@ -1,6 +1,6 @@
 "use client";
 import { Inter } from "next/font/google";
-import "./globals.css";
+import "./styles.scss";
 import SmoothScroll from "./lib/smooth-scroll/smooth-scroll";
 import LocalFont from "next/font/local";
 import "cal-sans";
@@ -10,7 +10,7 @@ import Navigation from "./components/navigation/navigation";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import { faSpotify } from "@fortawesome/free-brands-svg-icons";
-import {  useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import MobileNav from "./components/navigation/mobile-nav/mobile-nav";
 import Footer from "./components/footer/footer";
 import ScrollProgressBar from "./components/scroll-progress-bar/scroll-progress-bar";
