@@ -24,12 +24,11 @@ import {
   TechStackFooterType,
 } from "@/app/lib/definitions/types";
 import { useRef } from "react";
+import Image from "next/image";
+import uk from "@pub/uk.png";
+import pl from "@pub/pl.png";
 
 const contactLinks: ContactFooterType[] = [
-  {
-    name: "CV",
-    href: "#",
-  },
   {
     name: "Email",
     href: "mailto:dombkowskimateusz@gmail.com",
@@ -196,6 +195,52 @@ export default function Footer() {
                 </li>
               );
             })}
+            <li>
+              <Dialog>
+                <DialogTrigger className="relative group font-bold font-calc text-color-text-light-mode-dark cursor-pointer dark:text-color-text-primary">
+                  CV
+                  <span className="absolute -right-5  transition duration-300 text-color-text-light-mode-dark dark:text-color-text-primary opacity-0 group-hover:opacity-100 ">
+                    →
+                  </span>
+                </DialogTrigger>
+                <DialogContent className=" bg-background-light">
+                  <DialogHeader>
+                    <DialogTitle>
+                      <motion.h1
+                        {...anim(slideDown, null)}
+                        className="text-xl mb-5 text-center text-color-text-primary-light-mode dark:text-[#fff]"
+                      >
+                        Which version do you prefer?
+                      </motion.h1>
+                    </DialogTitle>
+                    <DialogDescription>
+                      <div className="flex justify-center items-center gap-20">
+                        <Link
+                          className="w-20 h-auto border-color-text-light-mode-dark rounded-full border-2"
+                          href="/cv/ENG.pdf"
+                        >
+                          <Image
+                            className=" w-full h-full"
+                            src={uk}
+                            alt="rounded flag of UK"
+                          ></Image>
+                        </Link>
+                        <Link
+                          className="w-20 h-auto border-color-text-light-mode-dark rounded-full border-2"
+                          href="/cv/PL.pdf"
+                        >
+                          <Image
+                            src={pl}
+                            className=" w-full h-full"
+                            alt="rounded flag of Poland"
+                          ></Image>
+                        </Link>
+                      </div>
+                    </DialogDescription>
+                  </DialogHeader>
+                </DialogContent>
+              </Dialog>
+            </li>
           </ul>
         </div>
         <div className="max-w-[500px] px-10 lg:px-0">
