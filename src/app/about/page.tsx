@@ -44,7 +44,7 @@ export default function AboutPage() {
         <div className="max-w-[600px] lg:max-w-[1050px] pb-32">
           <div className="flex justify-center flex-col gap-10 pb-20 lg:pb-0">
             <div className="flex flex-col gap-6 mb-20">
-              <h1 className=" text-4xl font-calc sm:text-6xl pb-20">{`Hi! Mateusz here.`}</h1>
+              <h1 className="text-color-text-primary-light-mode dark:text-color-text-darker text-4xl font-calc sm:text-6xl pb-20">{`Hi! Mateusz here.`}</h1>
               <div
                 ref={helloContainer}
                 className="flex flex-col space-between gap-16 lg:flex-row"
@@ -80,7 +80,7 @@ export default function AboutPage() {
                   </div>
                 </motion.div>
                 <div className="flex flex-col font-calc justify-center items-center">
-                  <h1 className="text-2xl leading-[1.2] sm:text-4xl px-6 mb-12">
+                  <h1  className="text-color-text-primary-light-mode dark:text-color-text-darker text-2xl leading-[1.2] sm:text-4xl px-6 mb-12">
                     Frontend Developer working remotely from Poland, Wrocław.
                   </h1>
                   <div
@@ -106,7 +106,7 @@ export default function AboutPage() {
               ref={parallaxContainer}
               className="flex flex-col gap-8 text-lg text-sans dark:text-color-text-lighter text-justify px-6 font-calc items-center"
             >
-              <h1 className="text-3xl font-calc leading-[1.2] sm:text-5xl px-6 mb-10">
+              <h1 className="text-color-text-primary-light-mode dark:text-color-text-darker text-3xl font-calc leading-[1.2] sm:text-5xl px-6 mb-10">
                 A bit about me
               </h1>
               <ParallaxGallery darkTheme={darkTheme} />

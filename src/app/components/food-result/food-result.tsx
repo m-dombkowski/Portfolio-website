@@ -20,7 +20,9 @@ export default function FoodResult() {
           {...animByBoolean(hideElement, hide, null)}
           className="flex justify-start items-center flex-col mx-[auto]"
         >
-          <h1 className="text-3xl sm:text-5xl pb-10">Liked what you saw?</h1>
+          <h1 className="text-color-text-primary-light-mode dark:text-color-text-darker text-3xl sm:text-5xl pb-10">
+            Liked what you saw?
+          </h1>
           <div className="flex gap-8 sm:gap-10">
             <button
               onClick={() => {

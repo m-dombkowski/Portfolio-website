@@ -24,7 +24,7 @@ export default function Home() {
             >
               Hey there! My name is{" "}
             </motion.p>
-            <h1 className="text-4xl text-dark-text-primary  mb-2 md:text-6xl lg:text-7xl">
+            <h1 className="text-color-text-primary-light-mode dark:text-color-text-darker text-4xl text-dark-text-primary  mb-2 md:text-6xl lg:text-7xl">
               Mateusz Dombkowski
             </h1>
             <div className="max-w-[500px] flex flex-col justify-center items-center m-auto gap-3 lg:gap-5  lg:m-0 lg:max-w-[unset] lg:items-start">
@@ -33,7 +33,7 @@ export default function Home() {
                 {...animByBoolean(slideUp, isInView, 0.8)}
               >
                 {`I'm a Devloper passionate about everything code related with a focus on Frontend, especially `}
-                <span className="dark:text-color-text-darker ">
+                <span className="text-color-text-light-mode-dark dark:text-color-text-darker">
                   <Link href="/work">React, Next.js, Typescript</Link>
                 </span>
                 {`.`}
@@ -49,7 +49,7 @@ export default function Home() {
               </motion.p>
               <motion.p {...animByBoolean(slideUp, isInView, 1.6)}>
                 {`More about me can be found `}
-                <span className="dark:text-color-text-darker">
+                <span className="text-color-text-light-mode-dark dark:text-color-text-darker">
                   <Link href="/about">on this page</Link>
                 </span>
                 {`.`}
@@ -57,7 +57,7 @@ export default function Home() {
 
               <motion.p {...animByBoolean(slideUp, isInView, 2)}>
                 {`At the moment looking for a new full-time position as a `}
-                <span className="dark:text-color-text-darker">
+                <span className="text-color-text-light-mode-dark dark:text-color-text-darker">
                   <Link href="/contact">Frontend Developer</Link>
                 </span>
                 {`.`}

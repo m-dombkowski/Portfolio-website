@@ -23,7 +23,7 @@ export default function ProjectCard({ ...project }: ProjectCardType) {
             <div className="group " style={{ height }}>
               <div className="flex flex-col justify-start text-justify items-start flex-wrap dark:text-color-text-lighter h-full">
                 <span className="pt-10 px-10 mb-5">{project.date}</span>
-                <h1 className="px-10 text-4xl mb-7 font-calc dark:text-color-text-primary text-left">
+                <h1 className="text-color-text-primary-light-mode dark:text-color-text-darker px-10 text-4xl mb-7 font-calc text-left">
                   {project.projectTitle}
                 </h1>
                 <p className="px-10 mb-10 text-lg  sm:text-base dark:text-color-text-lighter">

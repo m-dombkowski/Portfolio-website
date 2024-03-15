@@ -68,7 +68,7 @@ export default function ProjectInfo({ ...projectData }: ProjectCardType) {
         {projectData.websiteLink && (
           <Link
             href={projectData.websiteLink}
-            className="flex justify-center items-center gap-4 dark:text-[#fff] border-b"
+            className="flex justify-center items-center gap-4 text-color-text-light-mode-dark dark:text-color-text-darker border-b"
           >
             <span className="group relative">
               Website
@@ -81,7 +81,7 @@ export default function ProjectInfo({ ...projectData }: ProjectCardType) {
 
         <Link
           href={projectData.repoLink}
-          className="flex justify-center items-center gap-4 dark:text-[#fff] border-b"
+          className="flex justify-center items-center gap-4 text-color-text-light-mode-dark dark:text-color-text-darker border-b"
         >
           <span className="group relative m-auto">
             Github

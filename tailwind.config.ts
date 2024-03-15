@@ -20,10 +20,12 @@ const config: Config = {
     },
     backgroundPosition: {
       "p-double-50": "50% 50%",
+      "dbl-0": "0% 0%",
     },
 
     backgroundSize: {
       "s-double-0": "0 0",
+      before: "94px 90px",
       "s-double-200": "200% 200%",
     },
     extend: {
@@ -49,6 +51,9 @@ const config: Config = {
           "radial-gradient(circle at center, #2f2f32b3 50%,transparent 50%);",
         "burger-light":
           "radial-gradient(circle at center, #beb9b2 50%,transparent 50% )",
+        "bg-gradient":
+          "radial-gradient( at 40% 40%, rgb(30, 144, 255) 0px, transparent 50%), radial-gradient(at 90% 10%, rgb(255, 105, 180) 0px, transparent 50%), radial-gradient(at 50% 95%, rgb(0, 255, 255) 0px, transparent 50%), radial-gradient(at 20% 30%, rgb(50, 205, 50) 0px, transparent 50%), radial-gradient(at 90% 90%, rgb(255, 255, 0) 0px, transparent 50%), radial-gradient(at 33% 50%, rgb(255, 69, 0) 0px, transparent 50%), radial-gradient(at 79% 53%, rgb(128, 0, 128) 0px, transparent 50%)",
+        bars: "linear-gradient(currentcolor 1px, transparent 1px), linear-gradient(to right, currentcolor 1px, transparent 1px)",
       },
     },
     animation: {
@@ -122,6 +127,7 @@ const config: Config = {
       "zinc-300-flipped": "hsla(240,5%,84%,.5)",
       "zinc-300-full": "hsla(240,5%,84%)",
       "zinc-100-flipped": "hsla(240,5%,96%,0)",
+
       "dark-gradient":
         "linear-gradient( to bottom, hsla(158, 23%, 18%, 0) 0%, hsla(158, 23%, 18%, .013) 9.7%, hsla(158, 23%, 18%, .049) 18.1%, hsla(158, 23%, 18%, .104) 25.5%, hsla(158, 23%, 18%, .175) 31.9%, hsla(158, 23%, 18%, .259) 37.7%, hsla(158, 23%, 18%, .352) 43%, hsla(158, 23%, 18%, .45) 47.9%, hsla(158, 23%, 18%, .55) 52.8%, hsla(158, 23%, 18%, .648) 57.7%, hsla(158, 23%, 18%, .741) 63%, hsla(158, 23%, 18%, .825) 68.7%, hsla(158, 23%, 18%, .896) 75%, hsla(158, 23%, 18%, .951) 82.2%, hsla(158, 23%, 18%, .987) 90.5%, hsl(158, 23%, 18%) 100% )",
       "color-bg": "#233831",

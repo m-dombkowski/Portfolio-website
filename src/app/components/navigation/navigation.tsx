@@ -1,3 +1,4 @@
+"use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { NavDataType } from "../../lib/definitions/types";
@@ -7,7 +8,10 @@ export default function Navigation({ currentPath }: { currentPath: string }) {
   const NavItemHighlighted = ({ element }: { element: NavDataType }) => {
     return (
       <div className="relative py-2 px-[0.55rem] sm:py-3 sm:px-6">
-        <Link href={element.href} className="z-[10] relative ">
+        <Link
+          href={element.href}
+          className="z-[10] relative text-color-text-light-mode-dark dark:text-color-text-darker"
+        >
           {element.name}
         </Link>
         <motion.div
@@ -22,7 +26,7 @@ export default function Navigation({ currentPath }: { currentPath: string }) {
     return (
       <div className="py-2 px-[0.55rem] sm:py-3 sm:px-6 ">
         <Link
-          className="dark:text-color-text-lighter z-[10] relative "
+          className=" z-[10] relative text-color-text-light-mode-dark dark:text-color-text-darker"
           href={element.href}
         >
           {element.name}

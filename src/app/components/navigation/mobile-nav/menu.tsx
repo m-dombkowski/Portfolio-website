@@ -53,7 +53,9 @@ export default function Menu({
               target="_blank"
               className=" text-[2.5vw] border-2 bg-nav-light-bg-highlight dark:bg-black dark:border-[#fff] rounded-full py-0 px-5"
             >
-              <span className="dark:text-[#fff]">{el.text}</span>
+              <span className="text-color-text-light-mode-dark dark:text-[#fff]">
+                {el.text}
+              </span>
             </Link>
           );
         })}

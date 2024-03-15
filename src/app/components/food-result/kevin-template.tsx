@@ -15,7 +15,7 @@ export default function KevinTemplate({
 }) {
   return (
     <div className="flex flex-col gap-5 justify-center items-center">
-      <h1 className="text-3xl">{kevinsData.title}</h1>
+      <h1 className="text-color-text-primary-light-mode dark:text-color-text-darker text-3xl">{kevinsData.title}</h1>
       <h2 className="text-xl">{kevinsData.subtitle}</h2>
       {!apologized && (
         <button

@@ -11,12 +11,18 @@ export const NeonetDescription = () => {
       </p>
       <p>
         My tasks also included creating and modyfing Landing Pages on
-        <Link className="underline" href="https://www.neonet.pl">
+        <Link
+          className="underline text-color-text-light-mode-dark dark:text-color-text-darker"
+          href="https://www.neonet.pl"
+        >
           {" "}
           Neonet
         </Link>{" "}
         and{" "}
-        <Link className="underline" href="https://www.neo24.pl">
+        <Link
+          className="underline text-color-text-light-mode-dark dark:text-color-text-darker"
+          href="https://www.neo24.pl"
+        >
           {" "}
           Neo24
         </Link>{" "}

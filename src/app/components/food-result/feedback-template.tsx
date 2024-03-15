@@ -18,8 +18,8 @@ export default function Feedback({
       className="flex flex-col gap-8 justify-center items-center px-10 text-sm sm:text-lg max-w-[650px] w-[330px] sm:w-[unset] m-auto"
     >
       <div>
-        <h1 className="text-3xl sm:text-5xl mb-3">{feedbackData.title}</h1>
-        <h1 className="text-2xl sm:text-3xl dark:text-[#fff]">
+        <h1 className="text-color-text-primary-light-mode dark:text-color-text-darker text-3xl sm:text-5xl mb-3">{feedbackData.title}</h1>
+        <h1 className="text-color-text-primary-light-mode text-2xl sm:text-3xl dark:text-[#fff]">
           {feedbackData.subTitle}
         </h1>
       </div>
@@ -37,7 +37,7 @@ export default function Feedback({
         <p className="text-justify text-lg">{feedbackData.description}</p>
         {feedbackData.showSocial !== false && (
           <Link
-            className="transition duration-300 flex gap-3 items-center p-4 border-2 rounded-3xl bg-nav-light-bg-highlight dark:bg-zinc-900 dark:hover:bg-zinc-nav-active"
+            className=" text-color-text-light-mode-dark dark:text-color-text-darker transition duration-300 flex gap-3 items-center p-4 border-2 rounded-3xl bg-nav-light-bg-highlight dark:bg-zinc-900 dark:hover:bg-zinc-nav-active"
             href="https://www.instagram.com/mateusz.dombkowski/"
             target="_blank"
           >

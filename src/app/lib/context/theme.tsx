@@ -22,7 +22,7 @@ export function MyThemeContextProvider(
   function initialThemeHandler(): void {
     if (isLocalStorageEmpty()) {
       localStorage.setItem("isDarkTheme", `false`);
-      // document!.querySelector("body")!.classList.add("dark");
+      // document!.querySelector("html")!.classList.add("dark");
       setIsDarkTheme(false);
     } else {
       if (localStorage.getItem("isDarkTheme") === "true") {
@@ -30,7 +30,7 @@ export function MyThemeContextProvider(
           localStorage.getItem("isDarkTheme")!
         );
         isDarkThemeInStorage &&
-          document!.querySelector("body")!.classList.add("dark");
+          document!.querySelector("html")!.classList.add("dark");
         setIsDarkTheme(true);
       } else if (localStorage.getItem("isDarkTheme") === "false") {
         setIsDarkTheme(false);
@@ -48,7 +48,7 @@ export function MyThemeContextProvider(
   }
 
   function toggleDarkClassToBody(): void {
-    document!.querySelector("body")!.classList.toggle("dark");
+    document!.querySelector("html")!.classList.toggle("dark");
   }
 
   function setValueToLocalStorage(isDarkTheme: boolean): void {

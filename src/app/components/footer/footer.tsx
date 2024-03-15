@@ -160,6 +160,7 @@ export default function Footer() {
                           <Link
                             target="_blank"
                             href="https://github.com/m-dombkowski/Portfolio-website"
+                            className="text-color-text-light-mode-dark dark:text-color-text-darker"
                           >
                             repository
                           </Link>
@@ -175,12 +176,18 @@ export default function Footer() {
       </div>
       <div className="flex flex-col gap-20 lg:flex-row">
         <div className="flex flex-col items-center lg:items-start">
-          <h1 className="text-3xl mb-10">Contact info</h1>
+          <h1 className="text-color-text-primary-light-mode dark:text-color-text-darker text-3xl mb-10">
+            Contact info
+          </h1>
           <ul className="flex flex-col gap-5 items-center lg:items-start">
             {contactLinks.map((link, index) => {
               return (
                 <li key={index} className="text-xl relative group ">
-                  <Link href={link.href} target="_blank">
+                  <Link
+                    className="text-color-text-light-mode-dark dark:text-color-text-darker"
+                    href={link.href}
+                    target="_blank"
+                  >
                     {link.name}
                   </Link>
                   <span className="absolute -right-5  transition duration-300 text-color-text-light-mode-dark dark:text-color-text-primary opacity-0 group-hover:opacity-100 ">
@@ -192,7 +199,7 @@ export default function Footer() {
           </ul>
         </div>
         <div className="max-w-[500px] px-10 lg:px-0">
-          <h1 className="text-3xl mb-10 text-center xl:text-left">
+          <h1 className="text-color-text-primary-light-mode dark:text-color-text-darker text-3xl mb-10 text-center xl:text-left">
             Open to work
           </h1>
           <div className="text-sm text-justify leading-8 sm:text-lg flex flex-col gap-5">

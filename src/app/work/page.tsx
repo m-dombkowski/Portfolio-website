@@ -45,7 +45,7 @@ export default function WorkPage() {
     <PageWrapper>
       <section className="px-10 flex justify-center items-center flex-col max-w-[700px] xl:max-w-[900px] m-auto font-calc overscroll-contain mt-40">
         <div className="max-w-[600px] xl:max-w-[900px] flex justify-center flex-col items-center font-calc">
-          <h1 className="text-4xl mb-20 sm:text-6xl text-center">
+          <h1 className=" text-color-text-primary-light-mode dark:text-color-text-darker text-4xl mb-20 sm:text-6xl text-center">
             Day to day tech stack
           </h1>
         </div>
@@ -70,13 +70,15 @@ export default function WorkPage() {
         </div>
         <TechStack filteredData={filteredData} />
         <div className="mt-40">
-          <h1 className="text-4xl mb-20 sm:text-6xl text-center">
+          <h1 className="text-color-text-primary-light-mode dark:text-color-text-darker text-4xl mb-20 sm:text-6xl text-center">
             Commercial experience
           </h1>
           <Timeline />
         </div>
         <div className="mt-40 md:w-[700px] lg:w-[900px] xl:w-[1200px] transition duration-500">
-          <h1 className="text-4xl mb-20 sm:text-6xl text-center">Projects</h1>
+          <h1 className="text-color-text-primary-light-mode dark:text-color-text-darker text-4xl mb-20 sm:text-6xl text-center">
+            Projects
+          </h1>
           <div className="gap-8 mx-auto font-sans columns-1 md:columns-2">
             {projectData.map((project, index) => {
               return (
