@@ -80,7 +80,7 @@ export default function AboutPage() {
                   </div>
                 </motion.div>
                 <div className="flex flex-col font-calc justify-center items-center">
-                  <h1  className="text-color-text-primary-light-mode dark:text-color-text-darker text-2xl leading-[1.2] sm:text-4xl px-6 mb-12">
+                  <h1 className="text-color-text-primary-light-mode dark:text-color-text-darker text-2xl leading-[1.2] sm:text-4xl px-6 mb-12">
                     Frontend Developer working remotely from Poland, Wrocław.
                   </h1>
                   <div
@@ -89,13 +89,13 @@ export default function AboutPage() {
                   >
                     <motion.p
                       {...animByBoolean(slideRight, helloDescInView, 0.3)}
-                    >{`Even though I wrote my first "Hello World" somewhere around 2019/2020 it all started long time ago around 2014 in the game called World of Warcraft where I met 3 guys who after few years started pushing me to check this thing called Javascript and later kept on pushing to not leave it and keep grinding.`}</motion.p>
+                    >{`Even though I wrote my first "Hello World" somewhere around 2019/2020, it all started long time ago around 2014 in the game called World of Warcraft, where I met 3 guys who after few years, started pushing me to check this thing called Javascrip. Later on they kept on pushing me to not leave it and keep grinding.`}</motion.p>
                     <motion.p
                       {...animByBoolean(slideRight, helloDescInView, 0.6)}
-                    >{`In 2021 I decided to switch my carrer path and after a bit over a year of commitment and hard work it paid off and I landed my first commercial job as a Frontend Developer.`}</motion.p>
+                    >{`In 2021, I decided to switch my carrer path, and after a bit over a year of commitment and hard work, it paid off, and I landed my first commercial job as a Frontend Developer.`}</motion.p>
                     <motion.p
                       {...animByBoolean(slideRight, helloDescInView, 0.9)}
-                    >{`My main goal is to always create pixel perfect, engaging and accessible experience wheter it's a private or commercial project.`}</motion.p>
+                    >{`My main goal is to always create pixel perfect, engaging and accessible experience, wheter it's a private or commercial project.`}</motion.p>
                   </div>
                 </div>
               </div>

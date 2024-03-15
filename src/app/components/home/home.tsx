@@ -32,7 +32,7 @@ export default function Home() {
                 className="w-[100%] xl:max-w-[750px]"
                 {...animByBoolean(slideUp, isInView, 0.8)}
               >
-                {`I'm a Devloper passionate about everything code related with a focus on Frontend, especially `}
+                {`I'm a Developer passionate about everything code related with a focus on Frontend, especially `}
                 <span className="text-color-text-light-mode-dark dark:text-color-text-darker">
                   <Link href="/work">React, Next.js, Typescript</Link>
                 </span>
