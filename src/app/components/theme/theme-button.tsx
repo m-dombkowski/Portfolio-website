@@ -21,7 +21,7 @@ export default function ThemeButton() {
   }, []);
 
   return (
-    <div className="fixed left-4 top-4 z-[99999]">
+    <div className="fixed left-[51px] top-[51px] z-[99999]">
       <input
         type="checkbox"
         id="toggle"

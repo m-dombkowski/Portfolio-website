@@ -69,7 +69,7 @@ export default function RootLayout({
       <SmoothScroll>
         <MyThemeContextProvider>
           <ScreenSizeContext.Provider value={{ deviceType }}>
-            <body className=" text-color-text-light-mode font-calc bg-background-light transition duration-300 after:bg-bg-gradient after:fixed after:z-[-1] after:w-full after:h-full after:blur-[100px] after:saturate-[100%] after:top-0 after:opacity-10 before:bg-dbl-0 before:bg-repeat before:bg-scroll before:bg-origin-padding before:bg-clip-border before:h-full before:w-full before:bg-bars before:fixed before:z-[-1] before:bg-before before:text-[#71717112] before:bg-transparent before:transition before:duration-500 dark:bg-dark-bg dark:text-color-text-lighter">
+            <body className=" text-color-text-light-mode font-calc bg-background-light transition duration-300 after:bg-bg-gradient after:fixed after:z-[-1] after:w-full after:h-full after:blur-[100px] after:saturate-[100%] after:top-0 after:opacity-10 dark:bg-dark-bg dark:text-color-text-lighter">
               <ScrollProgressBar />
               <Navigation currentPath={path} />
               {deviceType === "desktop" && <ThemeButton />}
