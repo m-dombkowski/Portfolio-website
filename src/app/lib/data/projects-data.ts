@@ -14,7 +14,7 @@ export const projectData: ProjectCardType[] = [
     description:
       "My personal portfolio website showing visitors a bit about me, what I've been up to when I'm not working aswell as some code/work stuff",
     technologies: [
-      "Next",
+      "Next.js",
       "React",
       "Typescript",
       "Tailwind",
@@ -25,25 +25,23 @@ export const projectData: ProjectCardType[] = [
     repoLink: "https://github.com/m-dombkowski/Portfolio-website",
     websiteLink: "https://www.dombkowski.pl",
   },
-  // {
-  //   date: "Work in progress",
-  //   projectTitle: "Moc grzybiarzy",
-  //   briefDescription:
-  //     "Weather checking application with beautiful visuals, database connection, account where user can bookmark his favorite cities.",
-  //   gifs: ["https://i.ibb.co/TBB0YH2/vid-1.gif"],
-  //   alt: `Bafi's pic`,
-  //   description:
-  //     "Application where users are able to check weather, bookmark their favorites cities and also check more specific data like forecast, time, humidity, pressure, sunset time, air quality and many more. Powered by OpenWeather API and Supabase Postgres SQL Database.",
-  //   technologies: [
-  //     "Next",
-  //     "React",
-  //     "Typescript",
-  //     "Openweather API",
-  //     "Tailwind",
-  //     "Supabase",
-  //     "React Hook Form",
-  //   ],
-  //   repoLink: "#",
-  //   websiteLink: "#",
-  // },
+  {
+    date: "Work in progress",
+    projectTitle: "Blog with newsletter",
+    briefDescription:
+      "Blog website with a possibility to signup for newsletter",
+    gifs: ["https://i.ibb.co/jgSw65P/giphy.gif"],
+    alt: `Placeholder gif`,
+    description:
+      "Blog powered by Next.js and Sanity where person with permission can add/edit/delete posts which can be later viewed by everyone else. Newslettter powered by Sendgrid API.",
+    technologies: [
+      "Next.js",
+      "Typescript",
+      "Sanity",
+      "Tailwind",
+      "Sendgrid API",
+    ],
+    repoLink: "https://github.com/m-dombkowski/blog-nextjs-sanity/",
+    websiteLink: null,
+  },
 ];

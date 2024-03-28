@@ -43,7 +43,7 @@ export default function ThemeButton() {
         <div
           id="circle"
           className={cn(
-            "w-[40px] h-[40px] bg-[#fff] relative top-[5px]  border-[10px] border-[#fff] rounded-full transition-all duration-500 z-[2]",
+            "w-[40px] h-[40px] bg-[#fff] relative top-[5px]  border-[10px] border-[#fff] rounded-full transition duration-500 z-[2]",
             !isChecked ? "left-[5px]" : "left-[65px]"
           )}
         ></div>
