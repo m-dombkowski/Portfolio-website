@@ -30,6 +30,8 @@ export default function ProjectInfo({ ...projectData }: ProjectCardType) {
                 width={350}
                 height={310}
                 alt={projectData.alt}
+                placeholder="blur"
+                blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mOs3reiHgAF/wJinwtkaAAAAABJRU5ErkJggg=="
                 className="rounded-xl w-full h-full"
               />
             </SwiperSlide>

@@ -30,7 +30,7 @@ export default function Feedback({
           alt={feedbackData.alt}
           src={feedbackData.meme}
           placeholder="blur"
-          blurDataURL="iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsv3OoHgAG3QKuq5tTVwAAAABJRU5ErkJggg=="
+          blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mOs3reiHgAF/wJinwtkaAAAAABJRU5ErkJggg=="
         />
       </div>
       <div className="flex justify-center items-center gap-10 flex-col sm:flex-row">

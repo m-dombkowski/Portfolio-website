@@ -61,6 +61,8 @@ export default function AboutPage() {
                       className="w-full h-full rounded-t-full "
                       src="https://i.ibb.co/58cRyYn/me.jpg"
                       alt="picture of me"
+                      placeholder="blur"
+                      blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mOs3reiHgAF/wJinwtkaAAAAABJRU5ErkJggg=="
                     />
                   </div>
                   <div className="w-[250px]  bg-nav-light-bg-highlight dark:bg-bg-dark-gray h-[75px] flex justify-center items-center gap-5 text-sm sm:w-[375px] sm:gap-8 sm:h-[120px] sm:text-xl shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]">
