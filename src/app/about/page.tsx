@@ -18,7 +18,7 @@ import SliderText from "../components/slider-text/slider-text";
 import FoodResult from "../components/food-result/food-result";
 import { ScreenSizeContext } from "../lib/context/screenSize";
 import MyThemeContext from "../lib/context/theme";
-import myPic from "../../../public/me.jpg";
+import portrait from "../../../public/me.jpg";
 
 export default function AboutPage() {
   const helloContainer = useRef<HTMLDivElement>(null);
@@ -58,7 +58,7 @@ export default function AboutPage() {
                     <Image
                       sizes="(min-width: 640px) 375px, 250px"
                       className="w-full h-full rounded-t-full "
-                      src={myPic}
+                      src={portrait}
                       alt="picture of me"
                       placeholder="blur"
                       blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mOs3reiHgAF/wJinwtkaAAAAABJRU5ErkJggg=="
