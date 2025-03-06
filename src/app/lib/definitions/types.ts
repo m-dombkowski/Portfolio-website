@@ -89,7 +89,7 @@ export type TimelineDataType = {
   date: string;
   jobTitle: string;
   companyName: string;
-  description: JSX.Element;
+  description: JSX.Element | null;
 };
 
 export type ProjectCardType = {

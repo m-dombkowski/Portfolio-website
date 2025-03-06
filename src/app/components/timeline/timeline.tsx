@@ -3,10 +3,10 @@ import { timelineData } from "@/app/lib/data/timeline-data";
 
 export default function Timeline() {
   return (
-    <ul className="flex justify-center">
+    <ul className="flex justify-center flex-col-reverse">
       {timelineData.map((company, index) => {
         return (
-          <li key={index} className="relative flex">
+          <li key={index} className="relative flex pb-6">
             <div className="min-w-16">
               <div className="relative w-16 h-16">
                 <Image

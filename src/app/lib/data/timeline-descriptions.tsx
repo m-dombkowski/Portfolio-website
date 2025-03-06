@@ -4,8 +4,8 @@ export const NeonetDescription = () => {
   return (
     <>
       <p>
-        As a Junior Frontend Developer, I was mainly tasked with creating
-        features, fixing, and maintaining frontend functionality of our internal
+        As a Frontend Developer, I was mainly tasked with creating features,
+        fixing, and maintaining frontend functionality of our internal
         application, a dashboard which allowed to visualize data for
         departaments like Marketing or HR.
       </p>
