@@ -249,7 +249,7 @@ export default function Footer() {
           </h1>
           <div className="text-sm text-justify leading-8 sm:text-lg flex flex-col gap-5">
             <p>
-              {`Always happy and open for a chat, if you're looking for a Frontend Developer for a role on site or hybrid model in Wroclaw/Krakow or remotely anywhere in Poland feel free to contact me the way that suits you best.`}
+              {`Always happy and open for a chat, if you're looking for a Frontend Developer for a role on site or hybrid model in Wroclaw or remotely anywhere in Poland feel free to contact me the way that suits you best.`}
             </p>
             <p>{`I'm always open to new opportunities, so if the offer would be really good but not in specified cities, feel free to contact me anyway. I might consider relocation.`}</p>
           </div>
