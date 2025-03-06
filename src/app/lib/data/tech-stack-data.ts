@@ -30,49 +30,49 @@ export const techData: TechStackDataType[] = [
   {
     name: "React",
     usecase: ["commercial", "personal"],
-    tooltip: "2 years",
+    tooltip: "2.5 years",
     svg: ReactSvg(),
   },
-  {
-    name: "React Native",
-    usecase: ["commercial", "personal"],
-    tooltip: "2 years",
-    svg: ReactSvg(),
-  },
+  // {
+  //   name: "React Native",
+  //   usecase: ["commercial", "personal"],
+  //   tooltip: "2 years",
+  //   svg: ReactSvg(),
+  // },
   {
     name: "Typescript",
     usecase: ["commercial", "personal"],
-    tooltip: "2 years",
+    tooltip: "2.5 years",
     svg: TypescriptSvg(),
   },
   {
     name: "Redux (Toolkit)",
     usecase: ["commercial", "personal"],
-    tooltip: "2 years",
+    tooltip: "2.5 years",
     svg: ReduxSvg(),
   },
   {
     name: "REST Api",
     usecase: ["commercial", "personal"],
-    tooltip: "2 years",
+    tooltip: "2.5 years",
     svg: RestSvg(),
   },
   {
     name: "Javasript",
     usecase: ["commercial", "personal"],
-    tooltip: "2 years",
+    tooltip: "2.5 years",
     svg: JavascriptSvg(),
   },
   {
     name: "CSS",
     usecase: ["commercial"],
-    tooltip: "2 years",
+    tooltip: "2.5 years",
     svg: CssSvg(),
   },
   {
     name: "SASS/SCSS",
     usecase: ["commercial", "personal"],
-    tooltip: "2 years",
+    tooltip: "2.5 years",
     svg: SassSvg(),
   },
   {
@@ -84,13 +84,13 @@ export const techData: TechStackDataType[] = [
   {
     name: "HTML",
     usecase: ["commercial"],
-    tooltip: "2 years",
+    tooltip: "2.5 years",
     svg: HtmlSvg(),
   },
   {
     name: "Git",
     usecase: ["commercial", "personal"],
-    tooltip: "2 years",
+    tooltip: "2.5 years",
     svg: GitSvg(),
   },
   {
@@ -102,7 +102,7 @@ export const techData: TechStackDataType[] = [
   {
     name: "Magento 2",
     usecase: ["commercial"],
-    tooltip: "2 years",
+    tooltip: "2.5 years",
     svg: MagentoSvg(),
   },
   {
@@ -114,13 +114,13 @@ export const techData: TechStackDataType[] = [
   {
     name: "Jira",
     usecase: ["commercial"],
-    tooltip: "2 years",
+    tooltip: "2.5 years",
     svg: JiraSvg(),
   },
   {
     name: "Npm",
     usecase: ["commercial", "personal"],
-    tooltip: "2 years",
+    tooltip: "2.5 years",
     svg: NpmSvg(),
   },
   {

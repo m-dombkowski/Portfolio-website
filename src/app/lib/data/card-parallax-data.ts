@@ -15,7 +15,7 @@ export const cards: CardParallaxDataType[] = [
   {
     title: "Present",
     description:
-      "Now I have over 1.5 years of commercial experience in which I've been mainly focused on working with React, Typescript, CSS. In this time I also learned a lot oustide of my commercial work, doing side projects with technologies like Next.js, Tailwind, Supabase, Firebase, various types of APIs and many more",
+      "Now I have about 2.5 years of commercial experience in which I've been mainly focused on working with React, Typescript, CSS. In this time I also learned a lot oustide of my commercial work, doing side projects with technologies like Next.js, Tailwind, Supabase, Firebase, various types of APIs and many more",
     src: "https://i.ibb.co/yRxXCpm/code.jpg",
     alt: "Opened laptop with some code",
     lightColor: "#c3c1bf",
